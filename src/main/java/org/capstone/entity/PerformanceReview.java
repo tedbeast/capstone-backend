@@ -18,7 +18,7 @@ public class PerformanceReview {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int performanceReviewID;
     public String goalType;
-    public String goalReview;
+    public String employeeComments;
     public Date targetDate;
     public int weight;
     public Date deadlineDate;
