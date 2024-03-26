@@ -1,11 +1,10 @@
 package org.capstone.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 enum Roles {
     EMPLOYEE,
@@ -13,6 +12,7 @@ enum Roles {
     ADMIN
 }
 @Entity
+@Data
 public class SiteUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,7 +26,11 @@ public class SiteUser {
     private Date birthDate;
     private Date anniversary;
     private int managerID;
-    private PerformanceReview performanceReview;
-    private Leave leave;
+    @OneToMany
+    @JoinColumn(name = "employeeID_fk")
+    private List<PerformanceReview> performanceReview;
+    @OneToMany
+    @JoinColumn(name = "employeeID_fk")
+    private List<Leave> leave;
     private Roles role;
 }

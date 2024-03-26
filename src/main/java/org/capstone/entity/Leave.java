@@ -28,6 +28,6 @@ public class Leave {
     private boolean acceptRejectFlag;
     private boolean active;
     @ManyToOne
-    @JoinColumn(name = "siteUsers")
-    private SiteUser siteUsers;
+    @JoinColumn(name = "employeeID_fk")
+    private SiteUser siteUser;
 }
