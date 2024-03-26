@@ -30,6 +30,8 @@ public class Leave {
     @ManyToOne
     @JoinColumn(name = "employeeID")
     private Employee employee;
+
     @JoinColumn(name = "managerID")
     private Manager manager;
+
 }
