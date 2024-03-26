@@ -9,11 +9,9 @@ import java.util.List;
 
 @Entity
 @Data
+
 public class Employee {
     @Id
-
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     private int employeeID;
@@ -38,4 +36,12 @@ public class Employee {
     @JoinColumn(name = "employeeID")
     private List<Leave> leave;
     private Roles role;
+
+    public String getRole() {
+        return role.toString();
+    }
+
+    public void setRole (String role) {
+        this.role = Roles.valueOf(role);
+    }
 }
