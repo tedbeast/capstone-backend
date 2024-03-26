@@ -23,7 +23,7 @@ public class AdminService {
 
     public List<Employee> getAllEmployees() {
         List<Employee> employees = employeeRepository.findAll();
-        Main.log.info("Employee List returned: " +employees);
+        Main.logger.info("Employee List returned: " +employees);
         return employees;
     }
 
@@ -31,10 +31,10 @@ public class AdminService {
         Optional<Employee> employeeOptional = employeeRepository.findById(employeeId);
         if (employeeOptional.isPresent()) {
             Employee employee = employeeOptional.get();
-            Main.log.info("Employee found: " + employee);
+            Main.logger.info("Employee found: " + employee);
             return employeeOptional.get();
         } else {
-            Main.log.warn("Employee not found" + employeeId);
+            Main.logger.warn("Employee not found" + employeeId);
             throw new AdminException("Employee is not found with that id" + employeeId);
         }
     }
