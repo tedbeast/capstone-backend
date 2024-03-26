@@ -9,11 +9,8 @@
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
-<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="zulu-21" project-jdk-type="JavaSDK">
-=======
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
->>>>>>> origin/login-team
+
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

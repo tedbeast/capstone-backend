@@ -11,11 +11,11 @@ import java.util.List;
 @Data
 public class Employee {
     @Id
-<<<<<<< HEAD
+
 //    @GeneratedValue(strategy = GenerationType.AUTO)
-=======
+
     @GeneratedValue(strategy = GenerationType.AUTO)
->>>>>>> origin/login-team
+
     private int employeeID;
     private String password;
     private String name;
