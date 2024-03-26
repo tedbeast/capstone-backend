@@ -12,8 +12,6 @@ import java.util.List;
 
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-
     private int employeeID;
     private String password;
     private String name;

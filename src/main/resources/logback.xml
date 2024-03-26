@@ -7,7 +7,7 @@
     </appender>
 
     <appender name = "FILE" class = "ch.qos.logback.core.FileAppender">
-        <File>./Login_Spring_Backend/logging.log</File> <!-- LOCATION of FILE WHERE YOU WANT TO SAVE -->
+        <File>logging.log</File> <!-- LOCATION of FILE WHERE YOU WANT TO SAVE -->
         <encoder>
             <pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.sss'Z'}] [%C] [%t] [%L] [%-5p] %m%n</pattern>
         </encoder>

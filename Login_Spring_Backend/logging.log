@@ -103,3 +103,176 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 [2024-03-26 16:36:54,309] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [SpringApplicationShutdownHook] [650] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
 [2024-03-26 16:36:54,315] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [350] [INFO ] HikariPool-1 - Shutdown initiated...
 [2024-03-26 16:36:54,316] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [352] [INFO ] HikariPool-1 - Shutdown completed.
+[2024-03-26 17:12:55,762] [org.springframework.boot.StartupInfoLogger] [restartedMain] [50] [INFO ] Starting Main using Java 21.0.2 with PID 29412 (C:\Users\A271404\java_bootcamp\working_code_login_app\capstone-backend\target\classes started by A271404 in C:\Users\A271404\java_bootcamp\working_code_login_app\capstone-backend)
+[2024-03-26 17:12:55,766] [org.springframework.boot.SpringApplication] [restartedMain] [654] [INFO ] No active profile set, falling back to 1 default profile: "default"
+[2024-03-26 17:12:55,821] [org.springframework.boot.logging.DeferredLog] [restartedMain] [252] [INFO ] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-03-26 17:12:55,822] [org.springframework.boot.logging.DeferredLog] [restartedMain] [252] [INFO ] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-03-26 17:12:56,820] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [139] [INFO ] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-03-26 17:12:56,889] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [208] [INFO ] Finished Spring Data repository scanning in 53 ms. Found 3 JPA repository interfaces.
+[2024-03-26 17:12:57,865] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [109] [INFO ] Tomcat initialized with port 8080 (http)
+[2024-03-26 17:12:57,888] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing ProtocolHandler ["http-nio-8080"]
+[2024-03-26 17:12:57,894] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting service [Tomcat]
+[2024-03-26 17:12:57,895] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting Servlet engine: [Apache Tomcat/10.1.19]
+[2024-03-26 17:12:57,965] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing Spring embedded WebApplicationContext
+[2024-03-26 17:12:57,968] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] [restartedMain] [296] [INFO ] Root WebApplicationContext: initialization completed in 2143 ms
+[2024-03-26 17:12:58,206] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [110] [INFO ] HikariPool-1 - Starting...
+[2024-03-26 17:12:58,402] [com.zaxxer.hikari.pool.HikariPool] [restartedMain] [565] [INFO ] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:0bd1b897-c016-4c02-a770-98f519627563 user=SA
+[2024-03-26 17:12:58,404] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [123] [INFO ] HikariPool-1 - Start completed.
+[2024-03-26 17:12:58,413] [org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration] [restartedMain] [88] [INFO ] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:0bd1b897-c016-4c02-a770-98f519627563'
+[2024-03-26 17:12:58,832] [org.hibernate.jpa.internal.util.LogHelper] [restartedMain] [31] [INFO ] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-03-26 17:12:58,945] [org.hibernate.Version] [restartedMain] [44] [INFO ] HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-03-26 17:12:58,987] [org.hibernate.cache.internal.RegionFactoryInitiator] [restartedMain] [50] [INFO ] HHH000026: Second-level cache disabled
+[2024-03-26 17:12:59,237] [org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo] [restartedMain] [87] [INFO ] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-03-26 17:13:00,059] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [restartedMain] [58] [INFO ] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-03-26 17:13:00,094] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [restartedMain] [437] [INFO ] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-03-26 17:13:00,590] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] [restartedMain] [232] [WARN ] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-03-26 17:13:01,555] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] [restartedMain] [59] [INFO ] LiveReload server is running on port 35729
+[2024-03-26 17:13:01,573] [org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver] [restartedMain] [58] [INFO ] Exposing 1 endpoint(s) beneath base path '/actuator'
+[2024-03-26 17:13:01,657] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting ProtocolHandler ["http-nio-8080"]
+[2024-03-26 17:13:01,680] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [241] [INFO ] Tomcat started on port 8080 (http) with context path ''
+[2024-03-26 17:13:01,692] [org.springframework.boot.StartupInfoLogger] [restartedMain] [56] [INFO ] Started Main in 6.28 seconds (process running for 6.946)
+[2024-03-26 17:14:23,813] [org.apache.juli.logging.DirectJDKLog] [http-nio-8080-exec-1] [173] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-03-26 17:14:23,814] [org.springframework.web.servlet.FrameworkServlet] [http-nio-8080-exec-1] [532] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2024-03-26 17:14:23,815] [org.springframework.web.servlet.FrameworkServlet] [http-nio-8080-exec-1] [554] [INFO ] Completed initialization in 1 ms
+[2024-03-26 17:14:23,909] [org.apache.juli.logging.DirectJDKLog] [http-nio-8080-exec-1] [175] [ERROR] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "org.capstone.entity.Roles.toString()" because "this.role" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "org.capstone.entity.Roles.toString()" because "this.role" is null
+	at org.capstone.entity.Employee.getRole(Employee.java:41)
+	at org.capstone.entity.Employee.toString(Employee.java:11)
+	at java.base/java.lang.String.valueOf(String.java:4465)
+	at org.capstone.service.LoginService.saveUser(LoginService.java:31)
+	at org.capstone.controller.LoginController.registerUser(LoginController.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2024-03-26 17:15:51,301] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-8080-exec-4] [247] [WARN ] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: No enum constant org.capstone.entity.Roles.admin]
+[2024-03-26 17:16:09,911] [org.capstone.service.LoginService] [http-nio-8080-exec-6] [31] [INFO ] Employee(employeeID=123, password=123, name=null, jobTitle=null, phoneNumber=null, email=null, addressLine1=null, addressLine2=null, city=null, state=null, postalCode=null, birthDate=null, anniversary=null, manager=null, performanceReview=null, leave=null, role=EMPLOYEE) has been saved to the database
+[2024-03-26 17:20:19,280] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-8080-exec-8] [247] [WARN ] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+[2024-03-26 17:27:46,116] [org.capstone.service.LoginService] [http-nio-8080-exec-1] [31] [INFO ] Employee(employeeID=123, password=123, name=null, jobTitle=null, phoneNumber=null, email=null, addressLine1=null, addressLine2=null, city=null, state=null, postalCode=null, birthDate=null, anniversary=null, manager=null, performanceReview=null, leave=null, role=EMPLOYEE) has been saved to the database
+[2024-03-26 17:29:09,434] [org.capstone.service.LoginService] [http-nio-8080-exec-5] [31] [INFO ] Employee(employeeID=1234, password=123, name=null, jobTitle=null, phoneNumber=null, email=null, addressLine1=null, addressLine2=null, city=null, state=null, postalCode=null, birthDate=null, anniversary=null, manager=null, performanceReview=null, leave=null, role=ADMIN) has been saved to the database
+[2024-03-26 17:30:43,252] [org.capstone.service.LoginService] [http-nio-8080-exec-8] [26] [INFO ] 123 not found or incorrect password.
+[2024-03-26 17:30:43,252] [org.capstone.controller.LoginController] [http-nio-8080-exec-8] [43] [INFO ] Authenticated user: null
+[2024-03-26 17:31:00,692] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-8080-exec-9] [247] [WARN ] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+[2024-03-26 17:32:15,301] [org.capstone.service.LoginService] [http-nio-8080-exec-3] [26] [INFO ] 123 not found or incorrect password.
+[2024-03-26 17:32:15,301] [org.capstone.controller.LoginController] [http-nio-8080-exec-3] [43] [INFO ] Authenticated user: null
+[2024-03-26 17:32:33,507] [org.capstone.service.LoginService] [http-nio-8080-exec-5] [31] [INFO ] Employee(employeeID=123, password=123, name=null, jobTitle=null, phoneNumber=null, email=null, addressLine1=null, addressLine2=null, city=null, state=null, postalCode=null, birthDate=null, anniversary=null, manager=null, performanceReview=null, leave=null, role=ADMIN) has been saved to the database
+[2024-03-26 17:32:38,858] [org.capstone.service.LoginService] [http-nio-8080-exec-6] [26] [INFO ] 123 not found or incorrect password.
+[2024-03-26 17:32:38,858] [org.capstone.controller.LoginController] [http-nio-8080-exec-6] [43] [INFO ] Authenticated user: null
+[2024-03-26 17:33:01,336] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [SpringApplicationShutdownHook] [650] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-03-26 17:33:01,555] [org.springframework.beans.factory.support.DisposableBeanAdapter] [SpringApplicationShutdownHook] [221] [WARN ] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+[2024-03-26 17:33:01,556] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [350] [INFO ] HikariPool-1 - Shutdown initiated...
+[2024-03-26 17:33:01,558] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [352] [INFO ] HikariPool-1 - Shutdown completed.
+[2024-03-26 17:33:04,881] [org.springframework.boot.StartupInfoLogger] [restartedMain] [50] [INFO ] Starting Main using Java 21.0.2 with PID 26876 (C:\Users\A271404\java_bootcamp\working_code_login_app\capstone-backend\target\classes started by A271404 in C:\Users\A271404\java_bootcamp\working_code_login_app\capstone-backend)
+[2024-03-26 17:33:04,883] [org.springframework.boot.SpringApplication] [restartedMain] [654] [INFO ] No active profile set, falling back to 1 default profile: "default"
+[2024-03-26 17:33:04,927] [org.springframework.boot.logging.DeferredLog] [restartedMain] [252] [INFO ] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-03-26 17:33:04,928] [org.springframework.boot.logging.DeferredLog] [restartedMain] [252] [INFO ] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-03-26 17:33:05,919] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [139] [INFO ] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-03-26 17:33:05,987] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [208] [INFO ] Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
+[2024-03-26 17:33:07,042] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [109] [INFO ] Tomcat initialized with port 8080 (http)
+[2024-03-26 17:33:07,066] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing ProtocolHandler ["http-nio-8080"]
+[2024-03-26 17:33:07,071] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting service [Tomcat]
+[2024-03-26 17:33:07,072] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting Servlet engine: [Apache Tomcat/10.1.19]
+[2024-03-26 17:33:07,173] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing Spring embedded WebApplicationContext
+[2024-03-26 17:33:07,175] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] [restartedMain] [296] [INFO ] Root WebApplicationContext: initialization completed in 2244 ms
+[2024-03-26 17:33:07,436] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [110] [INFO ] HikariPool-1 - Starting...
+[2024-03-26 17:33:07,732] [com.zaxxer.hikari.pool.HikariPool] [restartedMain] [565] [INFO ] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:fafa6386-9871-4175-8b25-6b8fa4688896 user=SA
+[2024-03-26 17:33:07,735] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [123] [INFO ] HikariPool-1 - Start completed.
+[2024-03-26 17:33:07,752] [org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration] [restartedMain] [88] [INFO ] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:fafa6386-9871-4175-8b25-6b8fa4688896'
+[2024-03-26 17:33:08,264] [org.hibernate.jpa.internal.util.LogHelper] [restartedMain] [31] [INFO ] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-03-26 17:33:08,433] [org.hibernate.Version] [restartedMain] [44] [INFO ] HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-03-26 17:33:08,530] [org.hibernate.cache.internal.RegionFactoryInitiator] [restartedMain] [50] [INFO ] HHH000026: Second-level cache disabled
+[2024-03-26 17:33:08,785] [org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo] [restartedMain] [87] [INFO ] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-03-26 17:33:09,686] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [restartedMain] [58] [INFO ] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-03-26 17:33:09,730] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [restartedMain] [437] [INFO ] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-03-26 17:33:10,243] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] [restartedMain] [232] [WARN ] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-03-26 17:33:11,191] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] [restartedMain] [59] [INFO ] LiveReload server is running on port 35729
+[2024-03-26 17:33:11,205] [org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver] [restartedMain] [58] [INFO ] Exposing 1 endpoint(s) beneath base path '/actuator'
+[2024-03-26 17:33:11,293] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting ProtocolHandler ["http-nio-8080"]
+[2024-03-26 17:33:11,332] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [241] [INFO ] Tomcat started on port 8080 (http) with context path ''
+[2024-03-26 17:33:11,343] [org.springframework.boot.StartupInfoLogger] [restartedMain] [56] [INFO ] Started Main in 6.789 seconds (process running for 7.435)
+[2024-03-26 17:33:40,265] [org.apache.juli.logging.DirectJDKLog] [http-nio-8080-exec-2] [173] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-03-26 17:33:40,265] [org.springframework.web.servlet.FrameworkServlet] [http-nio-8080-exec-2] [532] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2024-03-26 17:33:40,266] [org.springframework.web.servlet.FrameworkServlet] [http-nio-8080-exec-2] [554] [INFO ] Completed initialization in 1 ms
+[2024-03-26 17:33:40,349] [org.capstone.service.LoginService] [http-nio-8080-exec-2] [31] [INFO ] Employee(employeeID=123, password=123, name=null, jobTitle=null, phoneNumber=null, email=null, addressLine1=null, addressLine2=null, city=null, state=null, postalCode=null, birthDate=null, anniversary=null, manager=null, performanceReview=null, leave=null, role=EMPLOYEE) has been saved to the database
+[2024-03-26 17:33:43,511] [org.capstone.service.LoginService] [http-nio-8080-exec-3] [26] [INFO ] 123 not found or incorrect password.
+[2024-03-26 17:33:43,511] [org.capstone.controller.LoginController] [http-nio-8080-exec-3] [43] [INFO ] Authenticated user: null
+[2024-03-26 17:34:35,842] [org.springframework.boot.StartupInfoLogger] [restartedMain] [50] [INFO ] Starting Main using Java 21.0.2 with PID 22468 (C:\Users\A271404\java_bootcamp\working_code_login_app\capstone-backend\target\classes started by A271404 in C:\Users\A271404\java_bootcamp\working_code_login_app\capstone-backend)
+[2024-03-26 17:34:35,845] [org.springframework.boot.SpringApplication] [restartedMain] [654] [INFO ] No active profile set, falling back to 1 default profile: "default"
+[2024-03-26 17:34:35,894] [org.springframework.boot.logging.DeferredLog] [restartedMain] [252] [INFO ] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-03-26 17:34:35,895] [org.springframework.boot.logging.DeferredLog] [restartedMain] [252] [INFO ] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-03-26 17:34:36,819] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [139] [INFO ] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-03-26 17:34:36,886] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [208] [INFO ] Finished Spring Data repository scanning in 52 ms. Found 3 JPA repository interfaces.
+[2024-03-26 17:34:37,896] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [109] [INFO ] Tomcat initialized with port 8080 (http)
+[2024-03-26 17:34:37,917] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing ProtocolHandler ["http-nio-8080"]
+[2024-03-26 17:34:37,921] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting service [Tomcat]
+[2024-03-26 17:34:37,921] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting Servlet engine: [Apache Tomcat/10.1.19]
+[2024-03-26 17:34:38,018] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing Spring embedded WebApplicationContext
+[2024-03-26 17:34:38,021] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] [restartedMain] [296] [INFO ] Root WebApplicationContext: initialization completed in 2123 ms
+[2024-03-26 17:34:38,250] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [110] [INFO ] HikariPool-1 - Starting...
+[2024-03-26 17:34:38,478] [com.zaxxer.hikari.pool.HikariPool] [restartedMain] [565] [INFO ] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:f5e5166f-8b86-4362-a842-6fbb5cf7a7e5 user=SA
+[2024-03-26 17:34:38,480] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [123] [INFO ] HikariPool-1 - Start completed.
+[2024-03-26 17:34:38,491] [org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration] [restartedMain] [88] [INFO ] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:f5e5166f-8b86-4362-a842-6fbb5cf7a7e5'
+[2024-03-26 17:34:38,978] [org.hibernate.jpa.internal.util.LogHelper] [restartedMain] [31] [INFO ] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-03-26 17:34:39,146] [org.hibernate.Version] [restartedMain] [44] [INFO ] HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-03-26 17:34:39,190] [org.hibernate.cache.internal.RegionFactoryInitiator] [restartedMain] [50] [INFO ] HHH000026: Second-level cache disabled
+[2024-03-26 17:34:39,426] [org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo] [restartedMain] [87] [INFO ] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-03-26 17:34:40,178] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [restartedMain] [58] [INFO ] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-03-26 17:34:40,219] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [restartedMain] [437] [INFO ] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-03-26 17:34:40,972] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] [restartedMain] [232] [WARN ] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-03-26 17:34:41,915] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] [restartedMain] [59] [INFO ] LiveReload server is running on port 35729
+[2024-03-26 17:34:41,932] [org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver] [restartedMain] [58] [INFO ] Exposing 1 endpoint(s) beneath base path '/actuator'
+[2024-03-26 17:34:42,015] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting ProtocolHandler ["http-nio-8080"]
+[2024-03-26 17:34:42,043] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [241] [INFO ] Tomcat started on port 8080 (http) with context path ''
+[2024-03-26 17:34:42,056] [org.springframework.boot.StartupInfoLogger] [restartedMain] [56] [INFO ] Started Main in 6.58 seconds (process running for 7.213)
+[2024-03-26 17:35:20,784] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [SpringApplicationShutdownHook] [650] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-03-26 17:35:21,000] [org.springframework.beans.factory.support.DisposableBeanAdapter] [SpringApplicationShutdownHook] [221] [WARN ] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+[2024-03-26 17:35:21,001] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [350] [INFO ] HikariPool-1 - Shutdown initiated...
+[2024-03-26 17:35:21,003] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [352] [INFO ] HikariPool-1 - Shutdown completed.
