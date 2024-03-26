@@ -2,9 +2,9 @@ package org.capstone.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.apache.catalina.Manager;
 
 import java.sql.Timestamp;
-import java.util.List;
 
 //enum LeaveStatus {
 //    APPROVED,
@@ -25,9 +25,11 @@ public class Leave {
     private Timestamp startDate;
     private Timestamp endDate;
     //private LeaveStatus leaveStatus;
-    private boolean acceptRejectFlag;
-    private boolean active;
+    private boolean acceptedFlag;
+    private boolean activeFlag;
     @ManyToOne
-    @JoinColumn(name = "siteUsers")
-    private SiteUser siteUsers;
+    @JoinColumn(name = "employeeID")
+    private Employee employee;
+    @JoinColumn(name = "managerID")
+    private Manager manager;
 }
