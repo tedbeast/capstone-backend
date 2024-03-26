@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import java.util.Optional;
 
@@ -17,6 +18,8 @@ import java.util.Optional;
 public class PerformanceReviewService {
     PerformanceReviewRepository performanceReviewRepository;
 
+
+
     @Autowired
     public PerformanceReviewService(PerformanceReviewRepository performanceReviewRepository) {
         this.performanceReviewRepository = performanceReviewRepository;
@@ -24,6 +27,7 @@ public class PerformanceReviewService {
         p.setGoalType("temp");
         p.setWeight(10);
         p.setEmployeeComments("temp1");
+        p.setManagerID(1);
         this.performanceReviewRepository.save(p);
 
     }
@@ -33,10 +37,10 @@ public class PerformanceReviewService {
         return performanceReviewRepository.findAll();
     }
 
-    public List<PerformanceReview> getAllPerformanceReviews(){
-        Main.logger.info("logging method execution: PerformanceReviewService.getAllPerformanceReviews");
-        Main.logger.info("PerformanceReviewService.getAllPerformanceReviews: Performance Review list successfully retrieved.");
-        return performanceReviewRepository.findAll();
+    public List<PerformanceReview> getAllPerformanceByManager(int id){
+        Main.logger.info("logging method execution: PerformanceReviewService.getAllPerformanceByManager");
+        Main.logger.info("PerformanceReviewService.getAllPerformanceByManager: Performance Review list successfully retrieved.");
+        return performanceReviewRepository.findPerformanceReviewByManagerID(id);
     }
 
     public PerformanceReview employeeAddComments(int employeeID, int performanceReviewID, PerformanceReview p){
