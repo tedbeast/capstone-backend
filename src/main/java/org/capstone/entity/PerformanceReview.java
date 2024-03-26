@@ -1,5 +1,6 @@
 package org.capstone.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,6 +28,7 @@ public class PerformanceReview {
 
     @ManyToOne
     @JoinColumn(name="employeeid")
+    @JsonIgnoreProperties("performanceReview")
     private Employee employee; //look up how to reference a column from another entity
 
 }
