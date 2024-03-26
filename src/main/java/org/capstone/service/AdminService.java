@@ -53,16 +53,17 @@ public class AdminService {
         return employeeRepository.save(employee);
     }
 
-    public Employee deleteById(int employeeId) throws Exception{
+    public Employee deleteById(int employeeId) throws Exception {
         Optional<Employee> employeeOptional = employeeRepository.findById(employeeId);
-        if(employeeOptional.isEmpty()){
+        if (employeeOptional.isEmpty()) {
             throw new Exception("No such employee exists,please check the employee id entered.");
         }
         employeeRepository.deleteById(employeeId);//Remove the employee from the list
         return employeeOptional.get();//Return deleted employee?
+    }
 
 
-        //Delete Site user by EmployeeID
+
 
 
     public List<Employee> getAllEmployees() {
