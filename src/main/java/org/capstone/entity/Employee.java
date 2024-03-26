@@ -1,5 +1,7 @@
 package org.capstone.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,9 +14,12 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Getter
+@Setter
 @EqualsAndHashCode
 @ToString
 public class Employee {
+    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int employeeID;
@@ -27,8 +32,9 @@ public class Employee {
     private Date birthDate;
     private Date anniversary;
 
+    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "managerID")
+    @JsonIgnoreProperties("employees")
     private Manager manager;
 
     @OneToMany
@@ -39,4 +45,7 @@ public class Employee {
     @JoinColumn(name = "employeeID")
     private List<Leave> leave;
     private Roles role;
+
 }
+
+

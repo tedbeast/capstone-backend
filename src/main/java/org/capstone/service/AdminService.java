@@ -2,8 +2,11 @@ package org.capstone.service;
 
 import org.capstone.Main;
 import org.capstone.entity.Employee;
+import org.capstone.entity.Manager;
+import org.capstone.entity.Roles;
 import org.capstone.exception.AdminException;
 import org.capstone.repository.EmployeeRepository;
+import org.capstone.repository.ManagerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -13,10 +16,12 @@ import java.util.Optional;
 public class AdminService {
 
     EmployeeRepository employeeRepository;
+    ManagerRepository managerRepository;
 
     @Autowired
-    public AdminService(EmployeeRepository employeeRepository) {
+    public AdminService(EmployeeRepository employeeRepository, ManagerRepository managerRepository) {
         this.employeeRepository = employeeRepository;
+        this.managerRepository = managerRepository;
     }
 
     //Update Site user by EmployeeID
@@ -46,13 +51,52 @@ public class AdminService {
             return employee;
         }
     }
-
-    public Employee createEmployee(Employee employee) throws AdminException {
+    public Employee createManager(Employee employee) throws AdminException {
         if (employee.getName() == null || employee.getName().isEmpty()) {
             throw new AdminException("Employee name cannot be null or empty.");
         }
-        return employeeRepository.save(employee);
+
+        Employee savedEmployee = employeeRepository.save(employee);
+
+        if (employee.getRole() == Roles.MANAGER){
+            Manager manager = new Manager();
+
+            manager.setManagerID(savedEmployee.getEmployeeID());
+
+            managerRepository.save(manager);
+        }
+        return savedEmployee;
     }
+
+    public Employee saveEmployee(int id, Employee employee) throws Exception {
+        Optional<Manager> optional = managerRepository.findById(id);
+        Manager manager;
+        if(optional.isEmpty()){
+            throw new Exception("no such artist...");
+        }else{
+            manager = optional.get();
+        }
+        Employee savedEmployee = employeeRepository.save(employee);
+        manager.getEmployees().add(savedEmployee);
+        managerRepository.save(manager);
+        return savedEmployee;
+    }
+//    public Employee createEmployee(Employee employee) throws AdminException {
+//        if (employee.getName() == null || employee.getName().isEmpty()) {
+//            throw new AdminException("Employee name cannot be null or empty.");
+//        }
+//
+//        Employee savedEmployee = employeeRepository.save(employee);
+//
+//        if (employee.getRole() == Roles.MANAGER){
+//            Manager manager = new Manager();
+//
+//            manager.setManagerID(savedEmployee.getEmployeeID());
+//
+//            managerRepository.save(manager);
+//        }
+//        return savedEmployee;
+//    }
 
     public Employee deleteById(int employeeId) throws Exception {
         Optional<Employee> employeeOptional = employeeRepository.findById(employeeId);
@@ -82,6 +126,13 @@ public class AdminService {
             throw new AdminException("Employee is not found with that id" + employeeId);
         }
     }
+
+    public List<Manager> getAllManagers() {
+        Main.logger.info("Manager List returned:");
+        return managerRepository.findAll();
+    }
+
+
 }
 
 

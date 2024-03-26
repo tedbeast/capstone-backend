@@ -107,3 +107,990 @@
 2024-03-26 13:17:07,366 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-03-26 13:17:07,372 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2024-03-26 13:17:07,374 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-26 13:56:19,952 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 17496 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 13:56:19,954 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 13:56:20,784 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 13:56:20,839 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 47 ms. Found 3 JPA repository interfaces.
+2024-03-26 13:56:21,555 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 13:56:21,564 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 13:56:21,566 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 13:56:21,567 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 13:56:21,629 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 13:56:21,631 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1640 ms
+2024-03-26 13:56:21,966 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 13:56:22,021 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 13:56:22,053 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 13:56:22,284 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 13:56:22,313 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 13:56:22,461 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bae57bf3-ffc7-45f4-aa66-826ed38daa3c user=SA
+2024-03-26 13:56:22,463 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 13:56:23,330 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 13:56:23,372 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 13:56:23,756 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 13:56:24,343 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 13:56:24,395 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 13:56:24,424 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 13:56:24,437 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.944 seconds (process running for 5.427)
+2024-03-26 13:56:36,666 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-26 13:56:36,666 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-26 13:56:36,668 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Completed initialization in 2 ms
+2024-03-26 13:56:50,914 INFO o.c.s.AdminService [http-nio-9004-exec-3] Employee List returned: []
+2024-03-26 13:56:56,954 INFO o.c.s.AdminService [http-nio-9004-exec-4] Employee List returned: []
+2024-03-26 14:02:55,352 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 5584 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 14:02:55,355 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 14:02:56,247 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 14:02:56,302 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2024-03-26 14:02:57,064 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 14:02:57,073 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:02:57,075 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 14:02:57,075 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 14:02:57,145 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 14:02:57,147 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1751 ms
+2024-03-26 14:02:57,471 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 14:02:57,532 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 14:02:57,564 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 14:02:57,787 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 14:02:57,816 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 14:02:57,980 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:7dde199a-944d-47b2-b145-3c43b702d2e6 user=SA
+2024-03-26 14:02:57,981 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 14:02:58,914 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 14:02:58,956 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:02:59,354 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 14:03:00,014 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 14:03:00,073 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:03:00,110 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 14:03:00,125 INFO o.s.b.StartupInfoLogger [main] Started Main in 5.265 seconds (process running for 5.77)
+2024-03-26 14:03:08,743 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-26 14:03:08,744 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-26 14:03:08,746 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Completed initialization in 1 ms
+2024-03-26 14:03:08,893 INFO o.c.s.AdminService [http-nio-9004-exec-2] Employee List returned: []
+2024-03-26 14:03:20,183 INFO o.c.s.AdminService [http-nio-9004-exec-4] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=Manager, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER)]
+2024-03-26 14:03:22,932 INFO o.c.s.AdminService [http-nio-9004-exec-5] Manager List returned: []
+2024-03-26 14:03:57,871 ERROR o.a.j.l.DirectJDKLog [http-nio-9004-exec-6] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : org.capstone.entity.Employee.manager -> org.capstone.entity.Manager] with root cause
+org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : org.capstone.entity.Employee.manager -> org.capstone.entity.Manager
+	at org.hibernate.engine.spi.CascadingActions$8.noCascade(CascadingActions.java:372)
+	at org.hibernate.engine.internal.Cascade.cascade(Cascade.java:173)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.cascadeOnFlush(AbstractFlushingEventListener.java:161)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:144)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEverythingToExecutions(AbstractFlushingEventListener.java:79)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1403)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:484)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2319)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1976)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:669)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:419)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at jdk.proxy2/jdk.proxy2.$Proxy134.save(Unknown Source)
+	at org.capstone.service.AdminService.createEmployee(AdminService.java:58)
+	at org.capstone.controller.AdminController.createEmployee(AdminController.java:28)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-03-26 14:04:22,475 ERROR o.a.j.l.DirectJDKLog [http-nio-9004-exec-8] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : org.capstone.entity.Employee.manager -> org.capstone.entity.Manager] with root cause
+org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : org.capstone.entity.Employee.manager -> org.capstone.entity.Manager
+	at org.hibernate.engine.spi.CascadingActions$8.noCascade(CascadingActions.java:372)
+	at org.hibernate.engine.internal.Cascade.cascade(Cascade.java:173)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.cascadeOnFlush(AbstractFlushingEventListener.java:161)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:144)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEverythingToExecutions(AbstractFlushingEventListener.java:79)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1403)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:484)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2319)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1976)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:669)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:419)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at jdk.proxy2/jdk.proxy2.$Proxy134.save(Unknown Source)
+	at org.capstone.service.AdminService.createEmployee(AdminService.java:58)
+	at org.capstone.controller.AdminController.createEmployee(AdminController.java:28)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-03-26 14:11:03,065 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:11:03,072 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-26 14:11:03,074 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-26 14:11:13,269 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 28692 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 14:11:13,271 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 14:11:14,417 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 14:11:14,487 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
+2024-03-26 14:11:15,513 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 14:11:15,526 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:11:15,529 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 14:11:15,530 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 14:11:15,617 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 14:11:15,618 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2299 ms
+2024-03-26 14:11:16,038 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 14:11:16,103 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 14:11:16,140 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 14:11:16,400 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 14:11:16,431 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 14:11:16,631 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:08428efd-df8a-41ee-ba7b-faec60e3da48 user=SA
+2024-03-26 14:11:16,634 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 14:11:17,632 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 14:11:17,678 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:11:18,143 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 14:11:18,815 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 14:11:18,878 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:11:18,913 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 14:11:18,935 INFO o.s.b.StartupInfoLogger [main] Started Main in 6.301 seconds (process running for 6.945)
+2024-03-26 14:11:22,743 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-26 14:11:22,743 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-26 14:11:22,744 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Completed initialization in 1 ms
+2024-03-26 14:11:22,885 INFO o.c.s.AdminService [http-nio-9004-exec-1] Manager List returned: []
+2024-03-26 14:11:29,044 INFO o.c.s.AdminService [http-nio-9004-exec-3] Employee List returned: []
+2024-03-26 14:11:53,527 INFO o.c.s.AdminService [http-nio-9004-exec-5] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=Manager, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER)]
+2024-03-26 14:11:56,582 INFO o.c.s.AdminService [http-nio-9004-exec-6] Manager List returned: [Manager(managerID=1, employees=[])]
+2024-03-26 14:12:04,185 INFO o.c.s.AdminService [http-nio-9004-exec-7] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=Manager, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER)]
+2024-03-26 14:12:19,639 INFO o.c.s.AdminService [http-nio-9004-exec-9] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=Manager, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=2, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=Manager(managerID=1, employees=[]), performanceReview=[], leave=[], role=EMPLOYEE)]
+2024-03-26 14:12:24,555 INFO o.c.s.AdminService [http-nio-9004-exec-10] Manager List returned: [Manager(managerID=1, employees=[])]
+2024-03-26 14:12:31,725 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-9004-exec-2] SQL Error: 23506, SQLState: 23506
+2024-03-26 14:12:31,725 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-9004-exec-2] Referential integrity constraint violation: "FKD67MBFXCGIP3Q9YOAYEYO2S3X: PUBLIC.EMPLOYEE FOREIGN KEY(MANAGERID) REFERENCES PUBLIC.MANAGER(MANAGERID) (3)"; SQL statement:
+insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [23506-224]
+2024-03-26 14:12:31,733 ERROR o.a.j.l.DirectJDKLog [http-nio-9004-exec-2] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Referential integrity constraint violation: "FKD67MBFXCGIP3Q9YOAYEYO2S3X: PUBLIC.EMPLOYEE FOREIGN KEY(MANAGERID) REFERENCES PUBLIC.MANAGER(MANAGERID) (3)"; SQL statement:
+insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [23506-224]] [insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [FKD67MBFXCGIP3Q9YOAYEYO2S3X]] with root cause
+org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Referential integrity constraint violation: "FKD67MBFXCGIP3Q9YOAYEYO2S3X: PUBLIC.EMPLOYEE FOREIGN KEY(MANAGERID) REFERENCES PUBLIC.MANAGER(MANAGERID) (3)"; SQL statement:
+insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [23506-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:520)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:311)
+	at org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:252)
+	at org.h2.table.Table.fireConstraints(Table.java:1200)
+	at org.h2.table.Table.fireAfterRow(Table.java:1218)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:188)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:74)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:216)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:174)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:108)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:40)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:52)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:175)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:113)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2873)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:104)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:632)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:499)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:363)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1403)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:484)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2319)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1976)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:669)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:419)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at jdk.proxy2/jdk.proxy2.$Proxy134.save(Unknown Source)
+	at org.capstone.service.AdminService.createEmployee(AdminService.java:60)
+	at org.capstone.controller.AdminController.createEmployee(AdminController.java:28)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-03-26 14:12:51,996 INFO o.c.s.AdminService [http-nio-9004-exec-4] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=Manager, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=2, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=Manager(managerID=1, employees=[]), performanceReview=[], leave=[], role=EMPLOYEE), Employee(employeeID=4, password=Steven_2k23, name=Employee, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=EMPLOYEE)]
+2024-03-26 14:12:57,629 INFO o.c.s.AdminService [http-nio-9004-exec-5] Manager List returned: [Manager(managerID=1, employees=[])]
+2024-03-26 14:13:12,114 INFO o.c.s.AdminService [http-nio-9004-exec-7] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=Manager, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=2, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=Manager(managerID=1, employees=[]), performanceReview=[], leave=[], role=EMPLOYEE), Employee(employeeID=4, password=Steven_2k23, name=Employee, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=EMPLOYEE), Employee(employeeID=5, password=Steven_2k23, name=admin, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=ADMIN)]
+2024-03-26 14:13:14,370 INFO o.c.s.AdminService [http-nio-9004-exec-8] Manager List returned: [Manager(managerID=1, employees=[])]
+2024-03-26 14:13:16,469 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-9004-exec-9] SQL Error: 23506, SQLState: 23506
+2024-03-26 14:13:16,470 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-9004-exec-9] Referential integrity constraint violation: "FKD67MBFXCGIP3Q9YOAYEYO2S3X: PUBLIC.EMPLOYEE FOREIGN KEY(MANAGERID) REFERENCES PUBLIC.MANAGER(MANAGERID) (3)"; SQL statement:
+insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [23506-224]
+2024-03-26 14:13:16,471 ERROR o.a.j.l.DirectJDKLog [http-nio-9004-exec-9] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Referential integrity constraint violation: "FKD67MBFXCGIP3Q9YOAYEYO2S3X: PUBLIC.EMPLOYEE FOREIGN KEY(MANAGERID) REFERENCES PUBLIC.MANAGER(MANAGERID) (3)"; SQL statement:
+insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [23506-224]] [insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [FKD67MBFXCGIP3Q9YOAYEYO2S3X]] with root cause
+org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Referential integrity constraint violation: "FKD67MBFXCGIP3Q9YOAYEYO2S3X: PUBLIC.EMPLOYEE FOREIGN KEY(MANAGERID) REFERENCES PUBLIC.MANAGER(MANAGERID) (3)"; SQL statement:
+insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [23506-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:520)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:311)
+	at org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:252)
+	at org.h2.table.Table.fireConstraints(Table.java:1200)
+	at org.h2.table.Table.fireAfterRow(Table.java:1218)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:188)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:74)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:216)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:174)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:108)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:40)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:52)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:175)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:113)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2873)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:104)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:632)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:499)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:363)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1403)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:484)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2319)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1976)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:669)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:419)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at jdk.proxy2/jdk.proxy2.$Proxy134.save(Unknown Source)
+	at org.capstone.service.AdminService.createEmployee(AdminService.java:60)
+	at org.capstone.controller.AdminController.createEmployee(AdminController.java:28)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-03-26 14:13:30,408 INFO o.c.s.AdminService [http-nio-9004-exec-3] Manager List returned: [Manager(managerID=1, employees=[]), Manager(managerID=2, employees=[])]
+2024-03-26 14:13:39,226 INFO o.c.s.AdminService [http-nio-9004-exec-1] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=Manager, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=2, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=Manager(managerID=1, employees=[]), performanceReview=[], leave=[], role=EMPLOYEE), Employee(employeeID=4, password=Steven_2k23, name=Employee, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=EMPLOYEE), Employee(employeeID=5, password=Steven_2k23, name=admin, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=ADMIN), Employee(employeeID=7, password=Steven_2k23, name=MANAGER 2, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER)]
+2024-03-26 14:14:00,802 INFO o.c.s.AdminService [http-nio-9004-exec-5] Manager List returned: [Manager(managerID=1, employees=[]), Manager(managerID=2, employees=[])]
+2024-03-26 14:14:04,088 INFO o.c.s.AdminService [http-nio-9004-exec-6] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=Manager, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=2, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=Manager(managerID=1, employees=[]), performanceReview=[], leave=[], role=EMPLOYEE), Employee(employeeID=4, password=Steven_2k23, name=Employee, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=EMPLOYEE), Employee(employeeID=5, password=Steven_2k23, name=admin, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=ADMIN), Employee(employeeID=7, password=Steven_2k23, name=MANAGER 2, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=8, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=Manager(managerID=2, employees=[]), performanceReview=[], leave=[], role=EMPLOYEE)]
+2024-03-26 14:16:20,726 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 3712 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 14:16:20,728 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 14:16:21,685 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 14:16:21,760 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 66 ms. Found 3 JPA repository interfaces.
+2024-03-26 14:16:22,644 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 14:16:22,655 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:16:22,657 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 14:16:22,658 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 14:16:22,733 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 14:16:22,734 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1965 ms
+2024-03-26 14:16:23,110 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 14:16:23,183 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 14:16:23,236 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 14:16:23,514 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 14:16:23,547 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 14:16:23,744 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:d994706f-160f-4caa-a32c-0c1a4554f33e user=SA
+2024-03-26 14:16:23,746 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 14:16:24,828 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 14:16:24,875 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:16:25,362 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 14:16:26,231 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 14:16:26,301 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:16:26,333 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 14:16:26,351 INFO o.s.b.StartupInfoLogger [main] Started Main in 6.136 seconds (process running for 6.635)
+2024-03-26 14:18:33,886 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-26 14:18:33,886 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-26 14:18:33,888 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Completed initialization in 1 ms
+2024-03-26 14:18:34,073 INFO o.c.s.AdminService [http-nio-9004-exec-1] Manager List returned: []
+2024-03-26 14:18:36,321 INFO o.c.s.AdminService [http-nio-9004-exec-3] Employee List returned: []
+2024-03-26 14:18:42,273 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-9004-exec-5] SQL Error: 23506, SQLState: 23506
+2024-03-26 14:18:42,273 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-9004-exec-5] Referential integrity constraint violation: "FKQJJSUXDGHNEOV5ER49JLYT9CE: PUBLIC.EMPLOYEE FOREIGN KEY(MANAGER_MANAGERID) REFERENCES PUBLIC.MANAGER(MANAGERID) (2)"; SQL statement:
+insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,manager_managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [23506-224]
+2024-03-26 14:18:42,283 ERROR o.a.j.l.DirectJDKLog [http-nio-9004-exec-5] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Referential integrity constraint violation: "FKQJJSUXDGHNEOV5ER49JLYT9CE: PUBLIC.EMPLOYEE FOREIGN KEY(MANAGER_MANAGERID) REFERENCES PUBLIC.MANAGER(MANAGERID) (2)"; SQL statement:
+insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,manager_managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [23506-224]] [insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,manager_managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,manager_managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [FKQJJSUXDGHNEOV5ER49JLYT9CE]] with root cause
+org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Referential integrity constraint violation: "FKQJJSUXDGHNEOV5ER49JLYT9CE: PUBLIC.EMPLOYEE FOREIGN KEY(MANAGER_MANAGERID) REFERENCES PUBLIC.MANAGER(MANAGERID) (2)"; SQL statement:
+insert into employee (address_line1,address_line2,anniversary,birth_date,city,email,job_title,manager_managerid,name,password,phone_number,postal_code,role,state,employeeid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [23506-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:520)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:311)
+	at org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:252)
+	at org.h2.table.Table.fireConstraints(Table.java:1200)
+	at org.h2.table.Table.fireAfterRow(Table.java:1218)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:188)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:74)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:216)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:174)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:108)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:40)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:52)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:175)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:113)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2873)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:104)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:632)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:499)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:363)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1403)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:484)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2319)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1976)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:669)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:419)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at jdk.proxy2/jdk.proxy2.$Proxy134.save(Unknown Source)
+	at org.capstone.service.AdminService.createEmployee(AdminService.java:60)
+	at org.capstone.controller.AdminController.createEmployee(AdminController.java:28)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-03-26 14:18:49,389 INFO o.c.s.AdminService [http-nio-9004-exec-8] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=MANAGER 2, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=3, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=Manager(managerID=1, employees=[]), performanceReview=[], leave=[], role=EMPLOYEE)]
+2024-03-26 14:18:55,094 INFO o.c.s.AdminService [http-nio-9004-exec-9] Manager List returned: [Manager(managerID=1, employees=[])]
+2024-03-26 14:19:34,557 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 11748 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 14:19:34,560 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 14:19:35,732 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 14:19:35,801 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 59 ms. Found 3 JPA repository interfaces.
+2024-03-26 14:19:36,779 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 14:19:36,791 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:19:36,794 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 14:19:36,794 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 14:19:36,881 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 14:19:36,882 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2269 ms
+2024-03-26 14:19:37,315 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 14:19:37,410 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 14:19:37,455 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 14:19:37,752 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 14:19:37,785 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 14:19:38,011 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:df39dd8b-33d7-47f7-8151-6bce8625f2fe user=SA
+2024-03-26 14:19:38,014 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 14:19:39,222 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 14:19:39,267 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:19:39,718 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 14:19:40,433 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 14:19:40,497 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:19:40,531 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 14:19:40,549 INFO o.s.b.StartupInfoLogger [main] Started Main in 6.616 seconds (process running for 7.278)
+2024-03-26 14:19:44,538 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-26 14:19:44,538 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-26 14:19:44,540 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Completed initialization in 1 ms
+2024-03-26 14:19:44,696 INFO o.c.s.AdminService [http-nio-9004-exec-1] Manager List returned: []
+2024-03-26 14:19:47,132 INFO o.c.s.AdminService [http-nio-9004-exec-3] Employee List returned: []
+2024-03-26 14:19:59,773 INFO o.c.s.AdminService [http-nio-9004-exec-6] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=MANAGER 2, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=2, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=Manager(managerID=1, employees=[]), performanceReview=[], leave=[], role=EMPLOYEE)]
+2024-03-26 14:20:03,264 INFO o.c.s.AdminService [http-nio-9004-exec-7] Manager List returned: [Manager(managerID=1, employees=[])]
+2024-03-26 14:22:29,478 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 18308 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 14:22:29,480 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 14:22:30,348 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 14:22:30,406 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2024-03-26 14:22:31,162 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 14:22:31,173 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:22:31,175 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 14:22:31,176 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 14:22:31,250 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 14:22:31,252 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1736 ms
+2024-03-26 14:22:31,607 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 14:22:31,666 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 14:22:31,707 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 14:22:31,954 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 14:22:31,979 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 14:22:32,157 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:4dc5ed27-2c79-478e-98a6-16b7ace198e8 user=SA
+2024-03-26 14:22:32,159 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 14:22:33,074 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 14:22:33,115 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:22:33,520 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 14:22:34,187 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 14:22:34,249 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:22:34,284 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 14:22:34,299 INFO o.s.b.StartupInfoLogger [main] Started Main in 5.307 seconds (process running for 5.802)
+2024-03-26 14:22:41,513 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-26 14:22:41,513 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-26 14:22:41,514 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Completed initialization in 1 ms
+2024-03-26 14:22:41,549 INFO o.c.s.AdminService [http-nio-9004-exec-2] Manager List returned:
+2024-03-26 14:22:43,862 INFO o.c.s.AdminService [http-nio-9004-exec-3] Employee List returned: []
+2024-03-26 14:22:59,495 INFO o.c.s.AdminService [http-nio-9004-exec-6] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=MANAGER 2, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=2, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=Manager(managerID=1, employees=[]), performanceReview=[], leave=[], role=EMPLOYEE)]
+2024-03-26 14:23:04,269 INFO o.c.s.AdminService [http-nio-9004-exec-7] Manager List returned:
+2024-03-26 14:23:20,972 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:23:20,978 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-26 14:23:20,979 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-26 14:29:31,149 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 8248 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 14:29:31,152 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 14:29:32,030 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 14:29:32,087 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 47 ms. Found 3 JPA repository interfaces.
+2024-03-26 14:29:32,896 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 14:29:32,907 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:29:32,910 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 14:29:32,911 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 14:29:32,995 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 14:29:32,997 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1808 ms
+2024-03-26 14:29:33,389 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 14:29:33,454 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 14:29:33,501 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 14:29:33,777 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 14:29:33,807 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 14:29:33,986 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:08d69bfe-2d59-4ce5-80bf-4f056d3ed16f user=SA
+2024-03-26 14:29:33,987 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 14:29:34,892 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 14:29:34,931 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:29:35,353 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 14:29:36,007 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 14:29:36,068 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:29:36,099 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 14:29:36,113 INFO o.s.b.StartupInfoLogger [main] Started Main in 5.442 seconds (process running for 5.952)
+2024-03-26 14:29:43,051 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-26 14:29:43,051 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-26 14:29:43,052 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Completed initialization in 1 ms
+2024-03-26 14:29:43,196 INFO o.c.s.AdminService [http-nio-9004-exec-2] Employee List returned: []
+2024-03-26 14:29:52,635 INFO o.c.s.AdminService [http-nio-9004-exec-5] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=MANAGER 2, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=2, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=Manager{managerID=1, employees=[]}, performanceReview=[], leave=[], role=EMPLOYEE)]
+2024-03-26 14:29:54,187 INFO o.c.s.AdminService [http-nio-9004-exec-6] Manager List returned:
+2024-03-26 14:31:42,276 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 26296 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 14:31:42,279 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 14:31:43,352 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 14:31:43,422 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
+2024-03-26 14:31:44,255 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 14:31:44,265 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:31:44,267 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 14:31:44,268 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 14:31:44,342 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 14:31:44,343 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2022 ms
+2024-03-26 14:31:44,752 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 14:31:44,827 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 14:31:44,867 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 14:31:45,123 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 14:31:45,153 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 14:31:45,332 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:43ffde16-330d-4bee-9fa5-80dbbbaa0439 user=SA
+2024-03-26 14:31:45,334 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 14:31:46,312 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 14:31:46,352 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:31:46,823 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 14:31:47,649 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 14:31:47,720 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:31:47,757 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 14:31:47,776 INFO o.s.b.StartupInfoLogger [main] Started Main in 6.048 seconds (process running for 6.601)
+2024-03-26 14:31:54,775 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-26 14:31:54,775 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-26 14:31:54,777 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Completed initialization in 2 ms
+2024-03-26 14:31:54,806 INFO o.c.s.AdminService [http-nio-9004-exec-2] Manager List returned:
+2024-03-26 14:32:01,895 INFO o.c.s.AdminService [http-nio-9004-exec-5] Manager List returned:
+2024-03-26 14:32:04,262 INFO o.c.s.AdminService [http-nio-9004-exec-6] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=MANAGER 2, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=2, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=Manager{managerID=1, employees=[]}, performanceReview=[], leave=[], role=EMPLOYEE)]
+2024-03-26 14:35:24,563 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 21828 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 14:35:24,565 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 14:35:25,459 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 14:35:25,517 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 50 ms. Found 3 JPA repository interfaces.
+2024-03-26 14:35:26,286 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 14:35:26,295 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:35:26,297 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 14:35:26,298 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 14:35:26,361 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 14:35:26,364 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1759 ms
+2024-03-26 14:35:26,691 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 14:35:26,766 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 14:35:26,805 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 14:35:27,067 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 14:35:27,095 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 14:35:27,263 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:c4c735eb-3b73-4ebc-9d97-99ec197e3285 user=SA
+2024-03-26 14:35:27,265 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 14:35:28,166 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 14:35:28,207 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:35:28,620 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 14:35:29,252 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 14:35:29,304 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:35:29,340 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 14:35:29,357 INFO o.s.b.StartupInfoLogger [main] Started Main in 5.309 seconds (process running for 5.8)
+2024-03-26 14:35:34,042 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-26 14:35:34,043 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-26 14:35:34,044 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Completed initialization in 1 ms
+2024-03-26 14:35:34,192 INFO o.c.s.AdminService [http-nio-9004-exec-1] Employee List returned: []
+2024-03-26 14:35:45,795 INFO o.c.s.AdminService [http-nio-9004-exec-5] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=MANAGER 2, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=2, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=Manager{managerID=1, employees=[]}, performanceReview=[], leave=[], role=EMPLOYEE)]
+2024-03-26 14:35:50,331 INFO o.c.s.AdminService [http-nio-9004-exec-6] Manager List returned:
+2024-03-26 14:37:33,971 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 24996 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 14:37:33,973 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 14:37:34,927 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 14:37:34,997 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
+2024-03-26 14:37:35,791 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 14:37:35,801 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:37:35,804 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 14:37:35,804 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 14:37:35,878 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 14:37:35,879 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1864 ms
+2024-03-26 14:37:36,263 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 14:37:36,353 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 14:37:36,399 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 14:37:36,673 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 14:37:36,701 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 14:37:36,914 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:a685573e-4c6d-4a43-8eff-f17a32a0f4a4 user=SA
+2024-03-26 14:37:36,916 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 14:37:37,900 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 14:37:37,940 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:37:38,372 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 14:37:39,092 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 14:37:39,161 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:37:39,195 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 14:37:39,212 INFO o.s.b.StartupInfoLogger [main] Started Main in 5.787 seconds (process running for 6.353)
+2024-03-26 14:37:43,804 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-26 14:37:43,805 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-26 14:37:43,806 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Completed initialization in 1 ms
+2024-03-26 14:37:43,842 INFO o.c.s.AdminService [http-nio-9004-exec-1] Manager List returned:
+2024-03-26 14:37:46,388 INFO o.c.s.AdminService [http-nio-9004-exec-3] Employee List returned: []
+2024-03-26 14:38:03,061 INFO o.c.s.AdminService [http-nio-9004-exec-7] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=MANAGER 2, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=2, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=null, performanceReview=[], leave=[], role=EMPLOYEE), Employee(employeeID=3, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=null, performanceReview=[], leave=[], role=EMPLOYEE)]
+2024-03-26 14:38:05,702 INFO o.c.s.AdminService [http-nio-9004-exec-8] Manager List returned:
+2024-03-26 14:38:32,020 INFO o.c.s.AdminService [http-nio-9004-exec-9] Manager List returned:
+2024-03-26 14:38:53,155 INFO o.c.s.AdminService [http-nio-9004-exec-10] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=MANAGER 2, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=2, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=null, performanceReview=[], leave=[], role=EMPLOYEE), Employee(employeeID=3, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=null, performanceReview=[], leave=[], role=EMPLOYEE)]
+2024-03-26 14:51:42,875 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 18336 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 14:51:42,878 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 14:51:43,704 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 14:51:43,761 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2024-03-26 14:51:44,478 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 14:51:44,487 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:51:44,489 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 14:51:44,490 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 14:51:44,556 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 14:51:44,557 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1644 ms
+2024-03-26 14:51:44,893 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 14:51:44,960 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 14:51:45,003 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 14:51:45,233 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 14:51:45,257 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 14:51:45,431 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:d685fc88-e467-4878-b2a1-148e828946cc user=SA
+2024-03-26 14:51:45,433 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 14:51:46,341 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 14:51:46,379 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:51:46,815 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 14:51:47,485 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 14:51:47,542 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:51:47,578 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 14:51:47,594 INFO o.s.b.StartupInfoLogger [main] Started Main in 5.193 seconds (process running for 5.691)
+2024-03-26 14:51:51,697 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-26 14:51:51,697 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-26 14:51:51,698 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Completed initialization in 0 ms
+2024-03-26 14:51:51,728 INFO o.c.s.AdminService [http-nio-9004-exec-1] Manager List returned:
+2024-03-26 14:51:54,542 INFO o.c.s.AdminService [http-nio-9004-exec-3] Employee List returned: []
+2024-03-26 14:52:52,795 ERROR o.a.j.l.DirectJDKLog [http-nio-9004-exec-5] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.Exception: no such artist...] with root cause
+java.lang.Exception: no such artist...
+	at org.capstone.service.AdminService.saveEmployee(AdminService.java:75)
+	at org.capstone.controller.AdminController.addEmployee(AdminController.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-03-26 14:57:39,356 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:57:39,363 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-26 14:57:39,365 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-26 14:58:01,930 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 25720 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 14:58:01,932 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 14:58:02,796 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 14:58:02,850 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2024-03-26 14:58:03,599 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 14:58:03,611 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:58:03,613 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 14:58:03,614 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 14:58:03,681 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 14:58:03,682 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1713 ms
+2024-03-26 14:58:04,004 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 14:58:04,063 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 14:58:04,092 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 14:58:04,315 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 14:58:04,342 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 14:58:04,508 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:1ed2572f-d8a9-4f8d-a02e-0c45004d4b19 user=SA
+2024-03-26 14:58:04,510 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 14:58:05,419 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 14:58:05,457 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 14:58:05,868 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 14:58:06,517 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 14:58:06,569 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 14:58:06,600 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 14:58:06,614 INFO o.s.b.StartupInfoLogger [main] Started Main in 5.171 seconds (process running for 5.67)
+2024-03-26 14:59:43,523 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-26 14:59:43,523 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-26 14:59:43,525 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Completed initialization in 1 ms
+2024-03-26 14:59:43,556 INFO o.c.s.AdminService [http-nio-9004-exec-2] Manager List returned:
+2024-03-26 14:59:45,697 INFO o.c.s.AdminService [http-nio-9004-exec-3] Employee List returned: []
+2024-03-26 15:00:01,951 INFO o.c.s.AdminService [http-nio-9004-exec-6] Manager List returned:
+2024-03-26 15:00:04,974 INFO o.c.s.AdminService [http-nio-9004-exec-7] Employee List returned: [Employee(employeeID=1, password=Steven_2k23, name=MANAGER 2, jobTitle=Job Seeker, phoneNumber=7858745652, email=steb@gmail.com, addressLine1=123 Main St, addressLine2=Apt 4, city=deli, state=NY, postalCode=87452, birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, manager=null, performanceReview=[], leave=[], role=MANAGER), Employee(employeeID=2, password=password123, name=John Doe, jobTitle=Software Developer, phoneNumber=123-456-7890, email=john.doe@example.com, addressLine1=123 Main St, addressLine2=Apt 4, city=Chicago, state=IL, postalCode=60602, birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, manager=null, performanceReview=[], leave=[], role=EMPLOYEE)]
+2024-03-26 15:01:05,817 INFO o.c.s.AdminService [http-nio-9004-exec-10] Manager List returned:
+2024-03-26 15:06:17,518 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 15:06:17,525 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-26 15:06:17,526 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-26 15:07:36,251 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 18060 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 15:07:36,254 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 15:07:37,147 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 15:07:37,203 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 47 ms. Found 3 JPA repository interfaces.
+2024-03-26 15:07:38,023 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 15:07:38,034 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 15:07:38,037 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 15:07:38,037 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 15:07:38,119 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 15:07:38,121 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1826 ms
+2024-03-26 15:07:38,562 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 15:07:38,640 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 15:07:38,689 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 15:07:38,944 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 15:07:38,967 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 15:07:39,141 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:082bcf34-f94e-435d-bfd5-f7e37a3fe098 user=SA
+2024-03-26 15:07:39,143 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 15:07:40,122 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 15:07:40,162 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 15:07:40,582 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 15:07:41,322 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 15:07:41,385 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 15:07:41,406 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 15:07:41,422 INFO o.s.b.StartupInfoLogger [main] Started Main in 5.694 seconds (process running for 6.215)
+2024-03-26 15:10:18,962 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 15:10:18,969 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-26 15:10:18,971 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

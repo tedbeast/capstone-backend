@@ -2,6 +2,7 @@ package org.capstone.controller;
 
 import org.capstone.entity.Employee;
 
+import org.capstone.entity.Manager;
 import org.capstone.exception.AdminException;
 import org.capstone.service.AdminService;
 import org.springframework.http.HttpStatus;
@@ -21,10 +22,10 @@ public class AdminController {
     }
 
 
-    @PostMapping("/employees")
-    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
+    @PostMapping("/manager")
+    public ResponseEntity<Employee> createManager(@RequestBody Employee employee) {
         try {
-            Employee createdEmployee = adminService.createEmployee(employee);
+            Employee createdEmployee = adminService.createManager(employee);
             return ResponseEntity.ok(createdEmployee);
         } catch (AdminException e) {
             return ResponseEntity.badRequest().build();
@@ -32,19 +33,14 @@ public class AdminController {
     }
 
 
-    // Create Put Mapping
-
-    @PutMapping("admin/{employeeID}")
-    public Employee updateProduct(@PathVariable int employeeID, @RequestBody Employee employee) {
+    @PutMapping("employee/{employeeID}")
+    public Employee updateEmployee(@PathVariable int employeeID, @RequestBody Employee employee) {
         try {
             return adminService.updateEmployee(employeeID, employee);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee not found", e);
         }
     }
-
-    //Create Delete Mapping
-
 
 
     @DeleteMapping("employee/{employeeID}")
@@ -57,7 +53,6 @@ public class AdminController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-
 
         @GetMapping("/employee")
     public ResponseEntity<List<Employee>> getAllEmployeesEndpoint() {
@@ -73,5 +68,17 @@ public class AdminController {
         } catch (AdminException e) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/manager")
+    public ResponseEntity<List<Manager>> getAllManagersEndpoint() {
+        List<Manager> managers = adminService.getAllManagers();
+        return new ResponseEntity<>(managers, HttpStatus.OK);
+    }
+
+    @PostMapping("manager/{managerID}/employee")
+    public ResponseEntity<Employee> createEmployee(@RequestBody Employee p, @PathVariable int managerID) throws Exception {
+        Employee employee = adminService.saveEmployee(managerID, p);
+        return new ResponseEntity<>(employee, HttpStatus.CREATED);
     }
 }

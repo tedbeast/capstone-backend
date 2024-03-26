@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import lombok.*;
 
 
-enum Roles {
+public enum Roles {
     EMPLOYEE,
     MANAGER,
     ADMIN
