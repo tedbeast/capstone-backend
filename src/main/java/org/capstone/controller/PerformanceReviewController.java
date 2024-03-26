@@ -5,7 +5,17 @@ import org.capstone.service.PerformanceReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import org.springframework.web.bind.annotation.*;
+
+
+
+import java.util.*;
+
 
 @CrossOrigin
 @RestController
@@ -15,6 +25,14 @@ public class PerformanceReviewController {
     @Autowired
     public PerformanceReviewController(PerformanceReviewService performanceReviewService) {
         this.performanceReviewService = performanceReviewService;
+    }
+
+
+    @GetMapping("/performanceReview")
+    public ResponseEntity<List<PerformanceReview>> getAllPerformanceReview(){
+        List<PerformanceReview> performanceReviewList = performanceReviewService.getAllPerformanceReview();
+        return new ResponseEntity<>(performanceReviewList, HttpStatus.OK);
+
     }
 
    @PutMapping("employee/{empId}/performanceReview/{prId}/update")
@@ -29,4 +47,6 @@ public class PerformanceReviewController {
         return new ResponseEntity<PerformanceReview>(performanceReview, HttpStatus.OK);
     }
 
+
 }
+
