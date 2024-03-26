@@ -26,7 +26,6 @@ public class PerformanceReview {
     private int managerID; //this will likely be an FK to a manager entity created by.......?
 
     @ManyToOne
-
     @JoinColumn(name="employeeid")
     private Employee employee; //look up how to reference a column from another entity
 
