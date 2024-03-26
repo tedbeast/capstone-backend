@@ -56,3 +56,27 @@
 2024-03-26 12:18:12,954 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-03-26 12:18:12,962 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2024-03-26 12:18:12,965 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-26 13:09:27,800 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 28716 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-26 13:09:27,802 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-26 13:09:28,666 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-26 13:09:28,722 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+2024-03-26 13:09:29,450 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-26 13:09:29,460 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-26 13:09:29,462 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-26 13:09:29,463 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-26 13:09:29,532 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-26 13:09:29,533 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1689 ms
+2024-03-26 13:09:29,890 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-26 13:09:29,953 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-26 13:09:29,994 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-26 13:09:30,236 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-26 13:09:30,272 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-26 13:09:30,440 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:91145569-e75a-4b97-b28e-c0e8deb1a8eb user=SA
+2024-03-26 13:09:30,441 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-26 13:09:31,358 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-26 13:09:31,406 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-26 13:09:31,790 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-26 13:09:32,420 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-26 13:09:32,472 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-26 13:09:32,496 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-26 13:09:32,508 INFO o.s.b.StartupInfoLogger [main] Started Main in 5.22 seconds (process running for 5.745)

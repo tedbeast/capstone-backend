@@ -35,6 +35,7 @@ public class AdminService {
         employee.setPostalCode(newEmployee.getPostalCode());
         employee.setBirthDate(newEmployee.getBirthDate());
         employee.setAnniversary(newEmployee.getAnniversary());
+        employee.setRole(newEmployee.getRole());
 
 
         if (employee.getName().trim().isEmpty()) {
@@ -53,9 +54,9 @@ public class AdminService {
         return employeeRepository.save(employee);
     }
 
-    public Employee deleteById(int employeeId) throws Exception{
+    public Employee deleteById(int employeeId) throws Exception {
         Optional<Employee> employeeOptional = employeeRepository.findById(employeeId);
-        if(employeeOptional.isEmpty()){
+        if (employeeOptional.isEmpty()) {
             throw new Exception("No such employee exists,please check the employee id entered.");
         }
         employeeRepository.deleteById(employeeId);//Remove the employee from the list
@@ -64,7 +65,7 @@ public class AdminService {
 
         //Delete Site user by EmployeeID
 
-
+    }
     public List<Employee> getAllEmployees() {
         List<Employee> employees = employeeRepository.findAll();
         Main.logger.info("Employee List returned: " + employees);
