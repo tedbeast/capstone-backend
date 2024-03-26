@@ -27,4 +27,10 @@ public class PerformanceReviewService {
         Main.logger.info("Performance Review Get: Attempting to get all performance reviews.");
         return performanceReviewRepository.findAll();
     }
+
+    public List<PerformanceReview> getAllPerformanceReviews(){
+        Main.logger.info("logging method execution: PerformanceReviewService.getAllPerformanceReviews");
+        Main.logger.info("PerformanceReviewService.getAllPerformanceReviews: Performance Review list successfully retrieved.");
+        return performanceReviewRepository.findAll();
+    }
 }
