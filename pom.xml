@@ -29,12 +29,15 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+<<<<<<< HEAD
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
         <dependency>
+=======
+>>>>>>> origin/login-team
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
@@ -46,6 +49,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+<<<<<<< HEAD
 
             <groupId>com.h2database</groupId>
 
@@ -92,4 +96,10 @@
             </plugin>
         </plugins>
     </build>
+=======
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+    </dependencies>
+>>>>>>> origin/login-team
 </project>
