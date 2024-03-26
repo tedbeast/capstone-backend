@@ -2,13 +2,13 @@ package org.capstone.controller;
 
 import org.capstone.entity.Leave;
 import org.capstone.exception.LeaveException;
+import org.capstone.exception.LeaveNotFoundException;
 import org.capstone.repository.LeaveRepository;
 import org.capstone.service.LeaveService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -56,5 +56,15 @@ public class LeaveController {
     }
 
 
+    @PutMapping("/employees/{employeeId}/leaves/{id}")
+    public ResponseEntity<Leave> updateLeave(@RequestBody Leave l, @PathVariable int employeeId, @PathVariable int id) {
+        try {
+            Leave updatedLeave = leaveService.updateLeave(id, l);
+            return new ResponseEntity<>(updatedLeave, HttpStatus.OK);
+        } catch (LeaveNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+    }
 
 }

@@ -2,7 +2,7 @@ package org.capstone.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.apache.catalina.Manager;
+
 
 import java.sql.Timestamp;
 
@@ -20,7 +20,7 @@ import java.sql.Timestamp;
 public class Leave {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int leaveId;
+    private int Id;
     private String leaveName;
     private Timestamp startDate;
     private Timestamp endDate;
@@ -30,7 +30,7 @@ public class Leave {
     @ManyToOne
     @JoinColumn(name = "employeeID")
     private Employee employee;
-
+    @ManyToOne
     @JoinColumn(name = "managerID")
     private Manager manager;
 

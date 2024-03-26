@@ -8,6 +8,8 @@ import java.util.List;
 
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class Employee {
     @Id
