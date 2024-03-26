@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+
+import java.util.*;
+
 
 @CrossOrigin
 @RestController
@@ -21,10 +23,11 @@ public class PerformanceReviewController {
         this.performanceReviewService = performanceReviewService;
     }
 
-    @GetMapping(value = "/performance")
-    public ResponseEntity<List<PerformanceReview>> getAllPerformanceReviews(){
-        List<PerformanceReview> pr = performanceReviewService.getAllPerformanceReviews();
-        return new ResponseEntity<>(pr, HttpStatus.OK);
+    @GetMapping("/performanceReview")
+    public ResponseEntity<List<PerformanceReview>> getAllPerformanceReview(){
+        List<PerformanceReview> performanceReviewList = performanceReviewService.getAllPerformanceReview();
+        return new ResponseEntity<>(performanceReviewList, HttpStatus.OK);
+
     }
 }
 
