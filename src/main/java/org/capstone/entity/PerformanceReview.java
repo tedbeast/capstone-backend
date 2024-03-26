@@ -29,5 +29,4 @@ public class PerformanceReview {
     @JoinColumn(name="employee_fk")
     private int employeeID; //look up how to reference a column from another entity
 
-
 }
