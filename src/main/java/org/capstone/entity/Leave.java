@@ -1,9 +1,7 @@
 package org.capstone.entity;
-
 import jakarta.persistence.*;
 import lombok.*;
-import org.apache.catalina.Manager;
-
+//import org.apache.catalina.Manager;
 import java.sql.Timestamp;
 
 //enum LeaveStatus {
@@ -31,6 +29,7 @@ public class Leave {
     @JoinColumn(name = "employeeID")
     private Employee employee;
 
+    @ManyToOne
     @JoinColumn(name = "managerID")
     private Manager manager;
 
