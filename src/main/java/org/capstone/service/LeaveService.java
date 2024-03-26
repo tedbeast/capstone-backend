@@ -50,6 +50,28 @@ public class LeaveService {
         }
         return l;
     }
+
+   public Leave addLeave(Leave leave) {
+       // Validate leave details
+       if (leave.getLeaveName() == null || leave.getLeaveName().isEmpty()) {
+           throw new IllegalArgumentException("Leave name is required");
+       }
+       if (leave.getStartDate() == null || leave.getEndDate() == null) {
+           throw new IllegalArgumentException("Start date and end date are required");
+       }
+       if (leave.getEmployee() == null) {
+           throw new IllegalArgumentException("Employee is required");
+       }
+       if (leave.getManager() == null) {
+           throw new IllegalArgumentException("Manager is required");
+       }
+
+       leave.setActiveFlag(true);
+       leave.setAcceptedFlag(false);
+
+       // Save the leave record
+       return leaveRepository.save(leave);
+   }
 }
 
 

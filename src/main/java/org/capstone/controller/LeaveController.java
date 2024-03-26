@@ -5,10 +5,8 @@ import org.capstone.exception.LeaveException;
 import org.capstone.repository.LeaveRepository;
 import org.capstone.service.LeaveService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +18,7 @@ public class LeaveController {
 
     @Autowired
     public LeaveController(LeaveService leaveService) {
+
         this.leaveService = leaveService;
     }
 
@@ -54,7 +53,11 @@ public class LeaveController {
     public List<Leave> getLeaveByEmployeeIdAndInactive(int employeeId) throws LeaveException {
         return leaveService.getAllLeavesByEmployeeIdAndActiveFlag(employeeId, false); // Explicitly set active to false
     }
-
+   @PostMapping("/add")
+    public ResponseEntity<Leave> addLeave(@RequestBody Leave leave){
+        Leave newLeave = leaveService.addLeave(leave);
+        return ResponseEntity.ok(newLeave);
+   }
 
 
 }
