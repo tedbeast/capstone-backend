@@ -7,8 +7,13 @@ import java.util.Date;
 import java.util.List;
 
 
+
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
+@EqualsAndHashCode
+@ToString
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
