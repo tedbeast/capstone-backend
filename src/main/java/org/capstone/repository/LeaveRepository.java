@@ -10,11 +10,11 @@ import java.util.List;
 @Repository(value = "LeaveRepository")
 public interface LeaveRepository extends JpaRepository<Leave, Integer> {
 
-    List<Leave> findByEmployeeId(int employeeId);
+    List<Leave> findByEmployeeEmployeeID(int employeeID);
 
-    List<Leave> findByEmployeeIdAndAcceptedFlag(int employeeId, boolean acceptedFlag);
+    List<Leave> findByEmployeeEmployeeIDAndAcceptedFlag(int employeeID, boolean acceptedFlag);
 
-    List<Leave> findByEmployeeIdAndActiveFlag(int employeeId, boolean activeFlag);
+    List<Leave> findByEmployeeEmployeeIDAndActiveFlag(int employeeID, boolean activeFlag);
 
 }
 

@@ -23,30 +23,31 @@ public class LeaveService {
     }
 
     //Get All Leaves by Employee ID
-    public List<Leave> getAllLeaveByEmployeeId(int employeeId) throws LeaveException {
+    public List<Leave> getAllLeaveByEmployeeId(int employeeID) throws LeaveException {
         Main.logger.info("Getting leaves by employee");
-        List <Leave> l = leaveRepository.findByEmployeeId(employeeId);
+        List <Leave> l = leaveRepository.findByEmployeeEmployeeID(employeeID);
         if (l.isEmpty()) {
-            throw new LeaveException("No leaves for a given employeeId is found: " + employeeId);
+            throw new LeaveException("No leaves for a given employeeId is found: " + employeeID);
         }
         return l;
     }
 
-    //Get All Leaves by Employee ID
-    public List<Leave> getAllLeaveByEmployeeIdAndAcceptFlag(int employeeId, boolean acceptedFlag) throws LeaveException {
+    //Get All Leaves by Employee ID & Accepted Flag
+    public List<Leave> getAllLeaveByEmployeeIdAndAcceptFlag(int employeeID, boolean acceptedFlag) throws LeaveException {
         Main.logger.info("Getting accepted leaves by employee");
-        List <Leave> l = leaveRepository.findByEmployeeIdAndAcceptedFlag(employeeId, acceptedFlag);
+        List <Leave> l = leaveRepository.findByEmployeeEmployeeIDAndAcceptedFlag(employeeID, acceptedFlag);
         if (l.isEmpty()) {
-            throw new LeaveException("No leaves for a given employeeId and Acccept/Reject Flag are found: " + employeeId);
+            throw new LeaveException("No leaves for a given employeeId and Acccept/Reject Flag are found: " + employeeID);
         }
         return l;
     }
 
-    public List<Leave> getAllLeavesByEmployeeIdAndActiveFlag(int employeeId, boolean activeFlag) throws LeaveException {
+    //Get All Leaves by Employee ID & Active Flag
+    public List<Leave> getAllLeavesByEmployeeIdAndActiveFlag(int employeeID, boolean activeFlag) throws LeaveException {
         Main.logger.info("Getting accepted leaves by employee");
-        List <Leave> l = leaveRepository.findByEmployeeIdAndActiveFlag(employeeId, activeFlag);
+        List <Leave> l = leaveRepository.findByEmployeeEmployeeIDAndActiveFlag(employeeID, activeFlag);
         if (l.isEmpty()) {
-            throw new LeaveException("No leaves for a given employeeId and Active Flag are found: " + employeeId);
+            throw new LeaveException("No leaves for a given employeeId and Active Flag are found: " + employeeID);
         }
         return l;
     }
