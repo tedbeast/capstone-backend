@@ -53,8 +53,8 @@ public class LeaveController {
         return leaveService.getAllLeavesByEmployeeIdAndActiveFlag(employeeID, false); // Explicitly set active to false
     }
 
-   @PostMapping("/add")
-    public ResponseEntity<Leave> addLeave(@RequestBody Leave leave){
+   @PostMapping(value = "/Leave")
+    public ResponseEntity<Leave> addLeave(@RequestBody Leave leave) throws LeaveException {
         Leave newLeave = leaveService.addLeave(leave);
         return ResponseEntity.ok(newLeave);
    }

@@ -55,26 +55,30 @@ public class LeaveService {
     }
 
 
-   public Leave addLeave(Leave leave) {
+   public Leave addLeave(Leave leave) throws LeaveException {
        // Validate leave details
        if (leave.getLeaveName() == null || leave.getLeaveName().isEmpty()) {
-           throw new IllegalArgumentException("Leave name is required");
+           throw new LeaveException("Leave name is required");
        }
        if (leave.getStartDate() == null || leave.getEndDate() == null) {
-           throw new IllegalArgumentException("Start date and end date are required");
+           throw new LeaveException("Start date and end date are required");
        }
        if (leave.getEmployee() == null) {
-           throw new IllegalArgumentException("Employee is required");
+           throw new LeaveException("Employee is required");
        }
        if (leave.getManager() == null) {
-           throw new IllegalArgumentException("Manager is required");
+           throw new LeaveException("Manager is required");
        }
-
-       leave.setActiveFlag(true);
-       leave.setAcceptedFlag(false);
+       if (leave.isActiveFlag() && !leave.isAcceptedFlag()) {
+          return leave;
+       } else {
+       throw new LeaveException("Leave cannot be added");
+       }
+       //leave.setActiveFlag(true);
+       //leave.setAcceptedFlag(false);
 
        // Save the leave record
-       return leaveRepository.save(leave);
+       //return leaveRepository.save(leave);
    }
 }
 
