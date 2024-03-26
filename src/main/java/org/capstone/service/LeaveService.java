@@ -37,7 +37,9 @@ public class LeaveService {
         Main.logger.info("Getting accepted leaves by employee");
         List <Leave> l = leaveRepository.findByEmployeeEmployeeIDAndAcceptedFlag(employeeID, acceptedFlag);
         if (l.isEmpty()) {
+
             throw new LeaveException("No leaves for a given employeeId and Accept/Reject Flag are found: " + employeeID);
+
         }
         return l;
     }

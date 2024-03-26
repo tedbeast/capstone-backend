@@ -16,4 +16,5 @@ public interface LeaveRepository extends JpaRepository<Leave, Integer> {
 
     List<Leave> findByEmployeeEmployeeIDAndActiveFlag(int employeeID, boolean activeFlag);
 
+
 }
