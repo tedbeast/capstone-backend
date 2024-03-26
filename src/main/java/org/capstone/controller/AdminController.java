@@ -1,8 +1,11 @@
 package org.capstone.controller;
 
+import org.capstone.dto.PerformanceStatsDto;
+import org.capstone.dto.PerformanceStatsProjection;
 import org.capstone.entity.Employee;
 
 import org.capstone.entity.Manager;
+import org.capstone.entity.PerformanceReview;
 import org.capstone.exception.AdminException;
 import org.capstone.service.AdminService;
 import org.springframework.http.HttpStatus;
@@ -80,5 +83,17 @@ public class AdminController {
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee p, @PathVariable int managerID) throws Exception {
         Employee employee = adminService.saveEmployee(managerID, p);
         return new ResponseEntity<>(employee, HttpStatus.CREATED);
+    }
+
+//    @GetMapping("/performance/stats")
+//    public ResponseEntity<PerformanceStatsDto> getPerformanceStats() {
+//        PerformanceStatsDto stats = adminService.findPerformanceStats();
+//        return new ResponseEntity<>(stats, HttpStatus.OK);
+//    }
+
+    @GetMapping("/performance/stats")
+    public ResponseEntity<PerformanceStatsProjection> getPerformanceStats() {
+       PerformanceStatsProjection stats = adminService.findPerformanceStats();
+       return new ResponseEntity<>(stats, HttpStatus.OK);
     }
 }
