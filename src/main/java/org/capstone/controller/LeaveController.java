@@ -18,41 +18,41 @@ public class LeaveController {
 
     @Autowired
     public LeaveController(LeaveService leaveService) {
-
         this.leaveService = leaveService;
     }
 
     /** Endpoints for localhost:9000/leave */
 
     // Endpoint for getting all leaves by employee
-    @GetMapping(value="/employees/{employeeId}/leaves")
-    public List<Leave> getLeaveByEmployeeId(int employeeId) throws LeaveException {
-        return leaveService.getAllLeaveByEmployeeId(employeeId);
+    @GetMapping(value="/employees/{employeeID}/leaves")
+    public List<Leave> getLeaveByEmployeeID(int employeeID) throws LeaveException {
+        return leaveService.getAllLeaveByEmployeeId(employeeID);
     }
 
     // Endpoint for getting all leaves by employee & accept status
-    @GetMapping(value="/employees/{employeeId}/leaves/accepted")
-    public List<Leave> getLeaveByEmployeeIdAndAccepted(int employeeId) throws LeaveException {
-        return leaveService.getAllLeaveByEmployeeIdAndAcceptFlag(employeeId, true);
+    @GetMapping(value="/employees/{employeeID}/leaves/accepted")
+    public List<Leave> getLeaveByEmployeeIdAndAccepted(int employeeID) throws LeaveException {
+        return leaveService.getAllLeaveByEmployeeIdAndAcceptFlag(employeeID, true);
     }
 
     // Endpoint for getting all leaves by employee & rejected leaves
-    @GetMapping(value = "/employees/{employeeId}/leaves/rejected")
-    public List<Leave> getLeaveByEmployeeIdAndRejected(int employeeId) throws LeaveException {
-        return leaveService.getAllLeaveByEmployeeIdAndAcceptFlag(employeeId, false); // Explicitly set acceptFlag to false
+    @GetMapping(value = "/employees/{employeeID}/leaves/rejected")
+    public List<Leave> getLeaveByEmployeeIdAndRejected(int employeeID) throws LeaveException {
+        return leaveService.getAllLeaveByEmployeeIdAndAcceptFlag(employeeID, false); // Explicitly set acceptFlag to false
     }
 
     // Endpoint for getting all leaves by employee & active leaves
-    @GetMapping(value = "/employees/{employeeId}/leaves/active")
-    public List<Leave> getLeaveByEmployeeIdAndActive(int employeeId) throws LeaveException {
-        return leaveService.getAllLeavesByEmployeeIdAndActiveFlag(employeeId, true); // Default active to true
+    @GetMapping(value = "/employees/{employeeID}/leaves/active")
+    public List<Leave> getLeaveByEmployeeIdAndActive(int employeeID) throws LeaveException {
+        return leaveService.getAllLeavesByEmployeeIdAndActiveFlag(employeeID, true); // Default active to true
     }
 
     // Endpoint for inactive leaves
-    @GetMapping(value = "/employees/{employeeId}/leaves/inactive")
-    public List<Leave> getLeaveByEmployeeIdAndInactive(int employeeId) throws LeaveException {
-        return leaveService.getAllLeavesByEmployeeIdAndActiveFlag(employeeId, false); // Explicitly set active to false
+    @GetMapping(value = "/employees/{employeeID}/leaves/inactive")
+    public List<Leave> getLeaveByEmployeeIdAndInactive(int employeeID) throws LeaveException {
+        return leaveService.getAllLeavesByEmployeeIdAndActiveFlag(employeeID, false); // Explicitly set active to false
     }
+
    @PostMapping("/add")
     public ResponseEntity<Leave> addLeave(@RequestBody Leave leave){
         Leave newLeave = leaveService.addLeave(leave);
