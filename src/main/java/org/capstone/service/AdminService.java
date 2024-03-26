@@ -6,7 +6,6 @@ import org.capstone.exception.AdminException;
 import org.capstone.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -54,7 +53,16 @@ public class AdminService {
         return employeeRepository.save(employee);
     }
 
-    //Delete Site user by EmployeeID
+    public Employee deleteById(int employeeId) throws Exception{
+        Optional<Employee> employeeOptional = employeeRepository.findById(employeeId);
+        if(employeeOptional.isEmpty()){
+            throw new Exception("No such employee exists,please check the employee id entered.");
+        }
+        employeeRepository.deleteById(employeeId);//Remove the employee from the list
+        return employeeOptional.get();//Return deleted employee?
+
+
+        //Delete Site user by EmployeeID
 
 
     public List<Employee> getAllEmployees() {
