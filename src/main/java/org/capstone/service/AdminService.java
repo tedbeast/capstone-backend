@@ -1,21 +1,23 @@
 package org.capstone.service;
 
+import org.capstone.Main;
 import org.capstone.entity.Employee;
-
 import org.capstone.exception.AdminException;
 import org.capstone.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+
 @Service
 public class AdminService {
 
     EmployeeRepository employeeRepository;
 
     @Autowired
-    public AdminService(EmployeeRepository adminRepository){
-        this. employeeRepository = employeeRepository;
+    public AdminService(EmployeeRepository adminRepository) {
+        this.employeeRepository = employeeRepository;
     }
 
     //Update Site user by EmployeeID
@@ -38,9 +40,8 @@ public class AdminService {
 
 
         if (employee.getName().trim().isEmpty()) {
-            throw new AdminException ("Name is Empty must have a name");
-        }
-        else {
+            throw new AdminException("Name is Empty must have a name");
+        } else {
             employeeRepository.save(employee);
 
             return employee;
@@ -48,11 +49,32 @@ public class AdminService {
     }
 
     public Employee createEmployee(Employee employee) throws AdminException {
-        if(employee.getName() == null || employee.getName().isEmpty()){
+        if (employee.getName() == null || employee.getName().isEmpty()) {
             throw new AdminException("Employee name cannot be null or empty.");
         }
         return employeeRepository.save(employee);
     }
 
     //Delete Site user by EmployeeID
+
+
+    public List<Employee> getAllEmployees() {
+        List<Employee> employees = employeeRepository.findAll();
+        Main.logger.info("Employee List returned: " + employees);
+        return employees;
+    }
+
+    public Employee getEmployeeById(int employeeId) throws AdminException {
+        Optional<Employee> employeeOptional = employeeRepository.findById(employeeId);
+        if (employeeOptional.isPresent()) {
+            Employee employee = employeeOptional.get();
+            Main.logger.info("Employee found: " + employee);
+            return employeeOptional.get();
+        } else {
+            Main.logger.warn("Employee not found" + employeeId);
+            throw new AdminException("Employee is not found with that id" + employeeId);
+        }
+    }
 }
+
+
