@@ -2,8 +2,10 @@ package org.capstone.controller;
 
 import org.capstone.entity.Employee;
 
+import org.capstone.exception.AdminException;
 import org.capstone.service.AdminService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -15,6 +17,19 @@ public class AdminController {
     public AdminController (AdminService adminService){
         this.adminService =adminService;
     }
+
+
+    @PostMapping("/employees")
+    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee){
+        try
+          {
+            Employee createdEmployee = adminService.createEmployee(employee);
+            return ResponseEntity.ok(createdEmployee);
+          } catch (AdminException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
 
     // Create Put Mapping
 

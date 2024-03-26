@@ -47,5 +47,12 @@ public class AdminService {
         }
     }
 
+    public Employee createEmployee(Employee employee) throws AdminException {
+        if(employee.getName() == null || employee.getName().isEmpty()){
+            throw new AdminException("Employee name cannot be null or empty.");
+        }
+        return employeeRepository.save(employee);
+    }
+
     //Delete Site user by EmployeeID
 }
