@@ -61,11 +61,10 @@ public class AdminService {
         }
         employeeRepository.deleteById(employeeId);//Remove the employee from the list
         return employeeOptional.get();//Return deleted employee?
-
-
-        //Delete Site user by EmployeeID
-
     }
+
+
+
     public List<Employee> getAllEmployees() {
         List<Employee> employees = employeeRepository.findAll();
         Main.logger.info("Employee List returned: " + employees);

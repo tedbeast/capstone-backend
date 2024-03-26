@@ -44,7 +44,11 @@ public class AdminController {
     }
 
     //Create Delete Mapping
-    @DeleteMapping("employee/{id}")
+
+
+
+    @DeleteMapping("employee/{employeeID}")
+
     public ResponseEntity<Employee>deleteById(@PathVariable int employeeID)throws Exception {
         try {
             adminService.deleteById(employeeID);
@@ -52,8 +56,9 @@ public class AdminController {
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
-
     }
+
+
         @GetMapping("/employee")
     public ResponseEntity<List<Employee>> getAllEmployeesEndpoint() {
         List<Employee> employees = adminService.getAllEmployees();
