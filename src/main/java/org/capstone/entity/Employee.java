@@ -1,40 +1,42 @@
 package org.capstone.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
+
+
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@EqualsAndHashCode
+@ToString
 public class Employee {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private Long employeeID;
-    private String employeeName;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int employeeID;
+    private String password;
+    private String name;
     private String jobTitle;
     private String phoneNumber;
     private String email;
-
+    private String addressLine1, addressLine2, city, state, postalCode;
+    private Date birthDate;
     private Date anniversary;
-    private String password;
-    private String addressLine1, addressLine2, city, state, zipCode;
-
-    private String birthdate;
-    private int managerID;
-
-    private int performanceID;
-    private int leaveID;
-
-    private Roles role;
 
     @ManyToOne
-    @JoinColumn(name = "manager_id")
-   @JoinColumn(name = "performance_id")
-  @JoinColumn(name = "leave_id")
+    @JoinColumn(name = "managerID")
+    private Manager manager;
 
-    private Employee Manager;
-    private Employee Performance;
+    @OneToMany
+    @JoinColumn(name = "employeeID")
+    private List<PerformanceReview> performanceReview;
 
-    private Employee Leave;
-
+    @OneToMany
+    @JoinColumn(name = "employeeID")
+    private List<Leave> leave;
+    private Roles role;
 }
