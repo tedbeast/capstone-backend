@@ -16,15 +16,14 @@ public class AdminService {
     EmployeeRepository employeeRepository;
 
     @Autowired
-    public AdminService(EmployeeRepository adminRepository) {
+    public AdminService(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 
     //Update Site user by EmployeeID
-    public Employee updateSiteUser(int employeeID, Employee newEmployee) throws AdminException {
+    public Employee updateEmployee(int employeeID, Employee newEmployee) throws AdminException {
         Optional<Employee> employeeeOptional = employeeRepository.findById(employeeID);
         Employee employee = employeeeOptional.get();
-
         employee.setName(newEmployee.getName());
         employee.setPassword(newEmployee.getPassword());
         employee.setJobTitle(newEmployee.getJobTitle());

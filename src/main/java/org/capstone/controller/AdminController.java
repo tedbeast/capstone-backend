@@ -37,7 +37,7 @@ public class AdminController {
     @PutMapping("admin/{employeeID}")
     public Employee updateProduct(@PathVariable int employeeID, @RequestBody Employee employee) {
         try {
-            return adminService.updateSiteUser(employeeID, employee);
+            return adminService.updateEmployee(employeeID, employee);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee not found", e);
         }
