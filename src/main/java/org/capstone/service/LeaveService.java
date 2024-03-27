@@ -34,15 +34,26 @@ public class LeaveService {
         return l;
     }
 
-    //Get All Leaves by Employee ID
+
+
+    //Get All Leaves by Employee ID & Accepted Flag
+
     public List<Leave> getAllLeaveByEmployeeIdAndAcceptFlag(int employeeID, boolean acceptedFlag) throws LeaveException {
         Main.logger.info("Getting accepted leaves by employee");
         List <Leave> l = leaveRepository.findByEmployeeEmployeeIDAndAcceptedFlag(employeeID, acceptedFlag);
         if (l.isEmpty()) {
-            throw new LeaveException("No leaves for a given employeeId and Acccept/Reject Flag are found: " + employeeID);
+         
+            throw new LeaveException("No leaves for a given employeeId and Accept/Reject Flag are found: " + employeeID);
+
+
         }
         return l;
     }
+
+
+
+
+    //Get All Leaves by Employee ID & Active Flag
 
     public List<Leave> getAllLeavesByEmployeeIdAndActiveFlag(int employeeID, boolean activeFlag) throws LeaveException {
         Main.logger.info("Getting accepted leaves by employee");
@@ -84,6 +95,52 @@ public class LeaveService {
 
         leaveToUpdate.setAcceptedFlag(isAccepted);
         return leaveRepository.save(leaveToUpdate);
+    }
+
+
+
+    public Leave deleteLeave(int leaveId) throws LeaveNotFoundException {
+        Main.logger.info("Deleting leave");
+        Optional<Leave> optionalLeave = leaveRepository.findById(leaveId);
+        Leave leaveToDelete;
+        if(optionalLeave.isEmpty()){
+            throw new LeaveNotFoundException("Leave with id " + leaveId + " not found");
+        }else{
+            leaveToDelete = optionalLeave.get();
+        }
+        leaveRepository.delete(leaveToDelete);
+        return leaveToDelete;
+    }
+
+
+   public Leave addLeave(Leave leave) throws LeaveException {
+       // Validate leave details
+       if (leave.getLeaveName() == null || leave.getLeaveName().isEmpty()) {
+           throw new LeaveException("Leave name is required");
+       }
+       if (leave.getStartDate() == null || leave.getEndDate() == null) {
+           throw new LeaveException("Start date and end date are required");
+       }
+       if (leave.getEmployee() == null) {
+           throw new LeaveException("Employee is required");
+       }
+       if (leave.getManager() == null) {
+           throw new LeaveException("Manager is required");
+       }
+       if (leave.isActiveFlag() && !leave.isAcceptedFlag()) {
+          return leave;
+       } else {
+       throw new LeaveException("Leave cannot be added");
+       }
+
+   }
+    public List<Leave> getAllLeavesByActiveStatus(boolean activeStatus) throws LeaveException {
+        Main.logger.info("Getting leaves by active status");
+        List<Leave> leaves = leaveRepository.findByActiveFlag(activeStatus);
+        if (leaves.isEmpty()) {
+            throw new LeaveException("No leaves with active status " + activeStatus + " are found");
+        }
+        return leaves;
     }
 
 
