@@ -32,33 +32,6 @@ public class AdminService {
         this.performanceReviewRepository = performanceReviewRepository;
     }
 
-    //Update Site user by EmployeeID
-//    public Employee updateEmployee(int employeeID, Employee newEmployee) throws AdminException {
-//        Optional<Employee> employeeeOptional = employeeRepository.findById(employeeID);
-//        Employee employee = employeeeOptional.get();
-//        employee.setName(newEmployee.getName());
-//        employee.setPassword(newEmployee.getPassword());
-//        employee.setJobTitle(newEmployee.getJobTitle());
-//        employee.setPhoneNumber(newEmployee.getPhoneNumber());
-//        employee.setEmail(newEmployee.getEmail());
-//        employee.setAddressLine1(newEmployee.getAddressLine1());
-//        employee.setAddressLine2(newEmployee.getAddressLine2());
-//        employee.setCity(newEmployee.getCity());
-//        employee.setState(newEmployee.getState());
-//        employee.setPostalCode(newEmployee.getPostalCode());
-//        employee.setBirthDate(newEmployee.getBirthDate());
-//        employee.setAnniversary(newEmployee.getAnniversary());
-//        employee.setRole(newEmployee.getRole());
-//
-//
-//        if (employee.getName().trim().isEmpty()) {
-//            throw new AdminException("Name is Empty must have a name");
-//        } else {
-//            employeeRepository.save(employee);
-//
-//            return employee;
-//        }
-//    }
     public Employee updateEmployee(int employeeID, Employee newEmployee) throws AdminException {
         Optional<Employee> employeeOptional = employeeRepository.findById(employeeID);
         Employee employee = employeeOptional.get();
@@ -94,9 +67,6 @@ public class AdminService {
         return employee;
     }
 
-
-
-
     public Employee createManager(Employee employee) throws AdminException {
         if (employee.getName() == null || employee.getName().isEmpty()) {
             throw new AdminException("Employee name cannot be null or empty.");
@@ -127,22 +97,6 @@ public class AdminService {
         managerRepository.save(manager);
         return savedEmployee;
     }
-//    public Employee createEmployee(Employee employee) throws AdminException {
-//        if (employee.getName() == null || employee.getName().isEmpty()) {
-//            throw new AdminException("Employee name cannot be null or empty.");
-//        }
-//
-//        Employee savedEmployee = employeeRepository.save(employee);
-//
-//        if (employee.getRole() == Roles.MANAGER){
-//            Manager manager = new Manager();
-//
-//            manager.setManagerID(savedEmployee.getEmployeeID());
-//
-//            managerRepository.save(manager);
-//        }
-//        return savedEmployee;
-//    }
 
     public Employee deleteById(int employeeId) throws Exception {
         Optional<Employee> employeeOptional = employeeRepository.findById(employeeId);
