@@ -80,6 +80,14 @@ public class LeaveService {
        // Save the leave record
        //return leaveRepository.save(leave);
    }
+    public List<Leave> getAllLeavesByActiveStatus(boolean activeStatus) throws LeaveException {
+        Main.logger.info("Getting leaves by active status");
+        List<Leave> leaves = leaveRepository.findByActiveFlag(activeStatus);
+        if (leaves.isEmpty()) {
+            throw new LeaveException("No leaves with active status " + activeStatus + " are found");
+        }
+        return leaves;
+    }
 }
 
 
