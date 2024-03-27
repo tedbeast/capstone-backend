@@ -33,7 +33,7 @@ public class LoginService {
     }
 
     public String updatePassword(int employeeID, String password) {
-        Employee user = loginRepository.findByEmployeeID(employeeID);
+        Employee user = employeeRepository.findByEmployeeID(employeeID);
         if (user != null) {
             if (user.getPassword().equals(password)) {
 
@@ -45,7 +45,7 @@ public class LoginService {
                     return "Password cannot be blank!";
                 }
                 user.setPassword(password);
-                loginRepository.save(user);
+                employeeRepository.save(user);
                    log.info("Your Password has been updated successfully!");
                 return "Your Password has been updated successfully!";
             } else {
