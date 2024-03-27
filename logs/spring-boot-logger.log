@@ -2028,3 +2028,31 @@ Caused by: org.hibernate.query.sqm.PathElementException: Could not resolve attri
 2024-03-26 18:23:11,593 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-03-26 18:23:11,601 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2024-03-26 18:23:11,602 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-27 08:47:47,895 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 17304 (C:\Users\U43SGB\IdeaProjects\capstone-backend2\target\classes started by U43SGB in C:\Users\U43SGB\IdeaProjects\capstone-backend2)
+2024-03-27 08:47:47,898 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-27 08:47:49,079 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-27 08:47:49,157 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 68 ms. Found 4 JPA repository interfaces.
+2024-03-27 08:47:50,163 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-27 08:47:50,176 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-27 08:47:50,179 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-27 08:47:50,180 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-27 08:47:50,273 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-27 08:47:50,275 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2312 ms
+2024-03-27 08:47:50,746 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-27 08:47:50,845 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-27 08:47:50,890 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-27 08:47:51,190 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-27 08:47:51,225 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-27 08:47:51,522 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:8923166e-f671-4530-9d56-97a31ef338dd user=SA
+2024-03-27 08:47:51,524 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-27 08:47:53,037 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-27 08:47:53,096 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-27 08:47:53,806 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-27 08:47:54,610 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-27 08:47:55,414 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-27 08:47:55,492 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-27 08:47:55,529 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-27 08:47:55,550 INFO o.s.b.StartupInfoLogger [main] Started Main in 8.421 seconds (process running for 9.289)
+2024-03-27 08:48:07,646 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-27 08:48:07,653 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-27 08:48:07,655 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

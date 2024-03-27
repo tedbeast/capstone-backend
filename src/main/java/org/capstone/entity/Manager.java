@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+
 @Data
 @EqualsAndHashCode
 
@@ -21,7 +21,12 @@ public class Manager {
     @JoinColumn(name="employee_fk")
     private List<Employee> employees;
 
-
+    @Override
+    public String toString() {
+        return "Manager{" +
+                "managerID=" + managerID +
+                '}';
+    }
 }
 
 

@@ -17,7 +17,7 @@ import java.util.List;
 @Getter
 @Setter
 @EqualsAndHashCode
-@ToString
+
 public class Employee {
     @Getter
     @Id
@@ -46,6 +46,27 @@ public class Employee {
     private List<Leave> leave;
     private Roles role;
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeID=" + employeeID +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", jobTitle='" + jobTitle + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", addressLine1='" + addressLine1 + '\'' +
+                ", addressLine2='" + addressLine2 + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", birthDate=" + birthDate +
+                ", anniversary=" + anniversary +
+                ", performanceReview=" + performanceReview +
+                ", leave=" + leave +
+                ", role=" + role +
+                '}';
+    }
 }
 
 
