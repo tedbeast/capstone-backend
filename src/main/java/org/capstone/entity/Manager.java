@@ -10,7 +10,9 @@ public class Manager {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int managerID;
-    private double testMerge;
+    private void testMerge(){
+        System.out.println("Testing a merge conflict");
+    }
     @OneToMany
     private List<Employee> employees;
 }
