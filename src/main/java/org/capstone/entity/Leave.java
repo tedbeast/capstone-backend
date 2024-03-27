@@ -31,13 +31,13 @@ public class Leave {
     //@JsonIgnore
     @ManyToOne
     @JoinColumn(name = "employeeID")
-    @JsonIgnoreProperties("employees")
+    @JsonIgnoreProperties("leave")
     private Employee employee;
 
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "managerID")
-    @JsonIgnoreProperties("managers")
-    private Manager manager;
+//    @JsonIgnore
+//    @ManyToOne
+//    @JoinColumn(name = "managerID")
+//    @JsonIgnoreProperties("employess")
+//    private Manager manager;
 
 }
