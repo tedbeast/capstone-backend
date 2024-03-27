@@ -31,4 +31,28 @@ public class LoginService {
         log.info(user + " has been saved to the database");
         loginRepository.save(user);
     }
-}
+
+    public String updatePassword(int employeeID, String password) {
+        Employee user = loginRepository.findByEmployeeID(employeeID);
+        if (user != null) {
+            if (user.getPassword().equals(password)) {
+
+                   log.info("New password cannot be same as the current password!");
+                return "New password cannot be same as the current password!";
+            }
+                if (password == null || password.isEmpty()){
+                    log.info("Password cannot be blank!");
+                    return "Password cannot be blank!";
+                }
+                user.setPassword(password);
+                loginRepository.save(user);
+                   log.info("Your Password has been updated successfully!");
+                return "Your Password has been updated successfully!";
+            } else {
+                   log.info("User does not exists!");
+                return "No matching user exist!";
+            }
+
+
+        }
+    }

@@ -45,4 +45,14 @@ public class LoginController {
 
     }
 
+    @PutMapping("/reset")
+    public ResponseEntity<String> resetPassword(@RequestBody Employee resetUser){
+        int empId = resetUser.getEmployeeID();
+        String newPwd = resetUser.getPassword();
+        String updatedPassword =   loginService.updatePassword(empId, newPwd);
+        log.info("Successfully updated the password");
+        return ResponseEntity.ok(updatedPassword);
+
+    }
+
 }
