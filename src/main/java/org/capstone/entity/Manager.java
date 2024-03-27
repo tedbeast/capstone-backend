@@ -13,7 +13,7 @@ public class Manager {
     private int managerID;
 
     private void mergeConflictTest(){
-        System.out.println("Test");
+        System.out.println("Galina made a change");
     }
     @OneToMany
     private List<Employee> employees;
