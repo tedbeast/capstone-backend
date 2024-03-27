@@ -9,7 +9,7 @@ import java.util.List;
 public class Manager {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int managerID;
+    private int managerD;
     private int merge;
     @OneToMany
     private List<Employee> employees;
