@@ -30,9 +30,9 @@ public class PerformanceReviewService {
         return performanceReviewRepository.findAll();
     }
 
-
+    // to do: use employee repository
     public List<Employee> getAllEmployeeByManagerID(int managerID){
-        return performanceReviewRepository.findEmployeeByManagerID(managerID);
+        return null; //performanceReviewRepository.findEmployeeByManagerID(managerID);
     }
 
     public List<PerformanceReview> getAllPerformanceReviewsByEmployeeID(int employeeID) throws PerformanceReviewException {
