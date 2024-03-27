@@ -1,16 +1,14 @@
 package org.capstone.service;
 
 import org.capstone.Main;
-import org.capstone.dto.PerformanceStatsDto;
-import org.capstone.dto.PerformanceStatsProjection;
+//import org.capstone.dto.PerformanceStatsDto;
+//import org.capstone.dto.PerformanceStatsProjection;
 import org.capstone.entity.Employee;
 import org.capstone.entity.Manager;
-import org.capstone.entity.PerformanceReview;
 import org.capstone.entity.Roles;
 import org.capstone.exception.AdminException;
 import org.capstone.repository.EmployeeRepository;
 import org.capstone.repository.ManagerRepository;
-import org.capstone.repository.PerformanceReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,13 +21,13 @@ public class AdminService {
 
     EmployeeRepository employeeRepository;
     ManagerRepository managerRepository;
-    PerformanceReviewRepository performanceReviewRepository;
+
 
     @Autowired
-    public AdminService(EmployeeRepository employeeRepository, ManagerRepository managerRepository,PerformanceReviewRepository performanceReviewRepository) {
+    public AdminService(EmployeeRepository employeeRepository, ManagerRepository managerRepository) {
         this.employeeRepository = employeeRepository;
         this.managerRepository = managerRepository;
-        this.performanceReviewRepository = performanceReviewRepository;
+
     }
 
     public Employee updateEmployee(int employeeID, Employee newEmployee) throws AdminException {
@@ -133,9 +131,9 @@ public class AdminService {
     }
 
 
-    public PerformanceStatsProjection findPerformanceStats() {
-        return performanceReviewRepository.findPerformanceStats();
-    }
+//    public PerformanceStatsProjection findPerformanceStats() {
+//        return performanceReviewRepository.findPerformanceStats();
+//    }
 
 }
 

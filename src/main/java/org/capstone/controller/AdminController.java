@@ -1,7 +1,6 @@
 package org.capstone.controller;
 
-import org.capstone.dto.PerformanceStatsDto;
-import org.capstone.dto.PerformanceStatsProjection;
+
 import org.capstone.entity.Employee;
 
 import org.capstone.entity.Manager;
@@ -91,9 +90,9 @@ public class AdminController {
 //        return new ResponseEntity<>(stats, HttpStatus.OK);
 //    }
 
-    @GetMapping("/performance/stats")
-    public ResponseEntity<PerformanceStatsProjection> getPerformanceStats() {
-       PerformanceStatsProjection stats = adminService.findPerformanceStats();
-       return new ResponseEntity<>(stats, HttpStatus.OK);
-    }
+//    @GetMapping("/performance/stats")
+//    public ResponseEntity<PerformanceStatsProjection> getPerformanceStats() {
+//       PerformanceStatsProjection stats = adminService.findPerformanceStats();
+//       return new ResponseEntity<>(stats, HttpStatus.OK);
+//    }
 }
