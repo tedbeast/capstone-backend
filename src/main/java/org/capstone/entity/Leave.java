@@ -1,7 +1,6 @@
 package org.capstone.entity;
 import jakarta.persistence.*;
 import lombok.*;
-//import org.apache.catalina.Manager;
 import java.sql.Timestamp;
 
 //enum LeaveStatus {
