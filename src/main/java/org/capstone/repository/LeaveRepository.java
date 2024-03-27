@@ -18,4 +18,5 @@ public interface LeaveRepository extends JpaRepository<Leave, Integer> {
     
     List<Leave> findByActiveFlag(boolean activeFlag);
 
+
 }

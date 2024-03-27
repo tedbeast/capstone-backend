@@ -1,8 +1,6 @@
 package org.capstone.entity;
-
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.sql.Timestamp;
 
 //enum LeaveStatus {
@@ -29,6 +27,7 @@ public class Leave {
     @ManyToOne
     @JoinColumn(name = "employeeID")
     private Employee employee;
+
     @ManyToOne
     @JoinColumn(name = "managerID")
     private Manager manager;

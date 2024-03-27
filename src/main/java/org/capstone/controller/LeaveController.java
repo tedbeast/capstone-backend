@@ -2,9 +2,11 @@ package org.capstone.controller;
 
 import org.capstone.entity.Leave;
 import org.capstone.exception.LeaveException;
+import org.capstone.exception.LeaveNotFoundException;
 import org.capstone.repository.LeaveRepository;
 import org.capstone.service.LeaveService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -53,6 +55,20 @@ public class LeaveController {
         return leaveService.getAllLeavesByEmployeeIdAndActiveFlag(employeeID, false); // Explicitly set active to false
     }
 
+
+    @DeleteMapping("leaves/{leaveId}")
+    public ResponseEntity<?> deleteLeave(@PathVariable int leaveId) {
+        try {
+            Leave leave = leaveService.deleteLeave(leaveId);
+            return new ResponseEntity<>(leave, HttpStatus.OK);
+        } catch (LeaveNotFoundException e) {
+            // Even if product is not found, return 200 status - this is convention
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.OK);
+        }
+
+    }
+
+
    @PostMapping(value = "/Leave")
     public ResponseEntity<Leave> addLeave(@RequestBody Leave leave) throws LeaveException {
         Leave newLeave = leaveService.addLeave(leave);
@@ -63,4 +79,5 @@ public class LeaveController {
         return leaveService.getAllLeavesByActiveStatus(activeFlag);
     }
 
-}
+
+ }

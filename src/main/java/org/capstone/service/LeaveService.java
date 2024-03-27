@@ -4,12 +4,14 @@ import jakarta.transaction.Transactional;
 import org.capstone.Main;
 import org.capstone.entity.Leave;
 import org.capstone.exception.LeaveException;
+import org.capstone.exception.LeaveNotFoundException;
 import org.capstone.repository.LeaveRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -32,6 +34,7 @@ public class LeaveService {
         return l;
     }
 
+
     //Get All Leaves by Employee ID & Accepted Flag
     public List<Leave> getAllLeaveByEmployeeIdAndAcceptFlag(int employeeID, boolean acceptedFlag) throws LeaveException {
         Main.logger.info("Getting accepted leaves by employee");
@@ -44,6 +47,7 @@ public class LeaveService {
         return l;
     }
 
+
     //Get All Leaves by Employee ID & Active Flag
     public List<Leave> getAllLeavesByEmployeeIdAndActiveFlag(int employeeID, boolean activeFlag) throws LeaveException {
         Main.logger.info("Getting accepted leaves by employee");
@@ -52,6 +56,19 @@ public class LeaveService {
             throw new LeaveException("No leaves for a given employeeId and Active Flag are found: " + employeeID);
         }
         return l;
+    }
+
+    public Leave deleteLeave(int leaveId) throws LeaveNotFoundException {
+        Main.logger.info("Deleting leave");
+        Optional<Leave> optionalLeave = leaveRepository.findById(leaveId);
+        Leave leaveToDelete;
+        if(optionalLeave.isEmpty()){
+            throw new LeaveNotFoundException("Leave with id " + leaveId + " not found");
+        }else{
+            leaveToDelete = optionalLeave.get();
+        }
+        leaveRepository.delete(leaveToDelete);
+        return leaveToDelete;
     }
 
 
@@ -74,11 +91,7 @@ public class LeaveService {
        } else {
        throw new LeaveException("Leave cannot be added");
        }
-       //leave.setActiveFlag(true);
-       //leave.setAcceptedFlag(false);
 
-       // Save the leave record
-       //return leaveRepository.save(leave);
    }
     public List<Leave> getAllLeavesByActiveStatus(boolean activeStatus) throws LeaveException {
         Main.logger.info("Getting leaves by active status");
@@ -88,6 +101,7 @@ public class LeaveService {
         }
         return leaves;
     }
+
 }
 
 
