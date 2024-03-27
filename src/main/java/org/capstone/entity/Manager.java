@@ -10,7 +10,7 @@ public class Manager {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int managerID;
-    private String testMerge;
+    private double testMerge;
     @OneToMany
     private List<Employee> employees;
 }
