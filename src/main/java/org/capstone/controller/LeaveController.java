@@ -56,6 +56,18 @@ public class LeaveController {
     }
 
 
+
+    @PutMapping("/employees/{employeeId}/leaves/{id}")
+    public ResponseEntity<Leave> updateLeave(@RequestBody Leave l, @PathVariable int employeeId, @PathVariable int id) {
+        try {
+            Leave updatedLeave = leaveService.updateLeave(id, l);
+            return new ResponseEntity<>(updatedLeave, HttpStatus.OK);
+        } catch (LeaveNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+    }
+
     @DeleteMapping("leaves/{leaveId}")
     public ResponseEntity<?> deleteLeave(@PathVariable int leaveId) {
         try {
@@ -65,6 +77,7 @@ public class LeaveController {
             // Even if product is not found, return 200 status - this is convention
             return new ResponseEntity<>(e.getMessage(), HttpStatus.OK);
         }
+
 
     }
 

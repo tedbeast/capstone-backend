@@ -1,6 +1,7 @@
 package org.capstone.entity;
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.sql.Timestamp;
 
 //enum LeaveStatus {
@@ -17,7 +18,7 @@ import java.sql.Timestamp;
 public class Leave {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int leaveId;
+    private int Id;
     private String leaveName;
     private Timestamp startDate;
     private Timestamp endDate;

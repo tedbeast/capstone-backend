@@ -20,7 +20,7 @@ public class LeaveService {
     LeaveRepository leaveRepository;
 
     @Autowired
-    public LeaveService (LeaveRepository leaveRepository) {
+    public LeaveService(LeaveRepository leaveRepository) {
         this.leaveRepository = leaveRepository;
     }
 
@@ -35,20 +35,26 @@ public class LeaveService {
     }
 
 
+
     //Get All Leaves by Employee ID & Accepted Flag
+
     public List<Leave> getAllLeaveByEmployeeIdAndAcceptFlag(int employeeID, boolean acceptedFlag) throws LeaveException {
         Main.logger.info("Getting accepted leaves by employee");
         List <Leave> l = leaveRepository.findByEmployeeEmployeeIDAndAcceptedFlag(employeeID, acceptedFlag);
         if (l.isEmpty()) {
-
+         
             throw new LeaveException("No leaves for a given employeeId and Accept/Reject Flag are found: " + employeeID);
+
 
         }
         return l;
     }
 
 
+
+
     //Get All Leaves by Employee ID & Active Flag
+
     public List<Leave> getAllLeavesByEmployeeIdAndActiveFlag(int employeeID, boolean activeFlag) throws LeaveException {
         Main.logger.info("Getting accepted leaves by employee");
         List <Leave> l = leaveRepository.findByEmployeeEmployeeIDAndActiveFlag(employeeID, activeFlag);
@@ -57,6 +63,41 @@ public class LeaveService {
         }
         return l;
     }
+
+    public Leave updateLeave(int leaveId, Leave updatedLeave) throws LeaveNotFoundException {
+        Main.logger.info("Updating Leave with ID: {}, id");
+        Optional<Leave> optionalLeave = leaveRepository.findById(leaveId);
+        if (optionalLeave.isEmpty()) {
+            throw new LeaveNotFoundException("Leave Not Found");
+
+        }
+            Leave existingLeave = optionalLeave.get();
+
+            existingLeave.setStartDate(updatedLeave.getStartDate());
+            existingLeave.setEndDate(updatedLeave.getEndDate());
+
+            return leaveRepository.save(existingLeave);
+    }
+
+    // Update the active flag for a leave
+    public Leave updateActiveFlag(int leaveId, boolean isActive) throws LeaveException {
+        Leave leaveToUpdate = leaveRepository.findById(leaveId)
+                .orElseThrow(() -> new LeaveException("Leave not found with ID: " + leaveId));
+
+        leaveToUpdate.setActiveFlag(isActive);
+        return leaveRepository.save(leaveToUpdate);
+    }
+
+    // Update the accepted flag for a leave
+    public Leave updateAcceptedFlag(int leaveId, boolean isAccepted) throws LeaveException {
+        Leave leaveToUpdate = leaveRepository.findById(leaveId)
+                .orElseThrow(() -> new LeaveException("Leave not found with ID: " + leaveId));
+
+        leaveToUpdate.setAcceptedFlag(isAccepted);
+        return leaveRepository.save(leaveToUpdate);
+    }
+
+
 
     public Leave deleteLeave(int leaveId) throws LeaveNotFoundException {
         Main.logger.info("Deleting leave");
@@ -102,6 +143,8 @@ public class LeaveService {
         return leaves;
     }
 
+
 }
+
 
 

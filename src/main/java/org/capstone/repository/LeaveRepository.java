@@ -15,8 +15,10 @@ public interface LeaveRepository extends JpaRepository<Leave, Integer> {
     List<Leave> findByEmployeeEmployeeIDAndAcceptedFlag(int employeeID, boolean acceptedFlag);
 
     List<Leave> findByEmployeeEmployeeIDAndActiveFlag(int employeeID, boolean activeFlag);
+
     
     List<Leave> findByActiveFlag(boolean activeFlag);
+
 
 
 }
