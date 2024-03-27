@@ -58,6 +58,9 @@ public class LeaveController {
         Leave newLeave = leaveService.addLeave(leave);
         return ResponseEntity.ok(newLeave);
    }
-
+    @PostMapping(value = "/Leave/active")
+    public List<Leave>  findAllLeaveByActiveFlag(@RequestBody boolean activeFlag) throws LeaveException {
+        return leaveService.getAllLeavesByActiveStatus(activeFlag);
+    }
 
 }
