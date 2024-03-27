@@ -9,8 +9,8 @@ import java.util.List;
 public class Manager {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int managerD;
-    private int merge;
+    private int managerID;
+    private int testMerge;
     @OneToMany
     private List<Employee> employees;
 }
