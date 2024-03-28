@@ -142,6 +142,7 @@ public class LeaveService {
 
    public Leave addLeave(Leave leave) throws LeaveException {
        Main.logger.info("Attempting to add a new leave: " + leave);
+       //check for duplicate leaves
        List<Leave> existingLeaves = leaveRepository.findByLeaveNameAndStartDateAndEndDate(leave.getLeaveName()
                ,leave.getStartDate(), leave.getEndDate());
        if (!existingLeaves.isEmpty()) {
@@ -155,7 +156,7 @@ public class LeaveService {
        if (leave.getStartDate() == null || leave.getEndDate() == null) {
            throw new LeaveException("Start date and end date are required");
        }
-       //check for duplicate leaves
+
 
            //if (leave.isActiveFlag() && !leave.isAcceptedFlag()) {
 
