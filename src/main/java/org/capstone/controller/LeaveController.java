@@ -2,6 +2,7 @@ package org.capstone.controller;
 
 import org.capstone.entity.Leave;
 import org.capstone.exception.LeaveException;
+import org.capstone.exception.LeaveManagerNotFoundException;
 import org.capstone.exception.LeaveNotFoundException;
 import org.capstone.repository.LeaveRepository;
 import org.capstone.service.LeaveService;
@@ -32,6 +33,18 @@ public class LeaveController {
     public ResponseEntity<List<Leave>> getLeave() throws LeaveException {
         List<Leave> l = leaveService.getAllLeaves();
         return new ResponseEntity<>(l, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/manager/{contextManagerID}/leave")
+    public ResponseEntity<Object> getAllEmployeeLeaveByManager(int contextManagerID) throws LeaveException, LeaveManagerNotFoundException {
+        try {
+            List<Leave> l = leaveService.getAllEmployeeLeavesForManager(contextManagerID);
+            return new ResponseEntity<>(l, HttpStatus.OK);
+        }
+        catch (LeaveException | LeaveManagerNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.BAD_REQUEST);
+        }
+
     }
 
     // Endpoint for getting all leaves by employee

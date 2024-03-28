@@ -3,7 +3,9 @@ package org.capstone.service;
 import jakarta.transaction.Transactional;
 import org.capstone.Main;
 import org.capstone.entity.Leave;
+import org.capstone.entity.Manager;
 import org.capstone.exception.LeaveException;
+import org.capstone.exception.LeaveManagerNotFoundException;
 import org.capstone.exception.LeaveNotFoundException;
 import org.capstone.repository.EmployeeRepository;
 import org.capstone.repository.LeaveRepository;
@@ -68,6 +70,24 @@ public class LeaveService {
         List <Leave> l = leaveRepository.findByEmployeeEmployeeIDAndActiveFlag(employeeID, activeFlag);
         if (l.isEmpty()) {
             throw new LeaveException("No leaves for a given employeeId and Active Flag are found: " + employeeID);
+        }
+        return l;
+    }
+
+    public List<Leave> getAllEmployeeLeavesForManager(int contextEmployeeID) throws LeaveException, LeaveManagerNotFoundException {
+        Main.logger.info("Getting all employee leaves for a manager");
+        // Get the employees who report to this manager
+        Optional<Manager> optionalManager = managerRepository.findById(contextEmployeeID);
+        List<Leave> l = new ArrayList<Leave>();
+        if (optionalManager.isPresent()) {
+            l = leaveRepository.findAllEmployeeLeaveByManager(contextEmployeeID);
+            if (l.isEmpty()) {
+                Main.logger.info("The manager does not have any leave requests for supervised employees.");
+                throw new LeaveException("The manager does not have any leave requests for supervised employees.");
+            }
+        } else {
+            Main.logger.warn("Manager ID supplied does not have any Manager records");
+            throw new LeaveManagerNotFoundException("Manager ID supplied does not have any Manager records");
         }
         return l;
     }
