@@ -31,5 +31,4 @@ public class PerformanceReview {
     @JoinColumn(name="employeeid")
     @JsonIgnoreProperties("performanceReview")
     private Employee employee; //look up how to reference a column from another entity
-
 }
