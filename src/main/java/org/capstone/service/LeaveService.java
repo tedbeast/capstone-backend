@@ -9,6 +9,8 @@ import org.capstone.repository.EmployeeRepository;
 import org.capstone.repository.LeaveRepository;
 import org.capstone.repository.ManagerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -140,6 +142,11 @@ public class LeaveService {
 
    public Leave addLeave(Leave leave) throws LeaveException {
        Main.logger.info("Attempting to add a new leave: " + leave);
+       List<Leave> existingLeaves = leaveRepository.findByLeaveNameAndStartDateAndEndDate(leave.getLeaveName()
+               ,leave.getStartDate(), leave.getEndDate());
+       if (!existingLeaves.isEmpty()) {
+           throw new LeaveException("Leave with same detail already Exists");
+       }
 
        // Validate leave details
        if (leave.getLeaveName() == null || leave.getLeaveName().isEmpty()) {
@@ -148,23 +155,19 @@ public class LeaveService {
        if (leave.getStartDate() == null || leave.getEndDate() == null) {
            throw new LeaveException("Start date and end date are required");
        }
-       /**if (leave.getEmployee() == null) {
-           throw new LeaveException("Employee is required");
-       }
-       if (leave.getManager() == null) {
-           throw new LeaveException("Manager is required");
-       }*/ else {
-       //if (leave.isActiveFlag() && !leave.isAcceptedFlag()) {
+       //check for duplicate leaves
+
+           //if (leave.isActiveFlag() && !leave.isAcceptedFlag()) {
 
            leave.setAcceptedFlag(false);            // new leave is set to Not Approved
            leave.setActiveFlag(true);               // new leave is set to Active
 
-           this.leaveRepository.save(leave);
+           leaveRepository.save(leave);
            Main.logger.info("New Leave added: " + leave);
-           return leave;
-       }
-   }
+          return leaveRepository.save(leave);
 
+
+   }
     public List<Leave> getAllLeavesByActiveStatus(boolean activeStatus) throws LeaveException {
         Main.logger.info("Getting leaves by active status");
         List<Leave> leaves = leaveRepository.findByActiveFlag(activeStatus);
