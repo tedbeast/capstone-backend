@@ -80,8 +80,12 @@ public class AdminController {
 
     @PostMapping("manager/{managerID}/employee")
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee p, @PathVariable int managerID) throws Exception {
+        try {
         Employee employee = adminService.saveEmployee(managerID, p);
         return new ResponseEntity<>(employee, HttpStatus.CREATED);
+        } catch (AdminException e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
 

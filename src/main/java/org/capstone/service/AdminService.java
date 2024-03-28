@@ -69,25 +69,45 @@ public class AdminService {
 
         return employee;
     }
+    //Check if manager being added is already in manager list
+    public boolean employeeDuplicateReview(String email, String phoneNumber){
+        List<Employee> employees = employeeRepository.findAll();
+        for (int i = 0; i < employees.size(); i++){
+            if (employees.get(i).getEmail().equalsIgnoreCase(email) || employees.get(i).getPhoneNumber().equals(phoneNumber)){
+                return true;
+            }
+        }
+        return false;
+    }
 
     public Employee createManager(Employee employee) throws AdminException {
+
+//Check for Manager email via review method
+        String mEmail = employee.getEmail().strip();
+        String mPhoneNumber = employee.getPhoneNumber().strip();
+        if (employeeDuplicateReview(mEmail, mPhoneNumber)){
+            throw new AdminException("Manager with email or phone number already exists, please try again.");
+        }
+
         if (employee.getName() == null || employee.getName().isEmpty()) {
             throw new AdminException("Employee name cannot be null or empty.");
         }
 
         Employee savedEmployee = employeeRepository.save(employee);
 
-        if (employee.getRole() == Roles.MANAGER){
+        if (employee.getRole() == Roles.MANAGER) {
             Manager manager = new Manager();
-
             manager.setManagerID(savedEmployee.getEmployeeID());
-
             managerRepository.save(manager);
         }
         return savedEmployee;
     }
-
     public Employee saveEmployee(int id, Employee employee) throws Exception {
+        String eEmail = employee.getEmail().strip();
+        String ePhoneNumber = employee.getPhoneNumber().strip();
+        if (employeeDuplicateReview(eEmail, ePhoneNumber)){
+            throw new AdminException("Manager with email or phone number already exists, please try again.");
+        }
         Optional<Manager> optional = managerRepository.findById(id);
         Manager manager;
         if(optional.isEmpty()){
