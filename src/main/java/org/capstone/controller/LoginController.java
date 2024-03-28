@@ -46,13 +46,12 @@ public class LoginController {
       session.setAttribute("role", authenticatedUser.getRole());
       Map<String, String> responseBody = new HashMap<>();
       responseBody.put("message", "Login successful. Session created.");
-      responseBody.put("role", authenticatedUser.getRole());
+      responseBody.put("role", authenticatedUser.getRole().toString());
       return ResponseEntity.ok(responseBody);
     } else {
       return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
           .body(Collections.singletonMap("error", "Invalid username or password"));
     }
-
   }
 
     @PutMapping("/reset")
@@ -62,7 +61,5 @@ public class LoginController {
         String updatedPassword =   loginService.updatePassword(empId, newPwd);
         log.info("Successfully updated the password");
         return ResponseEntity.ok(updatedPassword);
-
     }
-
 }

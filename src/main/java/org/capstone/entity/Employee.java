@@ -45,11 +45,12 @@ public class Employee {
     private List<Leave> leave;
     private Roles role;
 
+    //TODO: Determine if we need this
+    //public String getRole() {
+    //    return role.toString();
+    //}
 
-    public String getRole() {
-        return role.toString();
-    }
-
+    //TODO: Determine if we need this
     public void setRole (String role) {
         this.role = Roles.valueOf(role);
     }

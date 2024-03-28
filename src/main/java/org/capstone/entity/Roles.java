@@ -1,6 +1,6 @@
 package org.capstone.entity;
 
-enum Roles {
+public enum Roles {
     EMPLOYEE,
     MANAGER,
     ADMIN
