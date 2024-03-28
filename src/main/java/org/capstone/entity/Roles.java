@@ -1,4 +1,3 @@
-
 package org.capstone.entity;
 
 enum Roles {

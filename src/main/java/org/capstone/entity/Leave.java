@@ -1,10 +1,8 @@
 package org.capstone.entity;
-
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.sql.Timestamp;
-import java.util.List;
 
 //enum LeaveStatus {
 //    APPROVED,
@@ -20,14 +18,19 @@ import java.util.List;
 public class Leave {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int leaveId;
+    private int Id;
     private String leaveName;
     private Timestamp startDate;
     private Timestamp endDate;
     //private LeaveStatus leaveStatus;
-    private boolean acceptRejectFlag;
-    private boolean active;
+    private boolean acceptedFlag;
+    private boolean activeFlag;
     @ManyToOne
     @JoinColumn(name = "employeeID")
     private Employee employee;
+
+    @ManyToOne
+    @JoinColumn(name = "managerID")
+    private Manager manager;
+
 }
