@@ -9,6 +9,7 @@ import org.capstone.entity.Roles;
 import org.capstone.exception.AdminException;
 import org.capstone.repository.EmployeeRepository;
 import org.capstone.repository.ManagerRepository;
+import org.capstone.repository.PerformanceReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -130,9 +131,9 @@ public class AdminService {
     }
 
 
-//    public PerformanceStatsProjection findPerformanceStats() {
-//        return performanceReviewRepository.findPerformanceStats();
-//    }
+    public List<Object[]> getAverageRatingPerGoalType() {
+        return PerformanceReviewRepository.findAverageRatingPerGoalType();
+    }
 
 }
 

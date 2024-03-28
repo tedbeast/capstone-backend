@@ -84,6 +84,11 @@ public class AdminController {
         return new ResponseEntity<>(employee, HttpStatus.CREATED);
     }
 
+    @GetMapping("performance/average-rating-per-goal-type")
+    public ResponseEntity<List<Object[]>> getAverageRatingPerGoalType() {
+        return ResponseEntity.ok(adminService.getAverageRatingPerGoalType());
+    }
+
 //    @GetMapping("/performance/stats")
 //    public ResponseEntity<PerformanceStatsDto> getPerformanceStats() {
 //        PerformanceStatsDto stats = adminService.findPerformanceStats();
