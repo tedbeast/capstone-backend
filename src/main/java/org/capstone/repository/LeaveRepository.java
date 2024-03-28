@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @Repository(value = "LeaveRepository")
@@ -16,8 +17,10 @@ public interface LeaveRepository extends JpaRepository<Leave, Integer> {
 
     List<Leave> findByEmployeeEmployeeIDAndActiveFlag(int employeeID, boolean activeFlag);
 
-    
+
     List<Leave> findByActiveFlag(boolean activeFlag);
+
+    List<Leave> findByLeaveNameAndStartDateAndEndDate(String leaveName, Timestamp startDate, Timestamp endDate);
 
 
 

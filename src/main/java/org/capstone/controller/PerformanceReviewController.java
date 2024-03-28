@@ -66,8 +66,7 @@ public class PerformanceReviewController {
     }
 
     @PostMapping("/employee/{empId}/performanceReview")
-    public ResponseEntity<?> addPerformanceReview(@RequestBody PerformanceReview p, @PathVariable("empId") int employeeID) 
-        {
+    public ResponseEntity<?> addPerformanceReview(@RequestBody PerformanceReview p, @PathVariable("empId") int employeeID) throws Exception {
             performanceReviewService.addPerformanceReview(employeeID, p);
             return new ResponseEntity<PerformanceReview>(p, HttpStatus.OK);
     }

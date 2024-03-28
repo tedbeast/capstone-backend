@@ -6,7 +6,9 @@ import org.capstone.repository.ManagerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class AdminReportService {
@@ -32,6 +34,19 @@ public class AdminReportService {
 
     public long getNumberOfEmployeesWithRatingUnderThree() {
         return employeeRepository.countEmployeesWithRatingUnderThree();
+    }
+
+    public Map<Integer, Long> getCountOfReviewsPerEmployee() {
+        List<Object[]> reviewsCount = adminReportRepository.countReviewsPerEmployee();
+        Map<Integer, Long> reviewsCountMap = new HashMap<>();
+        for (Object[] review : reviewsCount) {
+            Integer employeeId = (Integer) review[0];
+            Long count = (Long) review[1];
+            if (employeeId != null) {
+                reviewsCountMap.put(employeeId, count != null ? count : 0);
+            }
+        }
+        return reviewsCountMap;
     }
 
 }

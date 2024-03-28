@@ -28,7 +28,7 @@ public class PerformanceReview {
     public double rating;
 
     @ManyToOne
-    @JoinColumn(name="employeeid")
+    @JoinColumn(name="employeeID")
     @JsonIgnoreProperties("performanceReview")
     private Employee employee; //look up how to reference a column from another entity
 

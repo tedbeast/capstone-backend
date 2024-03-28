@@ -63,7 +63,8 @@ public class Employee {
                 ", birthDate=" + birthDate +
                 ", anniversary=" + anniversary +
                 ", performanceReview=" + performanceReview +
-//                ", leave=" + leave +
+//  Resolved the leave 500 issue caused by infinite loop
+//  ", leave=" + leave +
                 ", role=" + role +
                 '}';
     }
