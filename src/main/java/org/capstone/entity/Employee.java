@@ -32,7 +32,7 @@ public class Employee {
     private Date birthDate;
     private Date anniversary;
 
-    @JsonIgnore
+//    @JsonIgnore
     @ManyToOne
     @JsonIgnoreProperties("employees")
     private Manager manager;

@@ -7,6 +7,7 @@ import org.capstone.entity.Employee;
 import org.capstone.entity.Manager;
 import org.capstone.entity.Roles;
 import org.capstone.exception.AdminException;
+import org.capstone.repository.AdminReportRepository;
 import org.capstone.repository.EmployeeRepository;
 import org.capstone.repository.ManagerRepository;
 import org.capstone.repository.PerformanceReviewRepository;
@@ -23,11 +24,14 @@ public class AdminService {
     EmployeeRepository employeeRepository;
     ManagerRepository managerRepository;
 
+    AdminReportRepository adminReportRepository;
+
 
     @Autowired
-    public AdminService(EmployeeRepository employeeRepository, ManagerRepository managerRepository) {
+    public AdminService(EmployeeRepository employeeRepository, ManagerRepository managerRepository, AdminReportRepository adminReportRepository) {
         this.employeeRepository = employeeRepository;
         this.managerRepository = managerRepository;
+        this.adminReportRepository =adminReportRepository;
 
     }
 
@@ -87,7 +91,7 @@ public class AdminService {
         Optional<Manager> optional = managerRepository.findById(id);
         Manager manager;
         if(optional.isEmpty()){
-            throw new Exception("no such artist...");
+            throw new Exception("no such Employee...");
         }else{
             manager = optional.get();
         }
@@ -130,6 +134,9 @@ public class AdminService {
         return managerRepository.findAll();
     }
 
+    public List<Object[]> findAverageRatingPerGoalType() {
+        return adminReportRepository.findAverageRatingPerGoalType();
+    }
 
 
 
