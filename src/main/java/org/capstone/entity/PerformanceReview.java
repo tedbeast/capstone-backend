@@ -1,5 +1,6 @@
 package org.capstone.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,15 +19,16 @@ public class PerformanceReview {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int performanceReviewID;
     public String goalType;
+    public String goalDescription;
     public String employeeComments;
     public Date targetDate;
     public int weight;
     public Date deadlineDate;
     public String managerComments;
-    private int managerID; //this will likely be an FK to a manager entity created by.......?
+    public double rating;
 
     @ManyToOne
     @JoinColumn(name="employeeid")
+    @JsonIgnoreProperties("performanceReview")
     private Employee employee; //look up how to reference a column from another entity
-
 }

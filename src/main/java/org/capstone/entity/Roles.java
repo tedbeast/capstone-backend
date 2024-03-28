@@ -1,6 +1,11 @@
 package org.capstone.entity;
 
-enum Roles {
+
+import jakarta.persistence.Entity;
+import lombok.*;
+
+
+public enum Roles {
     EMPLOYEE,
     MANAGER,
     ADMIN
