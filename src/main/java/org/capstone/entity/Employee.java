@@ -62,7 +62,7 @@ public class Employee {
                 ", postalCode='" + postalCode + '\'' +
                 ", birthDate=" + birthDate +
                 ", anniversary=" + anniversary +
-                ", performanceReview=" + performanceReview +
+//                ", performanceReview=" + performanceReview +
 //  Resolved the leave 500 issue caused by infinite loop
 //  ", leave=" + leave +
                 ", role=" + role +
