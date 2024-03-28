@@ -75,4 +75,9 @@ public class PerformanceReviewService {
         return performanceReview;
     }
 
+    public PerformanceReview addPerformanceReview (int employeeID , PerformanceReview p) {
+      performanceReviewRepository.save(p);
+        return p;
+    }
+
 }
