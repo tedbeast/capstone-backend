@@ -28,7 +28,7 @@ public class AdminService {
 
 
     @Autowired
-    public AdminService(EmployeeRepository employeeRepository, ManagerRepository managerRepository) {
+    public AdminService(EmployeeRepository employeeRepository, ManagerRepository managerRepository ) {
         this.employeeRepository = employeeRepository;
         this.managerRepository = managerRepository;
 

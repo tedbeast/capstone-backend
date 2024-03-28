@@ -27,4 +27,9 @@ public class AdminReportController {
     public List<Object[]> getAverageRatingPerEmployee() {
         return adminReportService.getAverageRatingPerEmployee();
     }
+
+    @GetMapping("/employees/lowRating")
+    public long getNumberOfEmployeesWithRatingUnderThree() {
+        return adminReportService.getNumberOfEmployeesWithRatingUnderThree();
+    }
 }

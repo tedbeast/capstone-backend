@@ -11,11 +11,6 @@ public interface AdminReportRepository extends JpaRepository<PerformanceReview, 
     @Query("SELECT pr.goalType, AVG(pr.rating) FROM PerformanceReview pr GROUP BY pr.goalType")
     List<Object[]> findAverageRatingPerGoalType();
 
-
-    @Query("SELECT e.employeeID, AVG(p.rating) FROM Employee e JOIN e.performanceReview p GROUP BY e.employeeID")
-    List<Object[]> findAverageRatingPerEmployee();
-
-
 }
 
 

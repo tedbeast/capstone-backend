@@ -27,6 +27,11 @@ public class AdminReportService {
     }
 
     public List<Object[]> getAverageRatingPerEmployee() {
-        return adminReportRepository.findAverageRatingPerEmployee();
+        return employeeRepository.findAverageRatingPerEmployee();
     }
+
+    public long getNumberOfEmployeesWithRatingUnderThree() {
+        return employeeRepository.countEmployeesWithRatingUnderThree();
+    }
+
 }
