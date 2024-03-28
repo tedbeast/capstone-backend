@@ -49,7 +49,7 @@ public class LoginController {
         session.setAttribute("role", authenticatedUser.getRole());
         Map<String, String> responseBody = new HashMap<>();
         responseBody.put("message", "Login successful. Session created.");
-        responseBody.put("role", authenticatedUser.getRole());
+        responseBody.put("role", String.valueOf(authenticatedUser.getRole()));
         return ResponseEntity.ok(responseBody);
       } else {
         // Handle invalid credentials
