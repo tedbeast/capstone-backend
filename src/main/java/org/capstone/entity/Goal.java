@@ -19,7 +19,6 @@ public class Goal {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int goalID;
-
     public String goalType;
     public String goalDescription;
     public String employeeComments;

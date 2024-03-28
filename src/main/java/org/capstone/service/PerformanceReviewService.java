@@ -69,33 +69,28 @@ public class PerformanceReviewService {
         return performanceReviewRepository.findPerformanceReviewByManagerID(id);
     }
 
-    public Goal employeeAddComments(int employeeID, int performanceReviewID, Goal g, int goalID){
+    public Goal employeeAddComments(int goalID, Goal g) throws PerformanceReviewException {
         Optional<Goal> optional = goalRepository.findById(goalID);
         if(optional.isEmpty()){
-            //dothiserrorthing
+            Main.logger.warn("Goal PUT: Goal Not Found.");
+            throw new PerformanceReviewException("Goal Not Found.");
         }
         Goal goal = optional.get();
         goal.setEmployeeComments(g.getEmployeeComments());
         goalRepository.save(goal);
         return goal;
-        /*
-        Optional<PerformanceReview> optional = performanceReviewRepository.findById(performanceReviewID);
-
-        PerformanceReview performanceReview = optional.get();
-        performanceReview
-        performanceReview.setEmployeeComments(p.employeeComments);
-        performanceReviewRepository.save(performanceReview);
-        return performanceReview;
-        */
     }
 
-    public PerformanceReview managerAddComments(int employeeID, int performanceReviewID, PerformanceReview p){
+    public PerformanceReview managerAddComments(int performanceReviewID, PerformanceReview p) throws PerformanceReviewException {
         Optional<PerformanceReview> optional = performanceReviewRepository.findById(performanceReviewID);
         if(optional.isEmpty()){
-            //dothiserrorthing
+            Main.logger.warn("Performance Review PUT: Performance Review Not Found.");
+            throw new PerformanceReviewException("Performance Review Not Found.");
         }
         PerformanceReview performanceReview = optional.get();
         performanceReview.setManagerComments(p.managerComments);
+        performanceReview.setRating(p.getRating());
+
         performanceReviewRepository.save(performanceReview);
         return performanceReview;
     }
@@ -134,6 +129,16 @@ public class PerformanceReviewService {
         return performanceReviewRepository.save(performanceReview);
     }
 
+    public void updateWeightofGoalList(List<Goal> goalList) {
+        int listSize = goalList.size();
+        if (listSize != 0) {
+            for (int i = 0; i < goalList.size(); i++) {
+                goalList.get(i).setWeight(100 / listSize);
+            }
+        }
+    }
+
+    //adds a goal to the most current performance review, if performance review does not exists, creates one
     public Goal addGoal(Goal goal, int employeeID) throws PerformanceReviewException {
         Main.logger.info("Goal POST: Attempting to create a new goal for an employee.");
         Employee employee = checkIfEmployeeExistsByID(employeeID);
@@ -153,9 +158,32 @@ public class PerformanceReviewService {
             performanceReviewList.get(0).setGoals(goalList);
             goal.setPerformanceReview(performanceReview);
             goal.setPerformanceReview(performanceReviewList.get(0));
+
+            updateWeightofGoalList(goalList);
         }
         return goalRepository.save(goal);
     }
 
+    //for employees to update their own goals
+    public Goal updateGoal(int goalID, Goal goal) throws PerformanceReviewException {
+        Main.logger.info("Goal PUT: Attempting to update a goal.");
+        Optional<Goal> optional = goalRepository.findById(goalID);
+        if(optional.isEmpty()){
+            Main.logger.warn("Goal PUT: Goal Not Found.");
+            throw new PerformanceReviewException("Goal Not Found.");
+        }
+        Goal goalToUpdate = optional.get();
+        if (goal.getGoalType() != null && goal.getGoalDescription() == null) {
+            goalToUpdate.setGoalType(goal.getGoalType());
+        }
+        else if (goal.getGoalDescription() != null && goal.getGoalType() == null) {
+            goalToUpdate.setGoalDescription(goal.getGoalDescription());
+        }
+        else if (goal.getGoalType() != null && goal.getGoalDescription() != null) {
+            goalToUpdate.setGoalType(goal.getGoalType());
+            goalToUpdate.setGoalDescription(goal.getGoalDescription());
+        }
+        return goalRepository.save(goalToUpdate);
+    }
 
 }

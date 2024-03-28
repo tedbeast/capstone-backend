@@ -29,7 +29,6 @@ public class PerformanceReviewController {
         return new ResponseEntity<>(performanceReviewList, HttpStatus.OK);
     }
 
-
     @GetMapping("/employee/{managerID}")
     public ResponseEntity<List<Employee>> getEmployeeByManagerId(@PathVariable int managerID) {
         List<Employee> employeeList = performanceReviewService.getAllEmployeeByManagerID(managerID);
@@ -64,19 +63,28 @@ public class PerformanceReviewController {
     public ResponseEntity<List<PerformanceReview>> getAllPerformanceByManager(@RequestParam("managerID") int id){
         List<PerformanceReview> pr = performanceReviewService.getAllPerformanceByManager(id);
         return new ResponseEntity<>(pr, HttpStatus.OK);
-
     }
 
-    @PutMapping("employee/{empId}/performanceReview/{prId}/{goalID}/update")
-    public ResponseEntity<?> EmployeeComments(@RequestBody Goal g, @PathVariable("empId") int employeeID, @PathVariable("prId") int performanceReviewID, @PathVariable("goalID") int goalID) {
-        Goal goal = performanceReviewService.employeeAddComments(employeeID, performanceReviewID, g, goalID);
-        return new ResponseEntity<>(goal, HttpStatus.OK);
+    //updates goals from employees point with employee comments
+    @PutMapping("employee/{empId}/goals/{goalID}/employeeReview")
+    public ResponseEntity<?> EmployeeComments(@RequestBody Goal g, @PathVariable("empId") int employeeID, @PathVariable("goalID") int goalID) {
+        try {
+            Goal goal = performanceReviewService.employeeAddComments(goalID, g);
+            return new ResponseEntity<>(goal, HttpStatus.OK);
+        } catch (PerformanceReviewException e) {
+            return new ResponseEntity<>("Performance Review Not Found", HttpStatus.NOT_FOUND);
+        }
     }
 
+    //updates performance review from managers point with rating and manager comments
     @PutMapping("employee/{empId}/performanceReview/{prId}/managerReview")
     public ResponseEntity<?> managerComments(@RequestBody PerformanceReview p, @PathVariable("empId") int employeeID, @PathVariable("prId") int performanceReviewID) {
-        PerformanceReview performanceReview = performanceReviewService.managerAddComments(employeeID, performanceReviewID, p);
-        return new ResponseEntity<PerformanceReview>(performanceReview, HttpStatus.OK);
+        try {
+            PerformanceReview performanceReview = performanceReviewService.managerAddComments(performanceReviewID, p);
+            return new ResponseEntity<PerformanceReview>(performanceReview, HttpStatus.OK);
+        } catch (PerformanceReviewException e) {
+            return new ResponseEntity<>("Performance Review Not Found", HttpStatus.NOT_FOUND);
+        }
     }
 
     //posts a new performance review for an employee
@@ -90,6 +98,7 @@ public class PerformanceReviewController {
         }
     }
 
+    //post a new goal for an employee
     @PostMapping("employee/{empId}/goals")
     public ResponseEntity<?> addGoal(@RequestBody Goal g, @PathVariable("empId") int employeeID) throws PerformanceReviewException {
         try {
@@ -98,7 +107,17 @@ public class PerformanceReviewController {
         } catch (PerformanceReviewException e) {
             return new ResponseEntity<>("Employee Not Found", HttpStatus.NOT_FOUND);
         }
+    }
 
+    //updates goals from employees point
+    @PutMapping("employee/{empId}/goals/{goalID}")
+    public ResponseEntity<?> updateGoal(@RequestBody Goal g, @PathVariable("empId") int employeeID, @PathVariable("goalID") int goalID){
+        try {
+            Goal goal = performanceReviewService.updateGoal(goalID, g);
+            return new ResponseEntity<>(goal, HttpStatus.OK);
+        } catch (PerformanceReviewException e) {
+            return new ResponseEntity<>("Goal Not Found", HttpStatus.NOT_FOUND);
+        }
     }
 
 }
