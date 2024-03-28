@@ -131,9 +131,7 @@ public class AdminService {
     }
 
 
-    public List<Object[]> getAverageRatingPerGoalType() {
-        return PerformanceReviewRepository.findAverageRatingPerGoalType();
-    }
+
 
 }
 
