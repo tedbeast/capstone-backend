@@ -1,9 +1,15 @@
 package org.capstone.service;
 
 import org.capstone.Main;
+
+import org.capstone.entity.Employee;
+import org.capstone.entity.PerformanceReview;
+import org.capstone.repository.PerformanceReviewRepository;
+
 import org.capstone.entity.*;
 import org.capstone.exception.*;
 import org.capstone.repository.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +28,11 @@ public class PerformanceReviewService {
     public List<PerformanceReview> getAllPerformanceReview() {
         Main.logger.info("Performance Review Get: Attempting to get all performance reviews.");
         return performanceReviewRepository.findAll();
+    }
+
+    // to do: use employee repository
+    public List<Employee> getAllEmployeeByManagerID(int managerID){
+        return null; //performanceReviewRepository.findEmployeeByManagerID(managerID);
     }
 
     public List<PerformanceReview> getAllPerformanceReviewsByEmployeeID(int employeeID) throws PerformanceReviewException {
@@ -62,6 +73,11 @@ public class PerformanceReviewService {
         performanceReview.setManagerComments(p.managerComments);
         performanceReviewRepository.save(performanceReview);
         return performanceReview;
+    }
+
+    public PerformanceReview addPerformanceReview (int employeeID , PerformanceReview p) {
+      performanceReviewRepository.save(p);
+        return p;
     }
 
 }

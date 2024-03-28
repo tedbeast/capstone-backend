@@ -1,5 +1,6 @@
 package org.capstone.controller;
 
+import org.capstone.entity.Employee;
 import com.sun.net.httpserver.HttpsServer;
 import org.capstone.entity.PerformanceReview;
 import org.capstone.exception.PerformanceReviewException;
@@ -11,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -35,6 +37,13 @@ public class PerformanceReviewController {
     public ResponseEntity<List<PerformanceReview>> getAllPerformanceReview(){
         List<PerformanceReview> performanceReviewList = performanceReviewService.getAllPerformanceReview();
         return new ResponseEntity<>(performanceReviewList, HttpStatus.OK);
+    }
+
+
+    @GetMapping("/employee/{managerID}")
+    public ResponseEntity<List<Employee>> getEmployeeByManagerId(@PathVariable int managerID) {
+        List<Employee> employeeList = performanceReviewService.getAllEmployeeByManagerID(managerID);
+            return new ResponseEntity<>(employeeList, HttpStatus.OK);
     }
 
     @GetMapping("employee/{empId}/performanceReview")
@@ -67,6 +76,12 @@ public class PerformanceReviewController {
         return new ResponseEntity<PerformanceReview>(performanceReview, HttpStatus.OK);
     }
 
+    @PostMapping("/employee/{empId}/performanceReview")
+    public ResponseEntity<?> addPerformanceReview(@RequestBody PerformanceReview p, @PathVariable("empId") int employeeID) 
+        {
+            performanceReviewService.addPerformanceReview(employeeID, p);
+            return new ResponseEntity<PerformanceReview>(p, HttpStatus.OK);
+    }
 
 }
 
