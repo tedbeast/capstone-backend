@@ -39,8 +39,7 @@ public class LoginController {
   }
 
   @PostMapping("/login")
-  public ResponseEntity<Map<String, String>> finalLogin(@RequestBody Employee loginUser,
-                                                        HttpSession session) {
+  public ResponseEntity<Map<String, String>> finalLogin(@RequestBody Employee loginUser,HttpSession session) {
     try {
       Employee authenticatedUser = loginService.authenticate(loginUser.getEmployeeID(),
               loginUser.getPassword());
@@ -62,7 +61,7 @@ public class LoginController {
       return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
               .body(Collections.singletonMap("error", "Invalid username or password"));
     }
-    // Add any other necessary handling here (e.g., return an error response).
+
   }
    @PutMapping("/reset")
     public ResponseEntity<String> resetPassword(@RequestBody Employee resetUser){
@@ -81,5 +80,4 @@ public class LoginController {
       }
 
     }
-
 }
