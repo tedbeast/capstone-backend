@@ -108,9 +108,8 @@ public class AdminService {
 
 
     public List<Employee> getAllEmployees() {
-        List<Employee> employees = employeeRepository.findAll();
-        Main.logger.info("Employee List returned: " + employees);
-        return employees;
+        Main.logger.info("Employee List returned: ");
+        return employeeRepository.findAll();
     }
 
     public Employee getEmployeeById(int employeeId) throws AdminException {
