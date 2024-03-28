@@ -13,14 +13,20 @@ public class AdminReportService {
 
 
     AdminReportRepository adminReportRepository;
+    EmployeeRepository employeeRepository;
 
 
     @Autowired
-    public AdminReportService(AdminReportRepository adminReportRepository) {
+    public AdminReportService(AdminReportRepository adminReportRepository, EmployeeRepository employeeRepository) {
               this.adminReportRepository =adminReportRepository;
+              this.employeeRepository = employeeRepository;
     }
 
     public List<Object[]> findAverageRatingPerGoalType() {
         return adminReportRepository.findAverageRatingPerGoalType();
+    }
+
+    public List<Object[]> getAverageRatingPerEmployee() {
+        return adminReportRepository.findAverageRatingPerEmployee();
     }
 }

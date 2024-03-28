@@ -24,14 +24,14 @@ public class AdminService {
     EmployeeRepository employeeRepository;
     ManagerRepository managerRepository;
 
-    AdminReportRepository adminReportRepository;
+
 
 
     @Autowired
-    public AdminService(EmployeeRepository employeeRepository, ManagerRepository managerRepository, AdminReportRepository adminReportRepository) {
+    public AdminService(EmployeeRepository employeeRepository, ManagerRepository managerRepository) {
         this.employeeRepository = employeeRepository;
         this.managerRepository = managerRepository;
-        this.adminReportRepository =adminReportRepository;
+
 
     }
 
@@ -134,9 +134,7 @@ public class AdminService {
         return managerRepository.findAll();
     }
 
-    public List<Object[]> findAverageRatingPerGoalType() {
-        return adminReportRepository.findAverageRatingPerGoalType();
-    }
+
 
 
 

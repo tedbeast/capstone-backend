@@ -13,6 +13,7 @@ import java.util.List;
 public class AdminReportController {
     AdminReportService adminReportService;
 
+
     @Autowired
     public AdminReportController(AdminReportService adminReportService) {
         this.adminReportService = adminReportService;
@@ -20,5 +21,10 @@ public class AdminReportController {
     @GetMapping("/average-rating-per-goal-type")
     public List<Object[]> getAverageRatingPerGoalType() {
         return adminReportService.findAverageRatingPerGoalType();
+    }
+
+    @GetMapping("/average-rating")
+    public List<Object[]> getAverageRatingPerEmployee() {
+        return adminReportService.getAverageRatingPerEmployee();
     }
 }
