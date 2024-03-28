@@ -30703,3 +30703,244 @@ org.hibernate.NonUniqueResultException: Query did not return a unique result: 2 
 2024-03-28 16:13:02,216 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-03-28 16:13:02,232 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2024-03-28 16:13:02,248 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-28 16:29:18,888 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 26768 (C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend\target\classes started by A239267 in C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend)
+2024-03-28 16:29:18,893 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-28 16:29:20,453 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-28 16:29:20,570 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 103 ms. Found 5 JPA repository interfaces.
+2024-03-28 16:29:21,902 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-28 16:29:21,918 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:29:21,922 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-28 16:29:21,923 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-28 16:29:22,047 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-28 16:29:22,049 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3084 ms
+2024-03-28 16:29:22,739 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-28 16:29:22,909 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-28 16:29:22,994 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-28 16:29:23,407 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-28 16:29:23,452 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-28 16:29:23,750 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:7c81476b-2dc8-42ba-8046-c0b746a0c2c9 user=SA
+2024-03-28 16:29:23,753 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-28 16:29:25,285 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-28 16:29:25,358 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:29:26,319 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-28 16:29:27,134 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-28 16:29:28,265 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-28 16:29:28,368 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:29:28,415 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-28 16:29:28,440 INFO o.s.b.StartupInfoLogger [main] Started Main in 10.416 seconds (process running for 11.292)
+2024-03-28 16:29:56,422 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-28 16:29:56,422 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-28 16:29:56,424 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Completed initialization in 1 ms
+2024-03-28 16:30:02,082 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-4] Goal POST: Attempting to create a new goal for an employee.
+2024-03-28 16:30:24,675 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-5] Goal PUT: Attempting to update a goal.
+2024-03-28 16:30:48,829 INFO o.c.s.AdminService [http-nio-9004-exec-6] Employee List returned: [Employee{employeeID=1, password='Steven_2k23', name='MANAGER 1', jobTitle='Job Seeker', phoneNumber='7858745652', email='steb@gmail.com', addressLine1='123 Main St', addressLine2='Apt 4', city='deli', state='NY', postalCode='87452', birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, leave=[], role=MANAGER}, Employee{employeeID=2, password='password123', name='John Doe', jobTitle='Software Developer', phoneNumber='123-456-7890', email='john.doe@example.com', addressLine1='123 Main St', addressLine2='Apt 4', city='Chicago', state='IL', postalCode='60602', birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, leave=[], role=EMPLOYEE}]
+2024-03-28 16:30:59,854 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-7] Goal PUT: Attempting to update a goal.
+2024-03-28 16:31:11,609 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:31:11,624 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-28 16:31:11,624 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-28 16:33:43,311 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 26932 (C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend\target\classes started by A239267 in C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend)
+2024-03-28 16:33:43,316 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-28 16:33:45,108 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-28 16:33:45,253 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 117 ms. Found 5 JPA repository interfaces.
+2024-03-28 16:33:46,894 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-28 16:33:46,926 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:33:46,933 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-28 16:33:46,934 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-28 16:33:47,100 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-28 16:33:47,104 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3696 ms
+2024-03-28 16:33:48,010 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-28 16:33:48,231 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-28 16:33:48,319 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-28 16:33:48,906 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-28 16:33:48,968 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-28 16:33:49,368 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:f999b20c-73e5-4705-84b2-a7d60471d319 user=SA
+2024-03-28 16:33:49,372 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-28 16:33:51,352 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-28 16:33:51,451 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:33:52,596 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-28 16:33:53,562 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-28 16:33:54,790 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-28 16:33:54,909 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:33:54,957 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-28 16:33:54,986 INFO o.s.b.StartupInfoLogger [main] Started Main in 12.708 seconds (process running for 13.802)
+2024-03-28 16:33:56,717 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-28 16:33:56,717 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-28 16:33:56,720 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Completed initialization in 1 ms
+2024-03-28 16:34:02,651 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-4] Goal POST: Attempting to create a new goal for an employee.
+2024-03-28 16:34:12,949 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-5] Goal GET: Attempting to get all goals by Employee ID.
+2024-03-28 16:34:17,679 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-6] Goal PUT: Attempting to update a goal.
+2024-03-28 16:34:32,121 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-7] Goal PUT: Attempting to update a goal.
+2024-03-28 16:34:45,242 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-8] Goal PUT: Attempting to update a goal.
+2024-03-28 16:34:58,412 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-9] Goal PUT: Attempting to update a goal.
+2024-03-28 16:35:14,100 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:35:14,109 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-28 16:35:14,111 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-28 16:36:52,561 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 22112 (C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend\target\classes started by A239267 in C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend)
+2024-03-28 16:36:52,565 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-28 16:36:54,085 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-28 16:36:54,191 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 92 ms. Found 5 JPA repository interfaces.
+2024-03-28 16:36:55,445 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-28 16:36:55,463 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:36:55,466 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-28 16:36:55,467 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-28 16:36:55,582 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-28 16:36:55,584 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2949 ms
+2024-03-28 16:36:56,142 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-28 16:36:56,272 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-28 16:36:56,348 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-28 16:36:56,834 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-28 16:36:56,883 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-28 16:36:57,203 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:5490170e-60d0-4111-8e27-3735cb9e8f93 user=SA
+2024-03-28 16:36:57,206 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-28 16:36:58,698 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-28 16:36:58,768 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:36:59,624 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-28 16:37:00,472 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-28 16:37:01,536 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-28 16:37:01,635 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:37:01,685 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-28 16:37:01,708 INFO o.s.b.StartupInfoLogger [main] Started Main in 10.01 seconds (process running for 10.893)
+2024-03-28 16:37:15,067 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-28 16:37:15,068 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-28 16:37:15,070 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-2] Completed initialization in 1 ms
+2024-03-28 16:37:21,034 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-4] Goal POST: Attempting to create a new goal for an employee.
+2024-03-28 16:42:12,598 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:42:12,607 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-28 16:42:12,611 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-28 16:42:20,572 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 30484 (C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend\target\classes started by A239267 in C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend)
+2024-03-28 16:42:20,576 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-28 16:42:22,120 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-28 16:42:22,236 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 102 ms. Found 5 JPA repository interfaces.
+2024-03-28 16:42:23,527 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-28 16:42:23,543 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:42:23,547 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-28 16:42:23,548 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-28 16:42:23,699 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-28 16:42:23,702 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3055 ms
+2024-03-28 16:42:24,300 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-28 16:42:24,418 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-28 16:42:24,476 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-28 16:42:24,885 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-28 16:42:24,927 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-28 16:42:25,178 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:59c1f39f-51c7-42e3-9042-63d0fe5294c6 user=SA
+2024-03-28 16:42:25,181 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-28 16:42:26,764 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-28 16:42:26,849 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:42:27,964 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-28 16:42:28,978 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-28 16:42:30,621 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-28 16:42:30,789 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:42:30,865 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-28 16:42:30,906 INFO o.s.b.StartupInfoLogger [main] Started Main in 11.2 seconds (process running for 12.068)
+2024-03-28 16:42:47,027 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-6] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-28 16:42:47,028 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-6] Initializing Servlet 'dispatcherServlet'
+2024-03-28 16:42:47,029 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-6] Completed initialization in 1 ms
+2024-03-28 16:42:51,573 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-2] Goal POST: Attempting to create a new goal for an employee.
+2024-03-28 16:43:34,646 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:43:34,667 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-28 16:43:34,669 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-28 16:46:36,207 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 28000 (C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend\target\classes started by A239267 in C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend)
+2024-03-28 16:46:36,211 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-28 16:46:37,889 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-28 16:46:38,034 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 115 ms. Found 5 JPA repository interfaces.
+2024-03-28 16:46:39,608 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-28 16:46:39,624 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:46:39,627 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-28 16:46:39,628 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-28 16:46:39,779 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-28 16:46:39,782 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3498 ms
+2024-03-28 16:46:40,471 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-28 16:46:40,604 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-28 16:46:40,676 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-28 16:46:41,230 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-28 16:46:41,288 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-28 16:46:41,612 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bbb1a8ba-2976-4290-abdf-48760e5e1088 user=SA
+2024-03-28 16:46:41,615 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-28 16:46:43,397 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-28 16:46:43,470 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:46:44,390 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-28 16:46:45,191 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-28 16:46:46,238 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-28 16:46:46,330 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:46:46,369 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-28 16:46:46,392 INFO o.s.b.StartupInfoLogger [main] Started Main in 11.125 seconds (process running for 12.041)
+2024-03-28 16:46:52,235 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-28 16:46:52,235 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-28 16:46:52,237 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Completed initialization in 2 ms
+2024-03-28 16:47:07,598 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-4] Goal POST: Attempting to create a new goal for an employee.
+2024-03-28 16:48:06,261 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9004-exec-5] Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'prId' for method parameter type int is not present]
+2024-03-28 16:48:29,861 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9004-exec-7] Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'prId' for method parameter type int is not present]
+2024-03-28 16:48:44,679 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-8] Goal GET: Attempting to get all goals by Employee ID.
+2024-03-28 16:49:27,504 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:49:27,513 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-28 16:49:27,515 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-28 16:50:39,726 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 324 (C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend\target\classes started by A239267 in C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend)
+2024-03-28 16:50:39,729 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-28 16:50:41,318 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-28 16:50:41,445 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 110 ms. Found 5 JPA repository interfaces.
+2024-03-28 16:50:42,905 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-28 16:50:42,921 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:50:42,925 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-28 16:50:42,926 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-28 16:50:43,059 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-28 16:50:43,061 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3251 ms
+2024-03-28 16:50:43,666 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-28 16:50:43,825 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-28 16:50:43,911 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-28 16:50:44,352 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-28 16:50:44,404 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-28 16:50:44,661 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:71fa722c-ba5d-4016-a890-950425952ed5 user=SA
+2024-03-28 16:50:44,665 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-28 16:50:46,063 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-28 16:50:46,128 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:50:47,055 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-28 16:50:47,791 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-28 16:50:48,750 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-28 16:50:48,835 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:50:48,882 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-28 16:50:48,905 INFO o.s.b.StartupInfoLogger [main] Started Main in 10.14 seconds (process running for 11.027)
+2024-03-28 16:50:52,697 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-28 16:50:52,698 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-28 16:50:52,699 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Completed initialization in 1 ms
+2024-03-28 16:51:00,353 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-4] Goal POST: Attempting to create a new goal for an employee.
+2024-03-28 16:51:20,677 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:51:20,677 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-28 16:51:20,691 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-28 16:57:50,035 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 6404 (C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend\target\classes started by A239267 in C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend)
+2024-03-28 16:57:50,039 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-28 16:57:51,495 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-28 16:57:51,618 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 92 ms. Found 5 JPA repository interfaces.
+2024-03-28 16:57:52,842 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 9004 (http)
+2024-03-28 16:57:52,857 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:57:52,860 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-28 16:57:52,860 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-28 16:57:52,963 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-28 16:57:52,965 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2864 ms
+2024-03-28 16:57:53,474 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-28 16:57:53,571 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-28 16:57:53,646 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-28 16:57:53,999 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-28 16:57:54,036 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-28 16:57:54,309 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:5963f1fa-aa1c-4302-b22d-25da8db5ad22 user=SA
+2024-03-28 16:57:54,312 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-28 16:57:55,648 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-28 16:57:55,708 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:57:56,506 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-28 16:57:57,212 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-28 16:57:58,222 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-28 16:57:58,323 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9004"]
+2024-03-28 16:57:58,366 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 9004 (http) with context path ''
+2024-03-28 16:57:58,388 INFO o.s.b.StartupInfoLogger [main] Started Main in 9.186 seconds (process running for 9.969)
+2024-03-28 16:58:05,225 INFO o.a.j.l.DirectJDKLog [http-nio-9004-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-28 16:58:05,225 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-28 16:58:05,226 INFO o.s.w.s.FrameworkServlet [http-nio-9004-exec-1] Completed initialization in 1 ms
+2024-03-28 16:58:10,801 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-4] Goal POST: Attempting to create a new goal for an employee.
+2024-03-28 16:58:13,082 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-5] Goal POST: Attempting to create a new goal for an employee.
+2024-03-28 16:58:16,617 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-6] Goal POST: Attempting to create a new goal for an employee.
+2024-03-28 16:58:17,498 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-7] Goal POST: Attempting to create a new goal for an employee.
+2024-03-28 16:58:18,802 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-8] Goal POST: Attempting to create a new goal for an employee.
+2024-03-28 16:58:22,314 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-9] Goal GET: Attempting to get all goals by Employee ID.
+2024-03-28 16:58:36,947 INFO o.c.s.PerformanceReviewService [http-nio-9004-exec-10] Performance Review Get: Attempting to get all performance reviews.
+2024-03-28 16:59:10,747 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28 16:59:10,755 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-28 16:59:10,758 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
