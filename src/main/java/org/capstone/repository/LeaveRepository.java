@@ -20,7 +20,7 @@ public interface LeaveRepository extends JpaRepository<Leave, Integer> {
     
     List<Leave> findByActiveFlag(boolean activeFlag);
 
-    List<Leave> findByLeaveNameAndStartDateAndEndDate(String leaveName, Timestamp startDate, Timestamp endDate);
+    List<Leave> findByIdAndLeaveNameAndStartDateAndEndDate(int Id,String leaveName, Timestamp startDate, Timestamp endDate);
 
 
 

@@ -143,8 +143,8 @@ public class LeaveService {
    public Leave addLeave(Leave leave) throws LeaveException {
        Main.logger.info("Attempting to add a new leave: " + leave);
        //check for duplicate leaves
-       List<Leave> existingLeaves = leaveRepository.findByLeaveNameAndStartDateAndEndDate(leave.getLeaveName()
-               ,leave.getStartDate(), leave.getEndDate());
+       List<Leave> existingLeaves = leaveRepository.findByIdAndLeaveNameAndStartDateAndEndDate
+               (leave.getId(),leave.getLeaveName(),leave.getStartDate(), leave.getEndDate());
        if (!existingLeaves.isEmpty()) {
            throw new LeaveException("Leave with same detail already Exists");
        }
@@ -161,8 +161,8 @@ public class LeaveService {
        }
        //We can add this if we want to check if an employee is assigned with a manager
        //if (leave.getEmployee() == null || leave.getEmployee().getManager() == null) {
-       //    throw new LeaveException("Employee must have a Manager assigned");
-     //  }
+        //  throw new LeaveException("Employee must have a Manager assigned");
+       // }
 
            leave.setAcceptedFlag(false);            // new leave is set to Not Approved
            leave.setActiveFlag(true);               // new leave is set to Active
