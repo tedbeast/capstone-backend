@@ -32,18 +32,17 @@ public class Employee {
     private Date birthDate;
     private Date anniversary;
 
-    @JsonIgnore
     @ManyToOne
+    @JoinColumn(name = "managerID")
     @JsonIgnoreProperties("employees")
     private Manager manager;
 
     @OneToMany
-    @JoinColumn(name = "employeeID")
     private List<PerformanceReview> performanceReview;
 
     @OneToMany
-    @JoinColumn(name = "employeeID")
     private List<Leave> leave;
+
     private Roles role;
 
     @Override
@@ -62,8 +61,8 @@ public class Employee {
                 ", postalCode='" + postalCode + '\'' +
                 ", birthDate=" + birthDate +
                 ", anniversary=" + anniversary +
-                ", performanceReview=" + performanceReview +
-                ", leave=" + leave +
+               // ", performanceReview=" + performanceReview +
+               // ", leave=" + leave +
                 ", role=" + role +
                 '}';
     }
