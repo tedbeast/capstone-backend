@@ -85,15 +85,17 @@ public class AdminService {
 //Check for Manager email via review method
         String mEmail = employee.getEmail().strip();
         String mPhoneNumber = employee.getPhoneNumber().strip();
-        if (employeeDuplicateReview(mEmail, mPhoneNumber)){
+        if (employeeDuplicateReview(mEmail, mPhoneNumber)) {
             throw new AdminException("Manager with email or phone number already exists, please try again.");
         }
 
         if (employee.getName() == null || employee.getName().isEmpty()) {
             throw new AdminException("Manager name cannot be null or empty.");
         }
-
+        Main.logger.info("ISSUE" + employee);
+        employee.setManager(null);
         Employee savedEmployee = employeeRepository.save(employee);
+
 
         if (employee.getRole() == Roles.MANAGER) {
             Manager manager = new Manager();

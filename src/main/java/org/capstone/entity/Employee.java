@@ -33,9 +33,8 @@ public class Employee {
     private Date anniversary;
 
 //    @JsonIgnore
-@ManyToOne(cascade = CascadeType.ALL)
-@JoinColumn(name = "manager_id")
-    //@JsonIgnoreProperties("employees")
+    @ManyToOne
+    @JsonIgnoreProperties("employees")
     private Manager manager;
 
     @OneToMany
@@ -63,9 +62,9 @@ public class Employee {
                 ", postalCode='" + postalCode + '\'' +
                 ", birthDate=" + birthDate +
                 ", anniversary=" + anniversary +
-//                ", performanceReview=" + performanceReview +
-//  Resolved the leave 500 issue caused by infinite loop
-//  ", leave=" + leave +
+                ", manager=" + manager +
+                ", performanceReview=" + performanceReview +
+                ", leave=" + leave +
                 ", role=" + role +
                 '}';
     }
