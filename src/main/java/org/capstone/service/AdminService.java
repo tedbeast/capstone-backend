@@ -7,10 +7,8 @@ import org.capstone.entity.Employee;
 import org.capstone.entity.Manager;
 import org.capstone.entity.Roles;
 import org.capstone.exception.AdminException;
-import org.capstone.repository.AdminReportRepository;
 import org.capstone.repository.EmployeeRepository;
 import org.capstone.repository.ManagerRepository;
-import org.capstone.repository.PerformanceReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,13 +23,10 @@ public class AdminService {
     ManagerRepository managerRepository;
 
 
-
-
     @Autowired
-    public AdminService(EmployeeRepository employeeRepository, ManagerRepository managerRepository ) {
+    public AdminService(EmployeeRepository employeeRepository, ManagerRepository managerRepository) {
         this.employeeRepository = employeeRepository;
         this.managerRepository = managerRepository;
-
 
     }
 
@@ -69,58 +64,38 @@ public class AdminService {
 
         return employee;
     }
-    //Check if manager being added is already in manager list
-    public boolean employeeDuplicateReview(String email, String phoneNumber){
-        List<Employee> employees = employeeRepository.findAll();
-        for (int i = 0; i < employees.size(); i++){
-            if (employees.get(i).getEmail().equalsIgnoreCase(email) || employees.get(i).getPhoneNumber().equals(phoneNumber)){
-                return true;
-            }
-        }
-        return false;
-    }
 
     public Employee createManager(Employee employee) throws AdminException {
-
-//Check for Manager email via review method
-        String mEmail = employee.getEmail().strip();
-        String mPhoneNumber = employee.getPhoneNumber().strip();
-        if (employeeDuplicateReview(mEmail, mPhoneNumber)) {
-            throw new AdminException("Manager with email or phone number already exists, please try again.");
-        }
-
         if (employee.getName() == null || employee.getName().isEmpty()) {
-            throw new AdminException("Manager name cannot be null or empty.");
+            throw new AdminException("Employee name cannot be null or empty.");
         }
         Main.logger.info("ISSUE" + employee);
         employee.setManager(null);
         Employee savedEmployee = employeeRepository.save(employee);
 
-
-        if (employee.getRole() == Roles.MANAGER) {
+        if (employee.getRole() == Roles.MANAGER){
             Manager manager = new Manager();
+            Main.logger.info("ISSUE" + savedEmployee);
             manager.setManagerID(savedEmployee.getEmployeeID());
+
             managerRepository.save(manager);
         }
         return savedEmployee;
     }
+
     public Employee saveEmployee(int id, Employee employee) throws Exception {
-        String eEmail = employee.getEmail().strip();
-        String ePhoneNumber = employee.getPhoneNumber().strip();
-        if (employeeDuplicateReview(eEmail, ePhoneNumber)){
-            throw new AdminException("Employee with email or phone number already exists, please try again.");
-        }
         Optional<Manager> optional = managerRepository.findById(id);
         Manager manager;
         if(optional.isEmpty()){
-            throw new Exception("no such Employee exists...");
+            throw new Exception("no such Manager exists...");
         }else{
             manager = optional.get();
         }
-        Employee savedEmployee = employeeRepository.save(employee);
-        manager.getEmployees().add(savedEmployee);
+        employee.setManager(manager);
+        employeeRepository.save(employee);
+        manager.getEmployees().add(employee);
         managerRepository.save(manager);
-        return savedEmployee;
+        return employee;
     }
 
     public Employee deleteById(int employeeId) throws Exception {
@@ -135,8 +110,9 @@ public class AdminService {
 
 
     public List<Employee> getAllEmployees() {
-        Main.logger.info("Employee List returned: ");
-        return employeeRepository.findAll();
+        List<Employee> employees = employeeRepository.findAll();
+        Main.logger.info("Employee List returned: " + employees);
+        return employees;
     }
 
     public Employee getEmployeeById(int employeeId) throws AdminException {
@@ -157,8 +133,9 @@ public class AdminService {
     }
 
 
-
-
+//    public PerformanceStatsProjection findPerformanceStats() {
+//        return performanceReviewRepository.findPerformanceStats();
+//    }
 
 }
 

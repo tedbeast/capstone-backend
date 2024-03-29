@@ -30,7 +30,7 @@ public class AdminController {
             Employee createdEmployee = adminService.createManager(employee);
             return ResponseEntity.ok(createdEmployee);
         } catch (AdminException e) {
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            return ResponseEntity.badRequest().build();
         }
     }
 
@@ -56,7 +56,7 @@ public class AdminController {
         }
     }
 
-        @GetMapping("/employee")
+    @GetMapping("/employee")
     public ResponseEntity<List<Employee>> getAllEmployeesEndpoint() {
         List<Employee> employees = adminService.getAllEmployees();
         return new ResponseEntity<>(employees, HttpStatus.OK);
@@ -80,15 +80,9 @@ public class AdminController {
 
     @PostMapping("manager/{managerID}/employee")
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee p, @PathVariable int managerID) throws Exception {
-        try {
         Employee employee = adminService.saveEmployee(managerID, p);
         return new ResponseEntity<>(employee, HttpStatus.CREATED);
-        } catch (AdminException e) {
-            return ResponseEntity.badRequest().build();
-        }
     }
-
-
 
 //    @GetMapping("/performance/stats")
 //    public ResponseEntity<PerformanceStatsDto> getPerformanceStats() {

@@ -13,7 +13,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     @Query("SELECT e.employeeID, e.name, p.rating, COUNT(e) FROM Employee e JOIN e.performanceReview p WHERE p.rating < 3 GROUP BY e.employeeID, e.name")
     List<Object[]> countEmployeesWithRatingUnderThree();
 
-
+    @Query("from Employee where manager.managerID = ?1")
+    List<Employee> findEmployeeByManagerId(Integer managerID);
 
 
 

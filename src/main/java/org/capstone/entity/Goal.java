@@ -1,8 +1,12 @@
 package org.capstone.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
+import org.capstone.service.PerformanceReviewService;
+
+import java.util.Date;
 
 @Entity
 @Getter
@@ -24,6 +28,7 @@ public class Goal {
     @ManyToOne
     @JoinColumn(name="performanceReviewID")
     @JsonIgnoreProperties("goals")
+    @JsonBackReference
     public PerformanceReview performanceReview;
 
 }

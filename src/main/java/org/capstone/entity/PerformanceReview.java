@@ -1,6 +1,7 @@
 package org.capstone.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,11 +23,12 @@ public class PerformanceReview {
     public String managerComments;
     public double rating;
 
-    @OneToMany
-    public List<Goal> goals;
-
     @ManyToOne
-    @JoinColumn(name="employeeid")
+    @JoinColumn(name="employeeID")
     @JsonIgnoreProperties("performanceReview")
-    public Employee employee; //look up how to reference a column from another entity
+    public Employee employee;
+
+    @OneToMany
+    @JsonManagedReference
+    public List<Goal> goals;
 }

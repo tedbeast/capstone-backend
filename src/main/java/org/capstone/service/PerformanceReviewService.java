@@ -39,7 +39,7 @@ public class PerformanceReviewService {
 
     // to do: use employee repository
     public List<Employee> getAllEmployeeByManagerID(int managerID){
-        return null; //performanceReviewRepository.findEmployeeByManagerID(managerID);
+        return employeeRepository.findEmployeeByManagerId(managerID);
     }
 
     public Employee checkIfEmployeeExistsByID(int employeeID) throws PerformanceReviewException {
@@ -132,7 +132,7 @@ public class PerformanceReviewService {
     public void updateWeightofGoalList(List<Goal> goalList) {
         int listSize = goalList.size();
         if (listSize != 0) {
-            for (int i = 0; i < goalList.size(); i++) {
+            for (int i = 0; i < listSize; i++) {
                 goalList.get(i).setWeight(100 / listSize);
             }
         }
