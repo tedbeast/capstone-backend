@@ -15,6 +15,21 @@ import java.util.*;
 @CrossOrigin
 @RestController
 public class PerformanceReviewController {
+    /*
+    Controllers Available (in order);
+    - get all performance reviews
+    - get employee by manager ID
+    - get performance reviews by employee ID
+    - get goals by employee ID
+    - get all performance reviews by manager ID
+    - update goals for employee review
+    - update performance review for manager review and rating
+    - post performance review
+    - post goals
+    - update goals
+    */
+
+
     PerformanceReviewService performanceReviewService;
 
     @Autowired
@@ -29,7 +44,8 @@ public class PerformanceReviewController {
         return new ResponseEntity<>(performanceReviewList, HttpStatus.OK);
     }
 
-    @GetMapping("/employee/{managerID}")
+    //get employees by managerID
+    @GetMapping("/employee/manager/{managerID}")
     public ResponseEntity<List<Employee>> getEmployeeByManagerId(@PathVariable int managerID) {
         List<Employee> employeeList = performanceReviewService.getAllEmployeeByManagerID(managerID);
             return new ResponseEntity<>(employeeList, HttpStatus.OK);

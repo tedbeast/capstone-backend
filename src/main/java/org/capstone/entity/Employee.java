@@ -34,6 +34,7 @@ public class Employee {
 
     @JsonIgnore
     @ManyToOne
+    @JoinColumn(name = "employee_fk")
     @JsonIgnoreProperties("employees")
     private Manager manager;
 
@@ -46,7 +47,7 @@ public class Employee {
     private List<Leave> leave;
     private Roles role;
 
-    @Override
+   /* @Override
     public String toString() {
         return "Employee{" +
                 "employeeID=" + employeeID +
@@ -66,7 +67,7 @@ public class Employee {
                 ", leave=" + leave +
                 ", role=" + role +
                 '}';
-    }
+    }*/
 }
 
 
