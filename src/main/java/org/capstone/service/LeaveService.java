@@ -74,20 +74,37 @@ public class LeaveService {
         return l;
     }
 
-    public List<Leave> getAllEmployeeLeavesForManager(String contextEmployeeID) throws LeaveException, LeaveManagerNotFoundException {
-        Main.logger.info("Getting all employee leaves for a manager");
+    public List<Leave> getAllEmployeeLeavesForManager(int managerID) throws LeaveManagerNotFoundException {
+        Main.logger.info("Getting all employee leaves for manager ID " + managerID);
         // Get the employees who report to this manager
-        Optional<Manager> optionalManager = managerRepository.findById(Integer.parseInt(contextEmployeeID));
+        Optional<Manager> optionalManager = managerRepository.findById(managerID);
         List<Leave> l = new ArrayList<Leave>();
         if (optionalManager.isPresent()) {
-            l = leaveRepository.findAllEmployeeLeaveByManager(contextEmployeeID);
+            l = leaveRepository.findAllEmployeeLeaveByManager(managerID);
             if (l.isEmpty()) {
-                Main.logger.info("The manager does not have any leave requests for supervised employees.");
-                throw new LeaveException("The manager does not have any leave requests for supervised employees.");
+                Main.logger.info("The manager ID " + managerID + " does not have any leave requests for supervised employees.");
             }
         } else {
-            Main.logger.warn("Manager ID supplied does not have any Manager records");
-            throw new LeaveManagerNotFoundException("Manager ID supplied does not have any Manager records");
+            Main.logger.warn("The manager ID, " + managerID + " does not have a Manager record");
+            throw new LeaveManagerNotFoundException("Manager ID supplied does not have any Manager record");
+        }
+        return l;
+    }
+
+    public List<Leave> getEmployeeLeavesForManagerByStatus(int managerID, boolean activeFlag, boolean acceptedFlag) throws LeaveManagerNotFoundException {
+        Main.logger.info("Getting all employee leaves for a manager");
+        // Get the employees who report to this manager
+        Optional<Manager> optionalManager = managerRepository.findById(managerID);
+        List<Leave> l = new ArrayList<Leave>();
+        if (optionalManager.isPresent()) {
+            l = leaveRepository.findEmployeeLeaveByManagerByStatusFlags(managerID, activeFlag, acceptedFlag);
+            if (l.isEmpty()) {
+                Main.logger.info("The manager ID " + managerID + " does not have any leave requests for employees for the requested status. accepted_flag: " + acceptedFlag + ", active_flag: " + activeFlag);
+//                throw new LeaveException("The manager does not have any leave requests for supervised employees.");
+            }
+        } else {
+            Main.logger.warn("Employee ID " + managerID + " does not have a Manager record");
+            throw new LeaveManagerNotFoundException("Employee ID supplied does not have a Manager record");
         }
         return l;
     }

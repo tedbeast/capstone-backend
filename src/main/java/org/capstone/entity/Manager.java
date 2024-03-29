@@ -15,14 +15,11 @@ import java.util.stream.Collectors;
 
 public class Manager {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int managerID;
-//    Merge commented out code into leaves branch, but not into master.  This is pending admin team update
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    Merge commented out code into leaves branch, but not into master.  This is pending admin team update
 
-
-
-//    private Employee managerEmployee;
+    @OneToOne
+    private Employee managerEmployee;
 
     @OneToMany
     @JoinColumn(name="employee_fk")

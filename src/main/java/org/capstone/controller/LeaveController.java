@@ -35,13 +35,59 @@ public class LeaveController {
         return new ResponseEntity<>(l, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/manager/{contextManagerID}/leave")
-    public ResponseEntity<Object> getAllEmployeeLeaveByManager(@PathVariable String contextManagerID) throws LeaveException, LeaveManagerNotFoundException {
+//    Endpoint for getting all leaves for all employees assigned to a manager
+    @GetMapping(value = "/manager/{managerID}/leave")
+    public ResponseEntity<Object> getAllEmployeeLeaveByManager(@PathVariable int managerID) throws LeaveManagerNotFoundException {
         try {
-            List<Leave> l = leaveService.getAllEmployeeLeavesForManager(contextManagerID);
+            List<Leave> l = leaveService.getAllEmployeeLeavesForManager(managerID);
             return new ResponseEntity<>(l, HttpStatus.OK);
         }
-        catch (LeaveException | LeaveManagerNotFoundException e) {
+        catch (LeaveManagerNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.BAD_REQUEST);
+        }
+
+    }
+
+    //    Endpoint for getting pending leaves for all employees assigned to a manager
+    @GetMapping(value = "/manager/{managerID}/leave/pending")
+    public ResponseEntity<Object> getPendingEmployeeLeaveByManager(@PathVariable int managerID) throws LeaveManagerNotFoundException {
+        try {
+            boolean activeFlag = true;
+            boolean acceptedFlag = false;
+            List<Leave> l = leaveService.getEmployeeLeavesForManagerByStatus(managerID, activeFlag, acceptedFlag);
+            return new ResponseEntity<>(l, HttpStatus.OK);
+        }
+        catch (LeaveManagerNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.BAD_REQUEST);
+        }
+
+    }
+
+    //    Endpoint for getting approved leaves for all employees assigned to a manager
+    @GetMapping(value = "/manager/{managerID}/leave/approved")
+    public ResponseEntity<Object> getApprovedEmployeeLeaveByManager(@PathVariable int managerID) throws LeaveManagerNotFoundException {
+        try {
+            boolean activeFlag = false;
+            boolean acceptedFlag = true;
+            List<Leave> l = leaveService.getEmployeeLeavesForManagerByStatus(managerID, activeFlag, acceptedFlag);
+            return new ResponseEntity<>(l, HttpStatus.OK);
+        }
+        catch (LeaveManagerNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.BAD_REQUEST);
+        }
+
+    }
+
+    //    Endpoint for getting rejected leaves for all employees assigned to a manager
+    @GetMapping(value = "/manager/{managerID}/leave/rejected")
+    public ResponseEntity<Object> getRejectedEmployeeLeaveByManager(@PathVariable int managerID) throws LeaveManagerNotFoundException {
+        try {
+            boolean activeFlag = false;
+            boolean acceptedFlag = false;
+            List<Leave> l = leaveService.getEmployeeLeavesForManagerByStatus(managerID, activeFlag, acceptedFlag);
+            return new ResponseEntity<>(l, HttpStatus.OK);
+        }
+        catch (LeaveManagerNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(),HttpStatus.BAD_REQUEST);
         }
 
