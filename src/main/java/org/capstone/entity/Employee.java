@@ -33,8 +33,9 @@ public class Employee {
     private Date anniversary;
 
 //    @JsonIgnore
-    @ManyToOne
-    @JsonIgnoreProperties("employees")
+@ManyToOne(cascade = CascadeType.ALL)
+@JoinColumn(name = "manager_id")
+    //@JsonIgnoreProperties("employees")
     private Manager manager;
 
     @OneToMany

@@ -30,7 +30,7 @@ public class AdminController {
             Employee createdEmployee = adminService.createManager(employee);
             return ResponseEntity.ok(createdEmployee);
         } catch (AdminException e) {
-            return ResponseEntity.badRequest().build();
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
 

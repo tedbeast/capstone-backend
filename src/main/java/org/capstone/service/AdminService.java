@@ -90,7 +90,7 @@ public class AdminService {
         }
 
         if (employee.getName() == null || employee.getName().isEmpty()) {
-            throw new AdminException("Employee name cannot be null or empty.");
+            throw new AdminException("Manager name cannot be null or empty.");
         }
 
         Employee savedEmployee = employeeRepository.save(employee);
@@ -106,12 +106,12 @@ public class AdminService {
         String eEmail = employee.getEmail().strip();
         String ePhoneNumber = employee.getPhoneNumber().strip();
         if (employeeDuplicateReview(eEmail, ePhoneNumber)){
-            throw new AdminException("Manager with email or phone number already exists, please try again.");
+            throw new AdminException("Employee with email or phone number already exists, please try again.");
         }
         Optional<Manager> optional = managerRepository.findById(id);
         Manager manager;
         if(optional.isEmpty()){
-            throw new Exception("no such Employee...");
+            throw new Exception("no such Employee exists...");
         }else{
             manager = optional.get();
         }

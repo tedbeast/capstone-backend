@@ -32,9 +32,10 @@ public class AdminReportService {
         return employeeRepository.findAverageRatingPerEmployee();
     }
 
-    public long getNumberOfEmployeesWithRatingUnderThree() {
+    public List<Object[]> getNumberOfEmployeesWithRatingUnderThree() {
         return employeeRepository.countEmployeesWithRatingUnderThree();
     }
+
 
     public Map<Integer, Long> getCountOfReviewsPerEmployee() {
         List<Object[]> reviewsCount = adminReportRepository.countReviewsPerEmployee();

@@ -32,9 +32,12 @@ public class AdminReportController {
     }
 
     @GetMapping("/employees/lowRating")
-    public long getNumberOfEmployeesWithRatingUnderThree() {
+    public List<Object[]> getNumberOfEmployeesWithRatingUnderThree() {
         return adminReportService.getNumberOfEmployeesWithRatingUnderThree();
     }
+
+
+
 
     @GetMapping("/reviews/count")
     public ResponseEntity<Map<Integer, Long>> getCountOfReviewsPerEmployee() {
