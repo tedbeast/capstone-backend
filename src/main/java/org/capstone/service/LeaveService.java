@@ -74,10 +74,10 @@ public class LeaveService {
         return l;
     }
 
-    public List<Leave> getAllEmployeeLeavesForManager(int contextEmployeeID) throws LeaveException, LeaveManagerNotFoundException {
+    public List<Leave> getAllEmployeeLeavesForManager(String contextEmployeeID) throws LeaveException, LeaveManagerNotFoundException {
         Main.logger.info("Getting all employee leaves for a manager");
         // Get the employees who report to this manager
-        Optional<Manager> optionalManager = managerRepository.findById(contextEmployeeID);
+        Optional<Manager> optionalManager = managerRepository.findById(Integer.parseInt(contextEmployeeID));
         List<Leave> l = new ArrayList<Leave>();
         if (optionalManager.isPresent()) {
             l = leaveRepository.findAllEmployeeLeaveByManager(contextEmployeeID);

@@ -23,8 +23,8 @@ public interface LeaveRepository extends JpaRepository<Leave, Integer> {
 
     List<Leave> findByLeaveNameAndStartDateAndEndDate(String leaveName, Timestamp startDate, Timestamp endDate);
 
-    @Query("SELECT l FROM Manager m, Leave l WHERE m.managerid = :contextManagerID and m.employeeid = l.employeeid")
-    List<Leave> findAllEmployeeLeaveByManager(@Param("contextManagerID") int contextManagerID);
+    @Query(value = "SELECT l.* FROM Leave l, Employee e WHERE  :contextManagerID = e.employee_fk and e.employeeid = l.employeeid", nativeQuery = true)
+    List<Leave> findAllEmployeeLeaveByManager(@Param("contextManagerID") String contextManagerID);
 
 
 }

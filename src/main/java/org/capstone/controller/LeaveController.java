@@ -36,7 +36,7 @@ public class LeaveController {
     }
 
     @GetMapping(value = "/manager/{contextManagerID}/leave")
-    public ResponseEntity<Object> getAllEmployeeLeaveByManager(int contextManagerID) throws LeaveException, LeaveManagerNotFoundException {
+    public ResponseEntity<Object> getAllEmployeeLeaveByManager(@PathVariable String contextManagerID) throws LeaveException, LeaveManagerNotFoundException {
         try {
             List<Leave> l = leaveService.getAllEmployeeLeavesForManager(contextManagerID);
             return new ResponseEntity<>(l, HttpStatus.OK);
