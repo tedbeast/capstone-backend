@@ -21,12 +21,12 @@ public class AdminReportController {
     public AdminReportController(AdminReportService adminReportService) {
         this.adminReportService = adminReportService;
     }
-    @GetMapping("/average-rating-per-goal-type")
+    @GetMapping("average-rating-per-goal-type")
     public List<Object[]> getAverageRatingPerGoalType() {
         return adminReportService.findAverageRatingPerGoalType();
     }
 
-    @GetMapping("/average-rating")
+    @GetMapping("average-rating")
     public List<Object[]> getAverageRatingPerEmployee() {
         return adminReportService.getAverageRatingPerEmployee();
     }
