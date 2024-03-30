@@ -193,9 +193,13 @@ public class LeaveService {
        if (leave.getStartDate() == null || leave.getEndDate() == null) {
            throw new LeaveException("Start date and end date are required");
        }
-
-
-           //if (leave.isActiveFlag() && !leave.isAcceptedFlag()) {
+       if (leave.getEndDate().before(leave.getStartDate())) {
+           throw new LeaveException("End date must be after Start Date");
+       }
+       //We can add this if we want to check if an employee is assigned with a manager
+       //if (leave.getEmployee() == null || leave.getEmployee().getManager() == null) {
+       //    throw new LeaveException("Employee must have a Manager assigned");
+     //  }
 
            leave.setAcceptedFlag(false);            // new leave is set to Not Approved
            leave.setActiveFlag(true);               // new leave is set to Active
