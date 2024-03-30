@@ -23,11 +23,13 @@ public class PerformanceReview {
     public Date deadlineDate;
     public String managerComments;
     public double rating;
+
     @ManyToOne
-    @JoinColumn(name="employeeid")
+    @JoinColumn(name="employeeID")
     @JsonIgnoreProperties("performanceReview")
     @JsonBackReference //added
     public Employee employee;
+
     @OneToMany
     @JsonManagedReference
     public List<Goal> goals;

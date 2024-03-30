@@ -33,23 +33,23 @@ public class Employee {
     private Date birthDate;
     private Date anniversary;
 
-    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "employee_fk")
+    @JoinColumn(name = "managerID")
     @JsonIgnoreProperties("employees")
     private Manager manager;
 
     @OneToMany
     @JoinColumn(name = "employeeID")
     @JsonManagedReference //added
+
     private List<PerformanceReview> performanceReview;
 
     @OneToMany
-    @JoinColumn(name = "employeeID")
     private List<Leave> leave;
+
     private Roles role;
 
-   /* @Override
+    @Override
     public String toString() {
         return "Employee{" +
                 "employeeID=" + employeeID +
@@ -66,10 +66,10 @@ public class Employee {
                 ", birthDate=" + birthDate +
                 ", anniversary=" + anniversary +
                // ", performanceReview=" + performanceReview +
-                ", leave=" + leave +
+               // ", leave=" + leave +
                 ", role=" + role +
                 '}';
-    }*/
+    }
 }
 
 
