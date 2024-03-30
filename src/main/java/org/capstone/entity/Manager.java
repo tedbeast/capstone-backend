@@ -20,6 +20,7 @@ public class Manager {
 
     @OneToOne
     private Employee managerEmployee;
+
     @OneToMany
     @JoinColumn(name="employee_fk")
     private List<Employee> employees;

@@ -7,6 +7,8 @@ import org.capstone.entity.Leave;
 import org.capstone.entity.Roles;
 import org.capstone.exception.LeaveException;
 import org.capstone.exception.LeaveFinancialException;
+import org.capstone.entity.Manager;
+import org.capstone.exception.LeaveManagerNotFoundException;
 import org.capstone.exception.LeaveNotFoundException;
 import org.capstone.repository.EmployeeRepository;
 import org.capstone.repository.LeaveRepository;
@@ -84,6 +86,7 @@ public class LeaveService {
         return l;
     }
 
+
 //    public Leave updateLeave(int Id, Leave updatedLeave) throws LeaveNotFoundException {
 //        Main.logger.info("Updating Leave with ID: "+Id);
 //        Optional<Leave> optionalLeave = leaveRepository.findById(Id);
@@ -103,9 +106,47 @@ public class LeaveService {
 
     public Leave updateLeaveById(int Id, Leave updatedLeave) throws LeaveNotFoundException, LeaveFinancialException {
         Main.logger.info("Updating Leave with ID: "+Id);
+
+    public List<Leave> getAllEmployeeLeavesForManager(int managerID) throws LeaveManagerNotFoundException {
+        Main.logger.info("Getting all employee leaves for manager ID " + managerID);
+        // Get the employees who report to this manager
+        Optional<Manager> optionalManager = managerRepository.findById(managerID);
+        List<Leave> l = new ArrayList<Leave>();
+        if (optionalManager.isPresent()) {
+            l = leaveRepository.findAllEmployeeLeaveByManager(managerID);
+            if (l.isEmpty()) {
+                Main.logger.info("The manager ID " + managerID + " does not have any leave requests for supervised employees.");
+            }
+        } else {
+            Main.logger.warn("The manager ID, " + managerID + " does not have a Manager record");
+            throw new LeaveManagerNotFoundException("Manager ID supplied does not have any Manager record");
+        }
+        return l;
+    }
+
+    public List<Leave> getEmployeeLeavesForManagerByStatus(int managerID, boolean activeFlag, boolean acceptedFlag) throws LeaveManagerNotFoundException {
+        Main.logger.info("Getting all employee leaves for a manager");
+        // Get the employees who report to this manager
+        Optional<Manager> optionalManager = managerRepository.findById(managerID);
+        List<Leave> l = new ArrayList<Leave>();
+        if (optionalManager.isPresent()) {
+            l = leaveRepository.findEmployeeLeaveByManagerByStatusFlags(managerID, activeFlag, acceptedFlag);
+            if (l.isEmpty()) {
+                Main.logger.info("The manager ID " + managerID + " does not have any leave requests for employees for the requested status. accepted_flag: " + acceptedFlag + ", active_flag: " + activeFlag);
+//                throw new LeaveException("The manager does not have any leave requests for supervised employees.");
+            }
+        } else {
+            Main.logger.warn("Employee ID " + managerID + " does not have a Manager record");
+            throw new LeaveManagerNotFoundException("Employee ID supplied does not have a Manager record");
+        }
+        return l;
+    }
+
+    public Leave updateLeave(int Id, Leave updatedLeave) throws LeaveNotFoundException {
+        Main.logger.info("Updating Leave with ID: {}, id");
+
         Optional<Leave> optionalLeave = leaveRepository.findById(Id);
         Optional<Employee> employeeOptional =
-                //employeeRepository.findById(updatedLeave.getEmployee().getEmployeeID());
         employeeRepository.findById(Id);
 
 
@@ -213,25 +254,30 @@ public class LeaveService {
     }
 
 
-    public Leave addLeave(Leave leave) throws LeaveException {
-        Main.logger.info("Attempting to add a new leave: " + leave);
-        //check for duplicate leaves
-        List<Leave> existingLeaves = leaveRepository.findByLeaveNameAndStartDateAndEndDate(leave.getLeaveName()
-                ,leave.getStartDate(), leave.getEndDate());
-        if (!existingLeaves.isEmpty()) {
-            throw new LeaveException("Leave with same detail already Exists");
-        }
 
-        // Validate leave details
-        if (leave.getLeaveName() == null || leave.getLeaveName().isEmpty()) {
-            throw new LeaveException("Leave name is required");
-        }
-        if (leave.getStartDate() == null || leave.getEndDate() == null) {
-            throw new LeaveException("Start date and end date are required");
-        }
+   public Leave addLeave(Leave leave) throws LeaveException {
+       Main.logger.info("Attempting to add a new leave: " + leave);
+       //check for duplicate leaves
+       List<Leave> existingLeaves = leaveRepository.findByIdAndLeaveNameAndStartDateAndEndDate
+               (leave.getId(),leave.getLeaveName(),leave.getStartDate(), leave.getEndDate());
+       if (!existingLeaves.isEmpty()) {
+           throw new LeaveException("Leave with same detail already Exists");
+       }
 
-
-        //if (leave.isActiveFlag() && !leave.isAcceptedFlag()) {
+       // Validate leave details
+       if (leave.getLeaveName() == null || leave.getLeaveName().isEmpty()) {
+           throw new LeaveException("Leave name is required");
+       }
+       if (leave.getStartDate() == null || leave.getEndDate() == null) {
+           throw new LeaveException("Start date and end date are required");
+       }
+       if (leave.getEndDate().before(leave.getStartDate())) {
+           throw new LeaveException("End date must be after Start Date");
+       }
+       //We can add this if we want to check if an employee is assigned with a manager
+       //if (leave.getEmployee() == null || leave.getEmployee().getManager() == null) {
+        //  throw new LeaveException("Employee must have a Manager assigned");
+       // }
 
         leave.setAcceptedFlag(false);            // new leave is set to Not Approved
         leave.setActiveFlag(true);               // new leave is set to Active
