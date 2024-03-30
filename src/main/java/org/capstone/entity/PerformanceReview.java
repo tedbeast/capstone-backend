@@ -1,5 +1,6 @@
 package org.capstone.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -26,6 +27,7 @@ public class PerformanceReview {
     @ManyToOne
     @JoinColumn(name="employeeID")
     @JsonIgnoreProperties("performanceReview")
+    @JsonBackReference //added
     public Employee employee;
 
     @OneToMany
