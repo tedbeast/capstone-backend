@@ -13,6 +13,11 @@ public class LeaveResponse {
         this.updatedLeave = updatedLeave;
     }
 
+    public LeaveResponse(HttpStatus statusCode, String statusMessage) {
+        this.statusCode = statusCode;
+        this.statusMessage = statusMessage;
+    }
+
     public HttpStatus getStatusCode() {
         return statusCode;
     }

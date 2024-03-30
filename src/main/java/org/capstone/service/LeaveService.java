@@ -12,16 +12,15 @@ import org.capstone.repository.EmployeeRepository;
 import org.capstone.repository.LeaveRepository;
 import org.capstone.repository.ManagerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import java.util.*;
 
 @Service
 @Transactional
@@ -60,7 +59,7 @@ public class LeaveService {
         Main.logger.info("Getting leaves by employee");
         List <Leave> l = leaveRepository.findByEmployeeEmployeeID(employeeID);
         if (l.isEmpty()) {
-            throw new LeaveException("No leaves for a given employeeId is found: " + employeeID);
+            throw new LeaveException("No leaves found for an employee with this id: " + employeeID);
         }
         return l;
     }
@@ -85,20 +84,20 @@ public class LeaveService {
         return l;
     }
 
-    public Leave updateLeave(int Id, Leave updatedLeave) throws LeaveNotFoundException {
-        Main.logger.info("Updating Leave with ID: "+Id);
-        Optional<Leave> optionalLeave = leaveRepository.findById(Id);
-        if (optionalLeave.isEmpty()) {
-            throw new LeaveNotFoundException("Leave Not Found");
-
-        }
-        Leave existingLeave = optionalLeave.get();
-
-        existingLeave.setStartDate(updatedLeave.getStartDate());
-        existingLeave.setEndDate(updatedLeave.getEndDate());
-
-        return leaveRepository.save(existingLeave);
-    }
+//    public Leave updateLeave(int Id, Leave updatedLeave) throws LeaveNotFoundException {
+//        Main.logger.info("Updating Leave with ID: "+Id);
+//        Optional<Leave> optionalLeave = leaveRepository.findById(Id);
+//        if (optionalLeave.isEmpty()) {
+//            throw new LeaveNotFoundException("Leave Not Found");
+//
+//        }
+//        Leave existingLeave = optionalLeave.get();
+//
+//        existingLeave.setStartDate(updatedLeave.getStartDate());
+//        existingLeave.setEndDate(updatedLeave.getEndDate());
+//
+//        return leaveRepository.save(existingLeave);
+//    }
 
 
 
@@ -106,24 +105,29 @@ public class LeaveService {
         Main.logger.info("Updating Leave with ID: "+Id);
         Optional<Leave> optionalLeave = leaveRepository.findById(Id);
         Optional<Employee> employeeOptional =
-                employeeRepository.findById(updatedLeave.getEmployee().getEmployeeID());
+                //employeeRepository.findById(updatedLeave.getEmployee().getEmployeeID());
+        employeeRepository.findById(Id);
+
 
         // Validate leave existence
-        Leave existingLeave = leaveRepository.findById(Id)
+         leaveRepository.findById(Id)
                 .orElseThrow(() -> new LeaveNotFoundException("Leave Not Found"));
 
         // Role-based logic
+        System.out.println("Employee ID: " +employeeOptional.get().getEmployeeID());
+        System.out.println("Role: " +employeeOptional.get().getRole());
         if (employeeOptional.get().getRole() == Roles.MANAGER) {
             System.out.println("Role: " +employeeOptional.get().getRole());
             // Call the payroll service
             try {
                 //If the 2nd API call doesn't throw an exception, we are assuming success;  otherwise error
-                callPayrollService();                   //call 2nd API
+                callPayrollService(updatedLeave);       //call 2nd API
                 updatedLeave.setAcceptedFlag(true);     //Set accepted if payroll service call is successful
                 System.out.println("Payroll service call successful, leave approved.");
             } catch (Exception | LeaveFinancialException e) {
-                updatedLeave.setAcceptedFlag(false);    // Set not accepted on any exception
+                updatedLeave.setAcceptedFlag(false);    // Set not accepted for any other exception
                 System.out.println("Payroll service call failed, leave not approved: " + e.getMessage());
+                throw e;                                // Re-throw the exception without modifying the message
             }
         } else {
             // Employee leave updates
@@ -134,43 +138,46 @@ public class LeaveService {
         return leaveRepository.save(updatedLeave);
     }
 
-    public void callPayrollService() throws LeaveFinancialException {
-        String url = "http://localhost:8080/payroll/";
+    // Call to the 2nd API: Financial API service -- it returns successful/unsuccessful response
+    public void callPayrollService(Leave leave) throws LeaveFinancialException {
+        String url = "http://localhost:8080/payroll";
 
         try {
-            // Use ResponseEntity<Map> to handle status code and body
-            ResponseEntity<Map> response = restTemplate.getForEntity(url, Map.class);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON); // Set the content type to JSON
 
-            // Access the status code and status message
-            HttpStatus statusCode = (HttpStatus) response.getStatusCode();
-            String statusMessage = (String) response.getBody().get("statusMessage"); // Assuming a "statusMessage" key
-            System.out.println("Payroll service response status code & message: " + statusCode + statusMessage);
+            // Prepare a minimal request body
+            Map<String, Object> requestBody = new HashMap<>();
+
+            // Create a data for the POST request body: approvalDate
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy"); // Adjust format to match the payroll API one
+            String formattedStartDate = dateFormat.format(leave.getStartDate());
+            System.out.println("formattedStartDate: " + formattedStartDate);
+            requestBody.put("approvalDate", formattedStartDate);         // startDate returns a Date object
+
+            // Create an empty ArrayList for the POST request body: payrollPeriods
+            List<Object> emptyPayrollPeriods = new ArrayList<>();
+            requestBody.put("payrollPeriods", emptyPayrollPeriods);
+
+            // Create a POST request entity with the request body
+            HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
+
+            // Send the POST request and get the response
+            ResponseEntity<Void> response = restTemplate.exchange(url, HttpMethod.POST, requestEntity, Void.class);
+
+            // Check if the response status code indicates success
+            if (response.getStatusCode().is2xxSuccessful()) {
+                System.out.println("Payroll service call successful");
+            } else {
+                System.out.println("Payroll service call failed with status code: " + response.getStatusCode());
+                throw new LeaveFinancialException("Payroll service call failed with status code: " + response.getStatusCode());
+            }
         } catch (Exception e) {
+            System.out.println("Payroll service call failed: " + e.getMessage());
             throw new LeaveFinancialException("Payroll service call failed: " + e.getMessage());
         }
     }
 
-    // Update leave after manager approves/rejects it using the acceptedFlag from the frontend
-//    public Leave updateLeaveByManager(int Id, Leave updatedLeave) throws LeaveNotFoundException {
-//        Main.logger.info("Updating Leave with ID: "+Id);
-//        Optional<Leave> optionalLeave = leaveRepository.findById(Id);
-//        Optional<Employee> employeeOptional =
-//                employeeRepository.findById(updatedLeave.getEmployee().getEmployeeID());
-//        if (optionalLeave.isEmpty()) {
-//            throw new LeaveNotFoundException("Leave Not Found");
-//        }
-//        //Leave existingLeave = optionalLeave.get();
-//
-//        updatedLeave.setActiveFlag(false);              //change leave from pending to inactive/looked-at
-//
-//        if (employeeOptional.get().getRole() == Roles.MANAGER){
-//            // Call financial API service
-//            //boolean isPaidLeave = financialApiService.checkIfLeaveIsPaid(existingLeave); // Replace with specific method
-//            //updatedLeave.setIsPaid(isPaidLeave); // Assuming a new "isPaid" field (modify based on your logic)
-//
-//
-//        return leaveRepository.save(updatedLeave);
-//    }
 
     // Update the active flag for a leave
     public Leave updateActiveFlag(int Id, boolean isActive) throws LeaveException {
