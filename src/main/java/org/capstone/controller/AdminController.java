@@ -80,8 +80,12 @@ public class AdminController {
 
     @PostMapping("manager/{managerID}/employee")
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee p, @PathVariable int managerID) throws Exception {
-        Employee employee = adminService.saveEmployee(managerID, p);
-        return new ResponseEntity<>(employee, HttpStatus.CREATED);
+        try {
+            Employee employee = adminService.saveEmployee(managerID, p);
+            return new ResponseEntity<>(employee, HttpStatus.CREATED);
+        }catch (AdminException e) {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
     }
 
 //    @GetMapping("/performance/stats")

@@ -31,6 +31,12 @@ public class AdminReportController {
         return adminReportService.getAverageRatingPerEmployee();
     }
 
+    @GetMapping("employee-manager")
+    public List<Object[]> findEmployeeAndManagerNames() {
+        return adminReportService.findEmployeeAndManagerNames();
+    }
+
+
     @GetMapping("/employees/lowRating")
     public List<Object[]> getNumberOfEmployeesWithRatingUnderThree() {
         return adminReportService.getNumberOfEmployeesWithRatingUnderThree();

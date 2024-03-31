@@ -36,6 +36,10 @@ public class AdminReportService {
         return employeeRepository.countEmployeesWithRatingUnderThree();
     }
 
+    public List<Object[]> findEmployeeAndManagerNames() {
+        return employeeRepository.findEmployeeAndManagerNames();
+    }
+
 
     public Map<Integer, Long> getCountOfReviewsPerEmployee() {
         List<Object[]> reviewsCount = adminReportRepository.countReviewsPerEmployee();
