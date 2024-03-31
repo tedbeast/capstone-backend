@@ -56,13 +56,13 @@ public class AdminController {
         }
     }
 
-    @GetMapping("/employee")
+    @GetMapping("employee")
     public ResponseEntity<List<Employee>> getAllEmployeesEndpoint() {
         List<Employee> employees = adminService.getAllEmployees();
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
-    @GetMapping("/employee/{employeeId}")
+    @GetMapping("employee/{employeeId}")
     public ResponseEntity<Employee> getEmployeeByIDEndpoint(@PathVariable int employeeId) {
         try {
             Employee employee = adminService.getEmployeeById(employeeId);
@@ -72,7 +72,7 @@ public class AdminController {
         }
     }
 
-    @GetMapping("/manager")
+    @GetMapping("manager")
     public ResponseEntity<List<Manager>> getAllManagersEndpoint() {
         List<Manager> managers = adminService.getAllManagers();
         return new ResponseEntity<>(managers, HttpStatus.OK);

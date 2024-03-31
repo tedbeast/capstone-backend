@@ -8,9 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface AdminReportRepository extends JpaRepository<PerformanceReview, Integer> {
-    @Query("SELECT g.goalType, AVG(pr.rating) FROM PerformanceReview pr JOIN pr.goals g GROUP BY g.goalType")
+    @Query("SELECT g.goalType, AVG(pr.rating), e.employeeID, e.manager.managerID FROM PerformanceReview pr JOIN pr.goals g JOIN pr.employee e GROUP BY g.goalType, e.employeeID, e.manager.managerID")
     List<Object[]> findAverageRatingPerGoalType();
-
     @Query("SELECT e.employeeID, COUNT(pr) FROM PerformanceReview pr JOIN pr.employee e GROUP BY e.employeeID")
     List<Object[]> countReviewsPerEmployee();
 
