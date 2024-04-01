@@ -1,4 +1,5 @@
 package org.capstone.entity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
@@ -14,8 +15,6 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Setter
-@Getter
 @EqualsAndHashCode
 @ToString
 public class Leave {
@@ -28,8 +27,6 @@ public class Leave {
     //private LeaveStatus leaveStatus;
     private boolean acceptedFlag;
     private boolean activeFlag;
-    //@Column(columnDefinition = "boolean default true")
-    //private boolean isPaidLeave;
 
     //@JsonIgnore
     @ManyToOne
