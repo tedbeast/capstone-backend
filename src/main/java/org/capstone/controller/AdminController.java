@@ -23,7 +23,6 @@ public class AdminController {
         this.adminService = adminService;
     }
 
-
     @PostMapping("/manager")
     public ResponseEntity<Employee> createManager(@RequestBody Employee employee) {
         try {
@@ -34,7 +33,6 @@ public class AdminController {
         }
     }
 
-
     @PutMapping("employee/{employeeID}")
     public Employee updateEmployee(@PathVariable int employeeID, @RequestBody Employee employee) {
         try {
@@ -43,7 +41,6 @@ public class AdminController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee not found", e);
         }
     }
-
 
     @DeleteMapping("employee/{employeeID}")
 
@@ -71,7 +68,6 @@ public class AdminController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-
     @GetMapping("manager")
     public ResponseEntity<List<Manager>> getAllManagersEndpoint() {
         List<Manager> managers = adminService.getAllManagers();
@@ -88,15 +84,13 @@ public class AdminController {
         }
     }
 
-//    @GetMapping("/performance/stats")
-//    public ResponseEntity<PerformanceStatsDto> getPerformanceStats() {
-//        PerformanceStatsDto stats = adminService.findPerformanceStats();
-//        return new ResponseEntity<>(stats, HttpStatus.OK);
-//    }
+    @PutMapping("manager/{employeeID}")
+    public Employee updateManagerID(@PathVariable int employeeID, @RequestBody Employee employee) {
+        try {
+            return adminService.updateManagerID(employeeID, employee);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee not found", e);
+        }
+    }
 
-//    @GetMapping("/performance/stats")
-//    public ResponseEntity<PerformanceStatsProjection> getPerformanceStats() {
-//       PerformanceStatsProjection stats = adminService.findPerformanceStats();
-//       return new ResponseEntity<>(stats, HttpStatus.OK);
-//    }
 }

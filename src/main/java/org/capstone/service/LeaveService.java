@@ -34,8 +34,6 @@ public class LeaveService {
         return l;
     }
 
-
-
     //Get All Leaves by Employee ID & Accepted Flag
 
     public List<Leave> getAllLeaveByEmployeeIdAndAcceptFlag(int employeeID, boolean acceptedFlag) throws LeaveException {
@@ -49,9 +47,6 @@ public class LeaveService {
         }
         return l;
     }
-
-
-
 
     //Get All Leaves by Employee ID & Active Flag
 

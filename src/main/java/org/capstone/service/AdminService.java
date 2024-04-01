@@ -47,6 +47,7 @@ public class AdminService {
         employee.setPostalCode(newEmployee.getPostalCode());
         employee.setBirthDate(newEmployee.getBirthDate());
         employee.setAnniversary(newEmployee.getAnniversary());
+        employee.setManager(newEmployee.getManager());
         employee.setRole(newEmployee.getRole());
 
         if (employee.getName().trim().isEmpty()) {
@@ -132,10 +133,18 @@ public class AdminService {
         return managerRepository.findAll();
     }
 
+    public Employee updateManagerID(int employeeID, Employee newEmployee) throws AdminException {
+        Optional<Employee> employeeOptional = employeeRepository.findById(employeeID);
+        Employee employee = employeeOptional.get();
 
-//    public PerformanceStatsProjection findPerformanceStats() {
-//        return performanceReviewRepository.findPerformanceStats();
-//    }
+        employee.setManager(newEmployee.getManager());
+
+        employee = employeeRepository.save(employee);
+
+        return employee;
+    }
+
+
 
 }
 
