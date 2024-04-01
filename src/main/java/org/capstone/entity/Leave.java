@@ -1,4 +1,6 @@
 package org.capstone.entity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,12 +27,17 @@ public class Leave {
     //private LeaveStatus leaveStatus;
     private boolean acceptedFlag;
     private boolean activeFlag;
+
+    //@JsonIgnore
     @ManyToOne
     @JoinColumn(name = "employeeID")
+    @JsonIgnoreProperties("leave")
     private Employee employee;
 
-    @ManyToOne
-    @JoinColumn(name = "managerID")
-    private Manager manager;
+//    @JsonIgnore
+//    @ManyToOne
+//    @JoinColumn(name = "managerID")
+//    @JsonIgnoreProperties("employess")
+//    private Manager manager;
 
 }
