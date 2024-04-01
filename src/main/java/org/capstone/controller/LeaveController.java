@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin
@@ -96,8 +97,13 @@ public class LeaveController {
     // Endpoint for getting all leaves by employee
     @GetMapping(value = "/employee/{employeeID}/leave")
     public ResponseEntity<List<Leave>> getLeaveByEmployeeID(@PathVariable int employeeID) throws LeaveException {
-        List<Leave> leaves = leaveService.getAllLeaveByEmployeeId(employeeID);
-        return ResponseEntity.ok(leaves);
+        try{
+            List<Leave> leaves = leaveService.getAllLeaveByEmployeeId(employeeID);
+            return ResponseEntity.ok(leaves);
+        }catch (LeaveException e){
+            return ResponseEntity.ok(new ArrayList<Leave>());
+        }
+
     }
 
     // Endpoint for getting all leaves by employee & accept status
@@ -151,6 +157,26 @@ public class LeaveController {
 
     }
 
+    @GetMapping("/leave/{id}/accept")
+    public ResponseEntity<Leave> acceptLeave(@PathVariable int id) {
+        try {
+            Leave updatedLeave = leaveService.updateAcceptedFlag(id, true);
+            return new ResponseEntity<>(updatedLeave, HttpStatus.OK);
+        } catch (LeaveException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @GetMapping("/leave/{id}/reject")
+    public ResponseEntity<Leave> rejectLeave(@PathVariable int id) {
+        try {
+            Leave updatedLeave = leaveService.updateAcceptedFlag(id, false);
+            return new ResponseEntity<>(updatedLeave, HttpStatus.OK);
+        } catch (LeaveException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @DeleteMapping("leave/{leaveId}")
     public ResponseEntity<?> deleteLeave(@PathVariable int leaveId) {
         try {
@@ -165,10 +191,10 @@ public class LeaveController {
     }
 
 
-    @PostMapping(value = "/leave")
-    public ResponseEntity<?> addLeave(@RequestBody Leave leave) throws LeaveException {
+    @PostMapping(value = "employee/{employeeId}/leave")
+    public ResponseEntity<?> addLeave(@RequestBody Leave leave, @PathVariable int employeeId) throws LeaveException {
         try{
-            Leave newLeave = leaveService.addLeave(leave);
+            Leave newLeave = leaveService.addLeave(leave, employeeId);
             return new ResponseEntity<>(newLeave, HttpStatus.CREATED);
         } catch(LeaveException e){
             System.err.println("Error adding leave: " + e.getMessage());
@@ -182,6 +208,11 @@ public class LeaveController {
     @PostMapping(value = "/leave/active")
     public List<Leave>  findAllLeaveByActiveFlag(@RequestBody boolean activeFlag) throws LeaveException {
         return leaveService.getAllLeavesByActiveStatus(activeFlag);
+    }
+
+    @GetMapping(value = "/manager/{managerId}/leaves")
+    public List<Leave> findAllLeavesOfManagerEmployees(@PathVariable int managerId){
+        return leaveService.findAllLeavesByManagerId(managerId);
     }
 
 
