@@ -2,12 +2,13 @@ package org.capstone.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
 import java.util.List;
+
 
 
 @Entity
@@ -17,6 +18,7 @@ import java.util.List;
 @Getter
 @Setter
 @EqualsAndHashCode
+
 public class Employee {
     @Getter
     @Id
@@ -31,29 +33,21 @@ public class Employee {
     private Date birthDate;
     private Date anniversary;
 
-    @JsonIgnore
     @ManyToOne
+    @JoinColumn(name = "managerID")
     @JsonIgnoreProperties("employees")
     private Manager manager;
 
     @OneToMany
     @JoinColumn(name = "employeeID")
+    @JsonManagedReference //added
+
     private List<PerformanceReview> performanceReview;
 
     @OneToMany
-    @JoinColumn(name = "employeeID")
     private List<Leave> leave;
+
     private Roles role;
-
-    //TODO: Determine if we need this
-    //public String getRole() {
-    //    return role.toString();
-    //}
-
-    //TODO: Determine if we need this
-    public void setRole (String role) {
-        this.role = Roles.valueOf(role);
-    }
 
     @Override
     public String toString() {
@@ -71,8 +65,8 @@ public class Employee {
                 ", postalCode='" + postalCode + '\'' +
                 ", birthDate=" + birthDate +
                 ", anniversary=" + anniversary +
-                ", performanceReview=" + performanceReview +
-                ", leave=" + leave +
+               // ", performanceReview=" + performanceReview +
+               // ", leave=" + leave +
                 ", role=" + role +
                 '}';
     }

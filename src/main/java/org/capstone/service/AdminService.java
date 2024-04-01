@@ -47,7 +47,7 @@ public class AdminService {
         employee.setPostalCode(newEmployee.getPostalCode());
         employee.setBirthDate(newEmployee.getBirthDate());
         employee.setAnniversary(newEmployee.getAnniversary());
-        employee.setRole(newEmployee.getRole().toString());
+        employee.setRole(newEmployee.getRole());
 
         if (employee.getName().trim().isEmpty()) {
             throw new AdminException("Name is empty, must have a name");
