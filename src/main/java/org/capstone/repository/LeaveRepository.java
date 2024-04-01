@@ -21,7 +21,7 @@ public interface LeaveRepository extends JpaRepository<Leave, Integer> {
     
     List<Leave> findByActiveFlag(boolean activeFlag);
 
-    List<Leave> findByLeaveNameAndStartDateAndEndDate(String leaveName, Timestamp startDate, Timestamp endDate);
+    List<Leave> findByIdAndLeaveNameAndStartDateAndEndDate(int Id,String leaveName, Timestamp startDate, Timestamp endDate);
 
     @Query(value = "SELECT l.* FROM Leave l, Employee e WHERE  :managerID = e.employee_fk and e.employeeid = l.employeeid", nativeQuery = true)
     List<Leave> findAllEmployeeLeaveByManager(@Param("managerID") int contextManagerID);
