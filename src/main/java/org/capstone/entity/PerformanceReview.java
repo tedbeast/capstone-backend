@@ -1,10 +1,12 @@
 package org.capstone.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import java.util.*;
 
 @Entity
 @Getter
@@ -18,17 +20,17 @@ public class PerformanceReview {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int performanceReviewID;
-    public String goalType;
-    public String goalDescription;
-    public String employeeComments;
-    public Date targetDate;
-    public int weight;
     public Date deadlineDate;
     public String managerComments;
     public double rating;
 
     @ManyToOne
-    @JoinColumn(name="employeeid")
+    @JoinColumn(name="employeeID")
     @JsonIgnoreProperties("performanceReview")
-    private Employee employee; //look up how to reference a column from another entity
+    @JsonBackReference //added
+    public Employee employee;
+
+    @OneToMany
+    @JsonManagedReference
+    public List<Goal> goals;
 }

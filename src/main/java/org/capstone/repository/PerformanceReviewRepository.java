@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Date;
 import java.util.List;
 
 public interface PerformanceReviewRepository extends JpaRepository <PerformanceReview, Integer> {
@@ -19,5 +20,7 @@ public interface PerformanceReviewRepository extends JpaRepository <PerformanceR
     @Query("from PerformanceReview where employee.employeeID = ?1")
     List<PerformanceReview> findPerformanceReviewByEmployeeID(Integer employeeID);
 
+    @Query("from PerformanceReview where employee.employeeID = ?1 and deadlineDate >= ?2 order by deadlineDate desc limit 1")
+    PerformanceReview findPerformanceReviewByEmployeeIDandYear(Integer employeeID, Date deadlineDate);
 
 }
