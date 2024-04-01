@@ -106,6 +106,20 @@ public class LeaveService {
 
     public Leave updateLeaveById(int Id, Leave updatedLeave) throws LeaveNotFoundException, LeaveFinancialException {
         Main.logger.info("Updating Leave with ID: "+Id);
+        Optional<Leave> optionalLeave = leaveRepository.findById(Id);
+        if (optionalLeave.isEmpty()) {
+            throw new LeaveNotFoundException("Leave Not Found");
+
+        }
+        Leave existingLeave = optionalLeave.get();
+
+        existingLeave.setStartDate(updatedLeave.getStartDate());
+        existingLeave.setEndDate(updatedLeave.getEndDate());
+        existingLeave.setActiveFlag(true);
+        existingLeave.setAcceptedFlag(false);
+
+        return leaveRepository.save(existingLeave);
+    }
 
     public List<Leave> getAllEmployeeLeavesForManager(int managerID) throws LeaveManagerNotFoundException {
         Main.logger.info("Getting all employee leaves for manager ID " + managerID);
@@ -142,7 +156,7 @@ public class LeaveService {
         return l;
     }
 
-    public Leave updateLeave(int Id, Leave updatedLeave) throws LeaveNotFoundException {
+    public Leave updateLeave(int Id, Leave updatedLeave) throws LeaveNotFoundException, LeaveFinancialException {
         Main.logger.info("Updating Leave with ID: {}, id");
 
         Optional<Leave> optionalLeave = leaveRepository.findById(Id);
