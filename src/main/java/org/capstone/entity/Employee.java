@@ -31,9 +31,10 @@ public class Employee {
     private Date birthDate;
     private Date anniversary;
 
-    @JsonIgnore
+  //  @JsonIgnore
     @ManyToOne
     @JsonIgnoreProperties("employees")
+    @JoinColumn(name = "managerID")
     private Manager manager;
 
     @OneToMany

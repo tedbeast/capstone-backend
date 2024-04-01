@@ -130,7 +130,10 @@ public class AdminService {
         return managerRepository.findAll();
     }
 
-
+    public Employee getEmployeeWithManager(int employeeId) throws AdminException {
+        return employeeRepository.findByIdWithManager(employeeId)
+            .orElseThrow(() -> new AdminException("Employee not found"));
+    }
 //    public PerformanceStatsProjection findPerformanceStats() {
 //        return performanceReviewRepository.findPerformanceStats();
 //    }

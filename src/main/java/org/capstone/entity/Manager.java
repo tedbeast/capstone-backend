@@ -12,14 +12,14 @@ import java.util.stream.Collectors;
 @EqualsAndHashCode
 public class Manager {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+  //  @GeneratedValue(strategy = GenerationType.AUTO)
     private int managerID;
 
-    @OneToOne
-    private Employee managerEmployee;
+    //@OneToOne
+   // private Employee managerEmployee;
 
     @OneToMany
-    @JoinColumn(name="employee_fk")
+    //@JoinColumn(name="employee_fk")
     private List<Employee> employees;
 
     @Override

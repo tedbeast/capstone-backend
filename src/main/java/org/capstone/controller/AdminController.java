@@ -83,7 +83,16 @@ public class AdminController {
         Employee employee = adminService.saveEmployee(managerID, p);
         return new ResponseEntity<>(employee, HttpStatus.CREATED);
     }
+@GetMapping("/employee/{employeeId}/manager")
+public ResponseEntity<Employee> getEmployeeWithManager(@PathVariable int employeeId) {
+    try {
+        Employee employee = adminService.getEmployeeWithManager(employeeId);
+        return new ResponseEntity<>(employee, HttpStatus.OK);
+    } catch (AdminException e) {
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+    }
 
+}
 //    @GetMapping("/performance/stats")
 //    public ResponseEntity<PerformanceStatsDto> getPerformanceStats() {
 //        PerformanceStatsDto stats = adminService.findPerformanceStats();
