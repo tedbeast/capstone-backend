@@ -34717,3 +34717,94 @@ java.lang.StackOverflowError: null
 2024-03-29 13:20:13,518 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-03-29 13:20:13,534 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2024-03-29 13:20:13,537 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-04-01 10:42:40,401 INFO o.s.b.StartupInfoLogger [main] Starting Main using Java 21.0.1 with PID 41048 (C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend\target\classes started by A239267 in C:\Users\A239267\Desktop\Bootcamp\Projects\capstone-backend)
+2024-04-01 10:42:40,403 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-04-01 10:42:41,828 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-01 10:42:41,942 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 101 ms. Found 5 JPA repository interfaces.
+2024-04-01 10:42:43,279 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2024-04-01 10:42:43,297 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-01 10:42:43,301 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-04-01 10:42:43,302 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-01 10:42:43,408 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-04-01 10:42:43,411 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2932 ms
+2024-04-01 10:42:44,005 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-01 10:42:44,126 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-01 10:42:44,201 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-04-01 10:42:44,593 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-01 10:42:44,638 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-04-01 10:42:44,901 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:6911f217-295b-4a91-b49f-eff848e558b3 user=SA
+2024-04-01 10:42:44,904 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-04-01 10:42:46,345 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-01 10:42:46,420 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-01 10:42:47,038 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-01 10:42:48,338 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-01 10:42:49,622 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 13 endpoint(s) beneath base path '/actuator'
+2024-04-01 10:42:49,771 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2024-04-01 10:42:49,819 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2024-04-01 10:42:49,847 INFO o.s.b.StartupInfoLogger [main] Started Main in 10.174 seconds (process running for 10.885)
+2024-04-01 10:43:51,872 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-01 10:43:51,873 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-04-01 10:43:51,874 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2024-04-01 10:45:05,798 INFO o.c.s.AdminService [http-nio-8080-exec-9] Manager List returned:
+2024-04-01 10:45:36,292 INFO o.c.s.PerformanceReviewService [http-nio-8080-exec-10] Performance Review POST: Attempting to create a new Performance Review for an employee.
+2024-04-01 10:45:36,294 INFO o.c.s.PerformanceReviewService [http-nio-8080-exec-10] Performance Review GET: Attempting to get all performance reviews by Employee ID.
+2024-04-01 10:45:51,871 INFO o.c.s.PerformanceReviewService [http-nio-8080-exec-1] Goal POST: Attempting to create a new goal for an employee.
+2024-04-01 10:46:05,820 INFO o.c.s.PerformanceReviewService [http-nio-8080-exec-2] Performance Review Get: Attempting to get all performance reviews.
+2024-04-01 10:55:36,958 INFO o.c.s.AdminService [http-nio-8080-exec-9] Employee List returned: [Employee{employeeID=1, password='Steven_2k23', name='MANAGER 1', jobTitle='Job Seeker', phoneNumber='7858745652', email='steb@gmail.com', addressLine1='123 Main St', addressLine2='Apt 4', city='deli', state='NY', postalCode='87452', birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, role=MANAGER}, Employee{employeeID=2, password='password123', name='John Doe', jobTitle='Software Developer', phoneNumber='123-456-7890', email='john.doe@example.com', addressLine1='123 Main St', addressLine2='Apt 4', city='Chicago', state='IL', postalCode='60602', birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, role=EMPLOYEE}, Employee{employeeID=3, password='password123', name='John Doe', jobTitle='Software Developer', phoneNumber='123-456-7890', email='john.doe@example.com', addressLine1='123 Main St', addressLine2='Apt 4', city='Chicago', state='IL', postalCode='60602', birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, role=EMPLOYEE}, Employee{employeeID=4, password='Steven_2k23', name='MANAGER 1', jobTitle='Job Seeker', phoneNumber='7858745652', email='steb@gmail.com', addressLine1='123 Main St', addressLine2='Apt 4', city='deli', state='NY', postalCode='87452', birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, role=MANAGER}, Employee{employeeID=5, password='Steven_2k23', name='MANAGER 1', jobTitle='Job Seeker', phoneNumber='7858745652', email='steb@gmail.com', addressLine1='123 Main St', addressLine2='Apt 4', city='deli', state='NY', postalCode='87452', birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, role=MANAGER}, Employee{employeeID=6, password='Steven_2k23', name='MANAGER 1', jobTitle='Job Seeker', phoneNumber='7858745652', email='steb@gmail.com', addressLine1='123 Main St', addressLine2='Apt 4', city='deli', state='NY', postalCode='87452', birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, role=MANAGER}, Employee{employeeID=7, password='Steven_2k23', name='MANAGER 1', jobTitle='Job Seeker', phoneNumber='7858745652', email='steb@gmail.com', addressLine1='123 Main St', addressLine2='Apt 4', city='deli', state='NY', postalCode='87452', birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, role=MANAGER}]
+2024-04-01 10:57:08,321 ERROR o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.Exception: no such artist...] with root cause
+java.lang.Exception: no such artist...
+	at org.capstone.service.AdminService.saveEmployee(AdminService.java:89)
+	at org.capstone.controller.AdminController.createEmployee(AdminController.java:83)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-04-01 10:57:56,339 INFO o.c.s.AdminService [http-nio-8080-exec-5] Employee List returned: [Employee{employeeID=1, password='Steven_2k23', name='MANAGER 1', jobTitle='Job Seeker', phoneNumber='7858745652', email='steb@gmail.com', addressLine1='123 Main St', addressLine2='Apt 4', city='deli', state='NY', postalCode='87452', birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, role=MANAGER}, Employee{employeeID=2, password='password123', name='John Doe', jobTitle='Software Developer', phoneNumber='123-456-7890', email='john.doe@example.com', addressLine1='123 Main St', addressLine2='Apt 4', city='Chicago', state='IL', postalCode='60602', birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, role=EMPLOYEE}, Employee{employeeID=3, password='password123', name='John Doe', jobTitle='Software Developer', phoneNumber='123-456-7890', email='john.doe@example.com', addressLine1='123 Main St', addressLine2='Apt 4', city='Chicago', state='IL', postalCode='60602', birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, role=EMPLOYEE}, Employee{employeeID=4, password='Steven_2k23', name='MANAGER 1', jobTitle='Job Seeker', phoneNumber='7858745652', email='steb@gmail.com', addressLine1='123 Main St', addressLine2='Apt 4', city='deli', state='NY', postalCode='87452', birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, role=MANAGER}, Employee{employeeID=5, password='Steven_2k23', name='MANAGER 1', jobTitle='Job Seeker', phoneNumber='7858745652', email='steb@gmail.com', addressLine1='123 Main St', addressLine2='Apt 4', city='deli', state='NY', postalCode='87452', birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, role=MANAGER}, Employee{employeeID=6, password='Steven_2k23', name='MANAGER 1', jobTitle='Job Seeker', phoneNumber='7858745652', email='steb@gmail.com', addressLine1='123 Main St', addressLine2='Apt 4', city='deli', state='NY', postalCode='87452', birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, role=MANAGER}, Employee{employeeID=7, password='Steven_2k23', name='MANAGER 1', jobTitle='Job Seeker', phoneNumber='7858745652', email='steb@gmail.com', addressLine1='123 Main St', addressLine2='Apt 4', city='deli', state='NY', postalCode='87452', birthDate=1989-12-31 19:00:00.0, anniversary=2009-12-31 19:00:00.0, role=MANAGER}, Employee{employeeID=8, password='password123', name='John Doe', jobTitle='Software Developer', phoneNumber='123-456-7890', email='john.doe@example.com', addressLine1='123 Main St', addressLine2='Apt 4', city='Chicago', state='IL', postalCode='60602', birthDate=1989-12-31 19:00:00.0, anniversary=2015-08-14 20:00:00.0, role=EMPLOYEE}]

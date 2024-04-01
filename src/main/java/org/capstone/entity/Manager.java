@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class Manager {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     private int managerID;
 
     //@OneToOne
