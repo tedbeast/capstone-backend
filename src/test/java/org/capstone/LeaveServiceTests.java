@@ -1,10 +1,12 @@
 package org.capstone;
 
+import jakarta.transaction.Transactional;
 import org.capstone.entity.*;
 import org.capstone.exception.LeaveException;
 import org.capstone.repository.EmployeeRepository;
 import org.capstone.repository.LeaveRepository;
 import org.capstone.repository.ManagerRepository;
+import org.capstone.repository.PerformanceReviewRepository;
 import org.capstone.service.LeaveService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,8 +34,9 @@ public class LeaveServiceTests {
     private ManagerRepository managerRepository;
     @Autowired
     private LeaveRepository leaveRepository;
+
     @Autowired
-    private PerformanceReview performanceReview;
+    private PerformanceReviewRepository performanceReviewRepository;
     @Autowired
     private LeaveService leaveService;
     private Employee employee1;
@@ -187,6 +190,7 @@ public class LeaveServiceTests {
 
     @Test
     @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
+    @Transactional
     public void givenBasicLeaveRecordConfirmAdded() throws ParseException, LeaveException {
         Leave leave1 = new Leave();
         leave1.setLeaveName("Sick");

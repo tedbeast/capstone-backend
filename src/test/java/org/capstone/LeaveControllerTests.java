@@ -1,12 +1,16 @@
 package org.capstone;
 
+import jakarta.transaction.Transactional;
 import org.capstone.controller.LeaveController;
 import org.capstone.entity.Employee;
+import org.capstone.entity.Leave;
 import org.capstone.entity.Manager;
 import org.capstone.entity.Roles;
+import org.capstone.exception.LeaveException;
 import org.capstone.repository.EmployeeRepository;
 import org.capstone.repository.LeaveRepository;
 import org.capstone.repository.ManagerRepository;
+import org.capstone.repository.PerformanceReviewRepository;
 import org.capstone.service.LeaveService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,13 +18,17 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Locale;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
@@ -32,6 +40,8 @@ public class LeaveControllerTests {
     private EmployeeRepository employeeRepository;
     @Autowired
     private ManagerRepository managerRepository;
+    @Autowired
+    private PerformanceReviewRepository performanceReviewRepository;
     @Autowired
     private LeaveRepository leaveRepository;
     @Autowired
@@ -186,5 +196,29 @@ public class LeaveControllerTests {
 
         assertTrue(managerRepository.findById(1).isPresent());
         assertTrue(managerRepository.findById(2).isPresent());
+    }
+
+    @Test
+    @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
+    public void givenBasicLeaveRecordConfirmAdded() throws ParseException, LeaveException {
+        Leave leave1 = new Leave();
+        leave1.setLeaveName("Sick");
+        leave1.setStartDate(Timestamp.valueOf("2024-04-01 00:00:00"));
+        leave1.setEndDate(Timestamp.valueOf("2024-04-05 00:00:00"));
+        leave1.setActiveFlag(true);
+        leave1.setAcceptedFlag(false);
+        leave1.setEmployee(this.employeeRepository.findById(2).get());
+
+        Leave newLeave1 = this.leaveService.addLeave(leave1);
+
+        ResponseEntity<?> leaveResponseEntity =  leaveController.addLeave(leave1);
+
+
+        assertEquals(leave1.getLeaveName(), newLeave1.getLeaveName());
+        assertEquals(leave1.getStartDate(), newLeave1.getStartDate());
+        assertEquals(leave1.getEndDate(), newLeave1.getEndDate());
+        assertEquals(leave1.isActiveFlag(), newLeave1.isActiveFlag());
+        assertEquals(leave1.isAcceptedFlag(),newLeave1.isAcceptedFlag());
+
     }
 }
