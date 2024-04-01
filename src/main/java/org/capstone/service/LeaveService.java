@@ -84,20 +84,20 @@ public class LeaveService {
         return l;
     }
 
-//    public Leave updateLeave(int Id, Leave updatedLeave) throws LeaveNotFoundException {
-//        Main.logger.info("Updating Leave with ID: "+Id);
-//        Optional<Leave> optionalLeave = leaveRepository.findById(Id);
-//        if (optionalLeave.isEmpty()) {
-//            throw new LeaveNotFoundException("Leave Not Found");
-//
-//        }
-//        Leave existingLeave = optionalLeave.get();
-//
-//        existingLeave.setStartDate(updatedLeave.getStartDate());
-//        existingLeave.setEndDate(updatedLeave.getEndDate());
-//
-//        return leaveRepository.save(existingLeave);
-//    }
+    public Leave updateLeave(int Id, Leave updatedLeave) throws LeaveNotFoundException {
+        Main.logger.info("Updating Leave with ID: "+Id);
+        Optional<Leave> optionalLeave = leaveRepository.findById(Id);
+        if (optionalLeave.isEmpty()) {
+            throw new LeaveNotFoundException("Leave Not Found");
+
+        }
+        Leave existingLeave = optionalLeave.get();
+
+        existingLeave.setStartDate(updatedLeave.getStartDate());
+        existingLeave.setEndDate(updatedLeave.getEndDate());
+
+        return leaveRepository.save(existingLeave);
+    }
 
 
 
