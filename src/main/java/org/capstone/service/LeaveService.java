@@ -104,8 +104,7 @@ public class LeaveService {
 
 
 
-    public Leave updateLeaveById(int Id, Leave updatedLeave) throws LeaveNotFoundException, LeaveFinancialException {
-        Main.logger.info("Updating Leave with ID: "+Id);
+
 
     public List<Leave> getAllEmployeeLeavesForManager(int managerID) throws LeaveManagerNotFoundException {
         Main.logger.info("Getting all employee leaves for manager ID " + managerID);
@@ -142,8 +141,14 @@ public class LeaveService {
         return l;
     }
 
-    public Leave updateLeave(int Id, Leave updatedLeave) throws LeaveNotFoundException {
-        Main.logger.info("Updating Leave with ID: {}, id");
+
+    public Leave updateLeaveById(int Id, Leave updatedLeave) throws LeaveNotFoundException, LeaveFinancialException {
+        Main.logger.info("Updating Leave with ID: "+Id);
+
+        // leaving to show the update of name in case we cause problems with the merge
+
+//    public Leave updateLeave(int Id, Leave updatedLeave) throws LeaveNotFoundException {
+//        Main.logger.info("Updating Leave with ID: {}, id");
 
         Optional<Leave> optionalLeave = leaveRepository.findById(Id);
         Optional<Employee> employeeOptional =
@@ -181,7 +186,7 @@ public class LeaveService {
 
     // Call to the 2nd API: Financial API service -- it returns successful/unsuccessful response
     public void callPayrollService(Leave leave) throws LeaveFinancialException {
-        String url = "http://localhost:8080/payroll";
+        String url = "http://localhost:9002/payroll";
 
         try {
             HttpHeaders headers = new HttpHeaders();
