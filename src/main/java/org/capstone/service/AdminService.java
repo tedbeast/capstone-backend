@@ -31,9 +31,17 @@ public class AdminService {
     }
 
     public Employee updateEmployee(int employeeID, Employee newEmployee) throws AdminException {
+
         Optional<Employee> employeeOptional = employeeRepository.findById(employeeID);
         Employee employee = employeeOptional.get();
         Roles oldRole = employee.getRole();
+        //Check for employee email/phone via review method
+        String eEmail = newEmployee.getEmail().strip();
+        String ePhoneNumber = newEmployee.getPhoneNumber().strip();
+        if (employeeDuplicateReview(eEmail, ePhoneNumber)) {
+            Main.logger.warn("Employee with duplicate email or phone number already exists");
+            throw new AdminException("Employee with email or phone number already exists, please try again.");
+        }
 
         employee.setName(newEmployee.getName());
         employee.setPassword(newEmployee.getPassword());
@@ -47,7 +55,6 @@ public class AdminService {
         employee.setPostalCode(newEmployee.getPostalCode());
         employee.setBirthDate(newEmployee.getBirthDate());
         employee.setAnniversary(newEmployee.getAnniversary());
-        employee.setManager(newEmployee.getManager());
         employee.setRole(newEmployee.getRole());
 
         if (employee.getName().trim().isEmpty()) {
@@ -61,6 +68,7 @@ public class AdminService {
                 employee.setManager(manager);
             }
             employee = employeeRepository.save(employee);
+            Main.logger.info("Employee " + employeeID + " updated successfully");
         }
 
         return employee;
@@ -70,26 +78,31 @@ public class AdminService {
         if (employee.getName() == null || employee.getName().isEmpty()) {
             throw new AdminException("Employee name cannot be null or empty.");
         }
-        Main.logger.info("ISSUE" + employee);
-        employee.setManager(null);
+
         Employee savedEmployee = employeeRepository.save(employee);
 
-        if (employee.getRole() == Roles.MANAGER){
+        if (employee.getRole() == Roles.MANAGER) {
             Manager manager = new Manager();
-            Main.logger.info("ISSUE" + savedEmployee);
             manager.setManagerID(savedEmployee.getEmployeeID());
-
             managerRepository.save(manager);
         }
         return savedEmployee;
     }
 
+
     public Employee saveEmployee(int id, Employee employee) throws Exception {
+//Check for employee email/phone via review method
+        String eEmail = employee.getEmail().strip();
+        String ePhoneNumber = employee.getPhoneNumber().strip();
+        if (employeeDuplicateReview(eEmail, ePhoneNumber)) {
+            throw new AdminException("Employee with email or phone number already exists, please try again.");
+        }
+
         Optional<Manager> optional = managerRepository.findById(id);
         Manager manager;
-        if(optional.isEmpty()){
+        if (optional.isEmpty()) {
             throw new Exception("no such Manager exists...");
-        }else{
+        } else {
             manager = optional.get();
         }
         employee.setManager(manager);
@@ -97,14 +110,27 @@ public class AdminService {
         manager.getEmployees().add(employee);
         managerRepository.save(manager);
         return employee;
+
+    }
+
+    //Check if manager being added is already in manager list
+    public boolean employeeDuplicateReview(String email, String phoneNumber) {
+        List<Employee> employees = employeeRepository.findAll();
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getEmail().equalsIgnoreCase(email) || employees.get(i).getPhoneNumber().equals(phoneNumber)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Employee deleteById(int employeeId) throws Exception {
         Optional<Employee> employeeOptional = employeeRepository.findById(employeeId);
         if (employeeOptional.isEmpty()) {
-            throw new Exception("No such employee exists,please check the employee id entered.");
+            throw new Exception("No such employee exists, please check the employee id entered.");
         }
         employeeRepository.deleteById(employeeId);//Remove the employee from the list
+        Main.logger.info("Employee was deleted" + employeeId);
         return employeeOptional.get();//Return deleted employee?
     }
 
@@ -133,18 +159,10 @@ public class AdminService {
         return managerRepository.findAll();
     }
 
-    public Employee updateManagerID(int employeeID, Employee newEmployee) throws AdminException {
-        Optional<Employee> employeeOptional = employeeRepository.findById(employeeID);
-        Employee employee = employeeOptional.get();
 
-        employee.setManager(newEmployee.getManager());
-
-        employee = employeeRepository.save(employee);
-
-        return employee;
-    }
-
-
+//    public PerformanceStatsProjection findPerformanceStats() {
+//        return performanceReviewRepository.findPerformanceStats();
+//    }
 
 }
 
