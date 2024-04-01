@@ -31,10 +31,12 @@ public class PerformanceReviewService {
         this.goalRepository = goalRepository;
         this.employeeRepository = employeeRepository;
     }
+
     public List<PerformanceReview> getAllPerformanceReview() {
         Main.logger.info("Performance Review Get: Attempting to get all performance reviews.");
         return performanceReviewRepository.findAll();
     }
+
     // to do: use employee repository
     public List<Employee> getAllEmployeeByManagerID(int managerID){
         return employeeRepository.findEmployeeByManagerId(managerID);
