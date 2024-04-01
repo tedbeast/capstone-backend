@@ -24,6 +24,7 @@ public class Manager {
     @JsonIgnore
     @OneToOne
     private Employee managerEmployee;
+
     @OneToMany
     @JoinColumn(name="employee_fk")
     private List<Employee> employees;
