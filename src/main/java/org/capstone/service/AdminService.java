@@ -78,9 +78,14 @@ public class AdminService {
         if (employee.getName() == null || employee.getName().isEmpty()) {
             throw new AdminException("Employee name cannot be null or empty.");
         }
-
+        //Check for employee email/phone via review method
+        String eEmail = employee.getEmail().strip();
+        String ePhoneNumber = employee.getPhoneNumber().strip();
+        if (employeeDuplicateReview(eEmail, ePhoneNumber)) {
+            Main.logger.warn("Manager with duplicate email or phone number already exists");
+            throw new AdminException("Manager with email or phone number already exists, please try again.");
+        }
         Employee savedEmployee = employeeRepository.save(employee);
-
         if (employee.getRole() == Roles.MANAGER) {
             Manager manager = new Manager();
             manager.setManagerID(savedEmployee.getEmployeeID());
@@ -91,19 +96,19 @@ public class AdminService {
 
 
     public Employee saveEmployee(int id, Employee employee) throws Exception {
-//Check for employee email/phone via review method
-        String eEmail = employee.getEmail().strip();
-        String ePhoneNumber = employee.getPhoneNumber().strip();
-        if (employeeDuplicateReview(eEmail, ePhoneNumber)) {
-            throw new AdminException("Employee with email or phone number already exists, please try again.");
-        }
-
         Optional<Manager> optional = managerRepository.findById(id);
         Manager manager;
         if (optional.isEmpty()) {
             throw new Exception("no such Manager exists...");
         } else {
             manager = optional.get();
+        }
+        //Check for employee email/phone via review method
+        String eEmail = employee.getEmail().strip();
+        String ePhoneNumber = employee.getPhoneNumber().strip();
+        if (employeeDuplicateReview(eEmail, ePhoneNumber)) {
+            Main.logger.warn("Employee with email or phone number already exists, please try again.");
+            throw new AdminException("Employee with email or phone number already exists, please try again.");
         }
         employee.setManager(manager);
         employeeRepository.save(employee);
@@ -133,7 +138,6 @@ public class AdminService {
         Main.logger.info("Employee was deleted" + employeeId);
         return employeeOptional.get();//Return deleted employee?
     }
-
 
 
     public List<Employee> getAllEmployees() {

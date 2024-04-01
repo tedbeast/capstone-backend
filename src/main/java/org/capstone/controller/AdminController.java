@@ -2,9 +2,7 @@ package org.capstone.controller;
 
 
 import org.capstone.entity.Employee;
-
 import org.capstone.entity.Manager;
-import org.capstone.entity.PerformanceReview;
 import org.capstone.exception.AdminException;
 import org.capstone.service.AdminService;
 import org.springframework.http.HttpStatus;
@@ -84,13 +82,13 @@ public class AdminController {
         }
     }
 
-    @PutMapping("manager/{employeeID}")
-    public Employee updateManagerID(@PathVariable int employeeID, @RequestBody Employee employee) {
-        try {
-            return adminService.updateManagerID(employeeID, employee);
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee not found", e);
-        }
-    }
+//    @PutMapping("manager/{employeeID}")
+//    public Employee updateManagerID(@PathVariable int employeeID, @RequestBody Employee employee) {
+//        try {
+//            return adminService.updateManagerID(employeeID, employee);
+//        } catch (Exception e) {
+//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee not found", e);
+//        }
+//    }
 
 }
