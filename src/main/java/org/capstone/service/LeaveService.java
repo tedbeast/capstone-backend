@@ -2,7 +2,9 @@ package org.capstone.service;
 
 import jakarta.transaction.Transactional;
 import org.capstone.Main;
+import org.capstone.entity.Employee;
 import org.capstone.entity.Leave;
+import org.capstone.entity.Manager;
 import org.capstone.exception.LeaveException;
 import org.capstone.exception.LeaveNotFoundException;
 import org.capstone.repository.EmployeeRepository;
@@ -83,6 +85,7 @@ public class LeaveService {
 
             existingLeave.setStartDate(updatedLeave.getStartDate());
             existingLeave.setEndDate(updatedLeave.getEndDate());
+            existingLeave.setLeaveName(updatedLeave.getLeaveName());
 
             return leaveRepository.save(existingLeave);
     }
@@ -121,6 +124,7 @@ public class LeaveService {
                 .orElseThrow(() -> new LeaveException("Leave not found with ID: " + Id));
 
         leaveToUpdate.setAcceptedFlag(isAccepted);
+        leaveToUpdate.setActiveFlag(false);
         return leaveRepository.save(leaveToUpdate);
     }
 
@@ -139,36 +143,34 @@ public class LeaveService {
         return leaveToDelete;
     }
 
+    public Leave addLeave(Leave leave, int employeeID) throws LeaveException {
+        Main.logger.info("Attempting to add a new leave: " + leave);
+        Employee employee = employeeRepository.findById(employeeID)
+                .orElseThrow(() -> new LeaveException("Employee not found with id: " + employeeID));
 
-   public Leave addLeave(Leave leave) throws LeaveException {
-       Main.logger.info("Attempting to add a new leave: " + leave);
-       //check for duplicate leaves
-       List<Leave> existingLeaves = leaveRepository.findByLeaveNameAndStartDateAndEndDate(leave.getLeaveName()
-               ,leave.getStartDate(), leave.getEndDate());
-       if (!existingLeaves.isEmpty()) {
-           throw new LeaveException("Leave with same detail already Exists");
-       }
+        // Check for duplicate leaves
+        List<Leave> existingLeaves = leaveRepository.findByLeaveNameAndStartDateAndEndDate(leave.getLeaveName(), leave.getStartDate(), leave.getEndDate());
+        if (!existingLeaves.isEmpty()) {
+            throw new LeaveException("Leave with same detail already Exists");
+        }
 
-       // Validate leave details
-       if (leave.getLeaveName() == null || leave.getLeaveName().isEmpty()) {
-           throw new LeaveException("Leave name is required");
-       }
-       if (leave.getStartDate() == null || leave.getEndDate() == null) {
-           throw new LeaveException("Start date and end date are required");
-       }
+        // Validate leave details
+        if (leave.getLeaveName() == null || leave.getLeaveName().isEmpty()) {
+            throw new LeaveException("Leave name is required");
+        }
+        if (leave.getStartDate() == null || leave.getEndDate() == null) {
+            throw new LeaveException("Start date and end date are required");
+        }
 
+        leave.setEmployee(employee); // Set the employee to the leave
+        leave.setAcceptedFlag(false); // New leave is set to Not Approved
+        leave.setActiveFlag(true); // New leave is set to Active
 
-           //if (leave.isActiveFlag() && !leave.isAcceptedFlag()) {
+        leaveRepository.save(leave);
+        Main.logger.info("New Leave added: " + leave);
+        return leave;
+    }
 
-           leave.setAcceptedFlag(false);            // new leave is set to Not Approved
-           leave.setActiveFlag(true);               // new leave is set to Active
-
-           leaveRepository.save(leave);
-           Main.logger.info("New Leave added: " + leave);
-          return leaveRepository.save(leave);
-
-
-   }
     public List<Leave> getAllLeavesByActiveStatus(boolean activeStatus) throws LeaveException {
         Main.logger.info("Getting leaves by active status");
         List<Leave> leaves = leaveRepository.findByActiveFlag(activeStatus);
@@ -178,6 +180,20 @@ public class LeaveService {
         return leaves;
     }
 
+    public List<Leave> findAllLeavesByManagerId(int managerId) {
+        Optional<Manager> employees = managerRepository.findById(managerId);
+        if(employees.isPresent()){
+            Manager manager =employees.get();
+            List<Leave> leaves = new ArrayList<>();
+            for (Employee employee : manager.getEmployees()) {
+                // Assuming Employee entity has a getLeaves method
+                leaves.addAll(employee.getLeave());
+            }
+            return leaves;
+        }
+
+        return new ArrayList<>();
+    }
 
 }
 
