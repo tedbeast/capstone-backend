@@ -48,7 +48,7 @@ public class PerformanceReviewController {
     @GetMapping("/employee/manager/{managerID}")
     public ResponseEntity<List<Employee>> getEmployeeByManagerId(@PathVariable int managerID) {
         List<Employee> employeeList = performanceReviewService.getAllEmployeeByManagerID(managerID);
-            return new ResponseEntity<>(employeeList, HttpStatus.OK);
+        return new ResponseEntity<>(employeeList, HttpStatus.OK);
     }
 
     //returns all performance reviews for an employee
@@ -137,4 +137,3 @@ public class PerformanceReviewController {
     }
 
 }
-

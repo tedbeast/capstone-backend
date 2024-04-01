@@ -46,7 +46,6 @@ public class Employee {
 
     @OneToMany
     private List<Leave> leave;
-
     private Roles role;
 
     @Override

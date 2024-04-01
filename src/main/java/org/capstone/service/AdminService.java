@@ -47,6 +47,7 @@ public class AdminService {
         employee.setPostalCode(newEmployee.getPostalCode());
         employee.setBirthDate(newEmployee.getBirthDate());
         employee.setAnniversary(newEmployee.getAnniversary());
+        employee.setManager(newEmployee.getManager());
         employee.setRole(newEmployee.getRole());
 
         if (employee.getName().trim().isEmpty()) {
@@ -69,12 +70,13 @@ public class AdminService {
         if (employee.getName() == null || employee.getName().isEmpty()) {
             throw new AdminException("Employee name cannot be null or empty.");
         }
-
+        Main.logger.info("ISSUE" + employee);
+        employee.setManager(null);
         Employee savedEmployee = employeeRepository.save(employee);
 
         if (employee.getRole() == Roles.MANAGER){
             Manager manager = new Manager();
-
+            Main.logger.info("ISSUE" + savedEmployee);
             manager.setManagerID(savedEmployee.getEmployeeID());
 
             managerRepository.save(manager);
@@ -86,7 +88,7 @@ public class AdminService {
         Optional<Manager> optional = managerRepository.findById(id);
         Manager manager;
         if(optional.isEmpty()){
-            throw new Exception("no such artist...");
+            throw new Exception("no such Manager exists...");
         }else{
             manager = optional.get();
         }
@@ -131,10 +133,18 @@ public class AdminService {
         return managerRepository.findAll();
     }
 
+    public Employee updateManagerID(int employeeID, Employee newEmployee) throws AdminException {
+        Optional<Employee> employeeOptional = employeeRepository.findById(employeeID);
+        Employee employee = employeeOptional.get();
 
-//    public PerformanceStatsProjection findPerformanceStats() {
-//        return performanceReviewRepository.findPerformanceStats();
-//    }
+        employee.setManager(newEmployee.getManager());
+
+        employee = employeeRepository.save(employee);
+
+        return employee;
+    }
+
+
 
 }
 
