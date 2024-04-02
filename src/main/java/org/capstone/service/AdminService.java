@@ -92,14 +92,16 @@ public class AdminService {
         }
         employee.setManager(null);
         Employee savedEmployee = employeeRepository.save(employee);
-        if (employee.getRole() == Roles.MANAGER) {
+
+        if (employee.getRole() == Roles.MANAGER){
             Manager manager = new Manager();
+
             manager.setManagerID(savedEmployee.getEmployeeID());
+
             managerRepository.save(manager);
         }
         return savedEmployee;
     }
-
 
     public Employee saveEmployee(int id, Employee employee) throws Exception {
         Optional<Manager> optional = managerRepository.findById(id);
@@ -121,9 +123,7 @@ public class AdminService {
         manager.getEmployees().add(employee);
         managerRepository.save(manager);
         return employee;
-
     }
-
     //Check if manager being added is already in manager list
     public boolean employeeDuplicateReview(String email, String phoneNumber) {
         List<Employee> employees = employeeRepository.findAll();
@@ -135,8 +135,7 @@ public class AdminService {
         return false;
     }
 
-    @Transactional
-    public void deleteById(int employeeId) throws Exception {
+    public Employee deleteById(int employeeId) throws Exception {
         Optional<Employee> employeeOptional = employeeRepository.findById(employeeId);
         if (employeeOptional.isEmpty()) {
             throw new Exception("No such employee exists,please check the employee id entered.");
@@ -150,6 +149,7 @@ public class AdminService {
             entityManager.remove(employee);
         }
     }
+
 
 
     public List<Employee> getAllEmployees() {
