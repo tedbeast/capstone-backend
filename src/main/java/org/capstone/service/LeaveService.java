@@ -5,34 +5,41 @@ import org.capstone.Main;
 import org.capstone.entity.Employee;
 import org.capstone.entity.Leave;
 import org.capstone.entity.Manager;
+import org.capstone.entity.Roles;
 import org.capstone.exception.LeaveException;
+import org.capstone.exception.LeaveFinancialException;
 import org.capstone.exception.LeaveManagerNotFoundException;
 import org.capstone.exception.LeaveNotFoundException;
 import org.capstone.repository.EmployeeRepository;
 import org.capstone.repository.LeaveRepository;
 import org.capstone.repository.ManagerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Service
 @Transactional
 
 public class LeaveService {
+    @Autowired
     LeaveRepository leaveRepository;
+    @Autowired
     EmployeeRepository employeeRepository;
+    @Autowired
     ManagerRepository managerRepository;
+    @Autowired
+    RestTemplate restTemplate;
 
     @Autowired
-    public LeaveService(LeaveRepository leaveRepository, EmployeeRepository employeeRepository, ManagerRepository managerRepository) {
+    public LeaveService(LeaveRepository leaveRepository, EmployeeRepository employeeRepository, ManagerRepository managerRepository, RestTemplate restTemplate) {
         this.leaveRepository = leaveRepository;
         this.employeeRepository = employeeRepository;
         this.managerRepository = managerRepository;
+        this.restTemplate = restTemplate;
     }
 
     //Get All Leaves
@@ -117,7 +124,7 @@ public class LeaveService {
                 updatedLeave.setActiveFlag(false);       // A leave was looked at
                 updatedLeave.setAcceptedFlag(true);     //Set accepted if payroll service call is successful
                 System.out.println("Payroll service call successful, leave approved.");
-            } catch (Exception | LeaveFinancialException e) {
+            } catch (LeaveFinancialException e) {
                 updatedLeave.setAcceptedFlag(false);    // Set not accepted for any other exception
                 updatedLeave.setActiveFlag(true);       // A leave is still pending
                 System.out.println("Payroll service call failed, leave not approved: " + e.getMessage());
@@ -245,42 +252,16 @@ public class LeaveService {
         return leaveToDelete;
     }
 
-    public Leave addLeave(Leave leave, int employeeID) throws LeaveException {
+
+
+    public Leave addLeave(Leave leave) throws LeaveException {
         Main.logger.info("Attempting to add a new leave: " + leave);
-        Employee employee = employeeRepository.findById(employeeID)
-                .orElseThrow(() -> new LeaveException("Employee not found with id: " + employeeID));
-
-
-        // Check for duplicate leaves
-        List<Leave> existingLeaves = leaveRepository.findByLeaveNameAndStartDateAndEndDate(leave.getLeaveName(), leave.getStartDate(), leave.getEndDate());
+        //check for duplicate leaves
+        List<Leave> existingLeaves = leaveRepository.findByIdAndLeaveNameAndStartDateAndEndDate
+                (leave.getId(),leave.getLeaveName(),leave.getStartDate(), leave.getEndDate());
         if (!existingLeaves.isEmpty()) {
             throw new LeaveException("Leave with same detail already Exists");
         }
-      
-   public Leave addLeave(Leave leave) throws LeaveException {
-       Main.logger.info("Attempting to add a new leave: " + leave);
-       //check for duplicate leaves
-       List<Leave> existingLeaves = leaveRepository.findByIdAndLeaveNameAndStartDateAndEndDate
-               (leave.getId(),leave.getLeaveName(),leave.getStartDate(), leave.getEndDate());
-       if (!existingLeaves.isEmpty()) {
-           throw new LeaveException("Leave with same detail already Exists");
-       }
-
-       // Validate leave details
-       if (leave.getLeaveName() == null || leave.getLeaveName().isEmpty()) {
-           throw new LeaveException("Leave name is required");
-       }
-       if (leave.getStartDate() == null || leave.getEndDate() == null) {
-           throw new LeaveException("Start date and end date are required");
-       }
-       if (leave.getEndDate().before(leave.getStartDate())) {
-           throw new LeaveException("End date must be after Start Date");
-       }
-       //We can add this if we want to check if an employee is assigned with a manager
-       //if (leave.getEmployee() == null || leave.getEmployee().getManager() == null) {
-        //  throw new LeaveException("Employee must have a Manager assigned");
-       // }
-
 
         // Validate leave details
         if (leave.getLeaveName() == null || leave.getLeaveName().isEmpty()) {
@@ -289,14 +270,22 @@ public class LeaveService {
         if (leave.getStartDate() == null || leave.getEndDate() == null) {
             throw new LeaveException("Start date and end date are required");
         }
+        if (leave.getEndDate().before(leave.getStartDate())) {
+            throw new LeaveException("End date must be after Start Date");
+        }
+        //We can add this if we want to check if an employee is assigned with a manager
+        //if (leave.getEmployee() == null || leave.getEmployee().getManager() == null) {
+        //  throw new LeaveException("Employee must have a Manager assigned");
+        // }
 
-        leave.setEmployee(employee); // Set the employee to the leave
-        leave.setAcceptedFlag(false); // New leave is set to Not Approved
-        leave.setActiveFlag(true); // New leave is set to Active
+        leave.setAcceptedFlag(false);            // new leave is set to Not Approved
+        leave.setActiveFlag(true);               // new leave is set to Active
 
         leaveRepository.save(leave);
         Main.logger.info("New Leave added: " + leave);
-        return leave;
+        return leaveRepository.save(leave);
+
+
     }
 
     public List<Leave> getAllLeavesByActiveStatus(boolean activeStatus) throws LeaveException {
