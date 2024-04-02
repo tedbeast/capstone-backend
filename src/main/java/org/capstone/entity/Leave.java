@@ -38,7 +38,7 @@ public class Leave {
     // Add a method to serialize only employeeID
     @JsonProperty("employeeID")
     public int getEmployeeID() {
-        return this.employee != null ? this.employee.getEmployeeID() : null;
+        return this.employee != null ? this.employee.getEmployeeID() : 0;
     }
 
     @JsonProperty("employeeName")

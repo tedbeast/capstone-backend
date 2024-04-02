@@ -191,10 +191,10 @@ public class LeaveController {
     }
 
 
-    @PostMapping(value = "employee/{employeeId}/leave")
-    public ResponseEntity<?> addLeave(@RequestBody Leave leave, @PathVariable int employeeId) throws LeaveException {
+    @PostMapping(value = "/leave")
+    public ResponseEntity<?> addLeave(@RequestBody Leave leave) throws LeaveException {
         try{
-            Leave newLeave = leaveService.addLeave(leave, employeeId);
+            Leave newLeave = leaveService.addLeave(leave);
             return new ResponseEntity<>(newLeave, HttpStatus.CREATED);
         } catch(LeaveException e){
             System.err.println("Error adding leave: " + e.getMessage());
@@ -203,7 +203,7 @@ public class LeaveController {
             String errorResponse = "Leave not added: " + e.getMessage();
             return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
         }
-}
+    }
 
     @PostMapping(value = "/leave/active")
     public List<Leave>  findAllLeaveByActiveFlag(@RequestBody boolean activeFlag) throws LeaveException {
