@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
-    @Query("SELECT e.employeeID, e.name, e.jobTitle, m.managerID, p.deadlineDate, AVG(p.rating) " +
+    @Query("SELECT e.employeeID, e.name, e.jobTitle, m.managerID,  AVG(p.rating) " +
             "FROM Employee e " +
             "JOIN e.performanceReview p " +
             "JOIN e.manager m " +
