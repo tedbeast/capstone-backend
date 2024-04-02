@@ -46,6 +46,7 @@ public class LeaveService {
     public List<Leave> getAllLeaves() throws LeaveException {
         Main.logger.info("Getting leaves by employee");
         List <Leave> l = leaveRepository.findAll();
+        System.out.println("Leaves: " +l);
         if (l.isEmpty()) {
             throw new LeaveException("No leaves found");
         }
@@ -56,6 +57,7 @@ public class LeaveService {
     public List<Leave> getAllLeaveByEmployeeId(int employeeID) throws LeaveException {
         Main.logger.info("Getting leaves by employee");
         List <Leave> l = leaveRepository.findByEmployeeEmployeeID(employeeID);
+        System.out.println("Leaves: " +l);
         if (l.isEmpty()) {
             throw new LeaveException("No leaves for a given employeeId is found: " + employeeID);
         }
@@ -104,8 +106,8 @@ public class LeaveService {
         Main.logger.info("Updating Leave with ID: "+Id);
         Optional<Leave> optionalLeave = leaveRepository.findById(Id);
         Optional<Employee> employeeOptional =
-                //employeeRepository.findById(updatedLeave.getEmployee().getEmployeeID());
-        employeeRepository.findById(Id);
+         employeeRepository.findById(updatedLeave.getEmployee().getEmployeeID());
+        //employeeRepository.findById(Id);
 
 
         // Validate leave existence
@@ -278,6 +280,7 @@ public class LeaveService {
         //  throw new LeaveException("Employee must have a Manager assigned");
         // }
 
+        System.out.println(leave);
         leave.setAcceptedFlag(false);            // new leave is set to Not Approved
         leave.setActiveFlag(true);               // new leave is set to Active
 

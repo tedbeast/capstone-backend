@@ -1,7 +1,9 @@
 package org.capstone.controller;
 
 import org.capstone.entity.Leave;
+import org.capstone.entity.LeaveResponse;
 import org.capstone.exception.LeaveException;
+import org.capstone.exception.LeaveFinancialException;
 import org.capstone.exception.LeaveManagerNotFoundException;
 import org.capstone.exception.LeaveNotFoundException;
 import org.capstone.repository.LeaveRepository;
@@ -31,12 +33,19 @@ public class LeaveController {
 
     // Endpoint for getting all leaves
     @GetMapping(value = "/leave")
-    public ResponseEntity<List<Leave>> getLeave() throws LeaveException {
+    public ResponseEntity<?> getLeave() throws LeaveException {
+        try {
         List<Leave> l = leaveService.getAllLeaves();
         return new ResponseEntity<>(l, HttpStatus.OK);
+    } catch (LeaveException e) {
+        System.err.println("No leaves submitted" + e.getMessage());
+        String errorResponse = "No leaves submitted: " + e.getMessage();
+        return new ResponseEntity<>(errorResponse, HttpStatus.OK);
+
+    }
     }
 
-//    Endpoint for getting all leaves for all employees assigned to a manager
+//    Endpoint for getting all leaves for all employees by a manager
     @GetMapping(value = "/manager/{managerID}/leave")
     public ResponseEntity<Object> getAllEmployeeLeaveByManager(@PathVariable int managerID) throws LeaveManagerNotFoundException {
         try {
@@ -108,30 +117,55 @@ public class LeaveController {
 
     // Endpoint for getting all leaves by employee & accept status
     @GetMapping(value = "/employee/{employeeID}/leave/accepted")
-    public ResponseEntity<List<Leave>> getLeaveByEmployeeIdAndAccepted(@PathVariable int employeeID) throws LeaveException {
-        List<Leave> leaves = leaveService.getAllLeaveByEmployeeIdAndAcceptFlag(employeeID, true);
-        return ResponseEntity.ok(leaves);
+    public ResponseEntity<?> getLeaveByEmployeeIdAndAccepted(@PathVariable int employeeID) throws LeaveException {
+        try {
+            List<Leave> leaves = leaveService.getAllLeaveByEmployeeIdAndAcceptFlag(employeeID, true);
+            return ResponseEntity.ok(leaves);
+        } catch (LeaveException e) {
+            System.err.println("Error getting approved leaves: " + e.getMessage());
+            String errorResponse = "Error getting approved leaves: " + e.getMessage();
+            return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+        }
     }
 
     // Endpoint for getting all leaves by employee & rejected leaves
     @GetMapping(value = "/employee/{employeeID}/leave/rejected")
-    public ResponseEntity<List<Leave>> getLeaveByEmployeeIdAndRejected(@PathVariable int employeeID) throws LeaveException {
-        List<Leave> leaves =  leaveService.getAllLeaveByEmployeeIdAndAcceptFlag(employeeID, false); // Explicitly set acceptFlag to false
-        return ResponseEntity.ok(leaves);
+    public ResponseEntity<?> getLeaveByEmployeeIdAndRejected(@PathVariable int employeeID) throws LeaveException {
+        try {
+            List<Leave> leaves = leaveService.getAllLeaveByEmployeeIdAndAcceptFlag(employeeID, false); // Explicitly set acceptFlag to false
+            return ResponseEntity.ok(leaves);
+        } catch (LeaveException e) {
+            System.err.println("Error getting rejected leaves: " + e.getMessage());
+            String errorResponse = "Error getting rejected leaves: " + e.getMessage();
+            return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+
+        }
     }
 
     // Endpoint for getting all leaves by employee & active leaves
     @GetMapping(value = "/employee/{employeeID}/leave/active")
-    public ResponseEntity<List<Leave>> getLeaveByEmployeeIdAndActive(@PathVariable int employeeID) throws LeaveException {
-        List<Leave> leaves = leaveService.getAllLeavesByEmployeeIdAndActiveFlag(employeeID, true); // Default active to true
-        return ResponseEntity.ok(leaves);
+    public ResponseEntity<?> getLeaveByEmployeeIdAndActive(@PathVariable int employeeID) throws LeaveException {
+        try {
+            List<Leave> leaves = leaveService.getAllLeavesByEmployeeIdAndActiveFlag(employeeID, true); // Default active to true
+            return ResponseEntity.ok(leaves);
+        } catch (LeaveException e) {
+            System.err.println("Error getting pending leaves: " + e.getMessage());
+            String errorResponse = "Error getting pending leaves for an employee: " + e.getMessage();
+            return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+        }
     }
 
     // Endpoint for inactive leaves
     @GetMapping(value = "/employee/{employeeID}/leave/inactive")
-    public ResponseEntity<List<Leave>> getLeaveByEmployeeIdAndInactive(@PathVariable int employeeID) throws LeaveException {
-        List<Leave> leaves = leaveService.getAllLeavesByEmployeeIdAndActiveFlag(employeeID, false); // Explicitly set active to false
-        return ResponseEntity.ok(leaves);
+    public ResponseEntity<?> getLeaveByEmployeeIdAndInactive(@PathVariable int employeeID) throws LeaveException {
+        try {
+            List<Leave> leaves = leaveService.getAllLeavesByEmployeeIdAndActiveFlag(employeeID, false); // Explicitly set active to false
+            return ResponseEntity.ok(leaves);
+        } catch (LeaveException e) {
+            System.err.println("Error getting non-pending leaves: " + e.getMessage());
+            String errorResponse = "Error getting non-pending leaves for an employee: " + e.getMessage();
+            return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+        }
     }
 
 
@@ -146,15 +180,21 @@ public class LeaveController {
 
     }
 
+    /**Create a custom response object that encapsulates the status code, status message,
+     * and the updated leave object (if applicable) to be sent to front end */
     @PutMapping("/leave/{id}")
-    public ResponseEntity<Leave> updateLeaveById(@RequestBody Leave l, @PathVariable int id) {
+    public ResponseEntity<LeaveResponse> updateLeaveById(@RequestBody Leave l, @PathVariable int id) {
         try {
-            Leave updatedLeave = leaveService.updateLeave(id, l);
-            return new ResponseEntity<>(updatedLeave, HttpStatus.OK);
+            Leave updatedLeave = leaveService.updateLeaveById(id, l);
+            LeaveResponse response = new LeaveResponse(HttpStatus.OK, "Leave updated successfully", updatedLeave);
+            return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (LeaveNotFoundException e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            LeaveResponse response = new LeaveResponse(HttpStatus.BAD_REQUEST, "Leave is not updated: " + e.getMessage());
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        } catch (LeaveFinancialException e) {
+            LeaveResponse response = new LeaveResponse(HttpStatus.FAILED_DEPENDENCY, "Leave is not updated: " + e.getMessage());
+            return new ResponseEntity<>(response, HttpStatus.FAILED_DEPENDENCY);
         }
-
     }
 
     @GetMapping("/leave/{id}/accept")
