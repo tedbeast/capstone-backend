@@ -62,8 +62,6 @@ public class Employee {
                 ", postalCode='" + postalCode + '\'' +
                 ", birthDate=" + birthDate +
                 ", anniversary=" + anniversary +
-                ", performanceReview=" + performanceReview +
-                ", leave=" + leave +
                 ", role=" + role +
                 '}';
     }
