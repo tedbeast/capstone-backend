@@ -1,18 +1,36 @@
 package org.capstone.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.*;
 
 @Entity
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class PerformanceReview {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int performanceId;
-    //new added fields
-    private double averageScore;
-   // private long reviewCount;
+    private int performanceReviewID;
+    public Date deadlineDate;
+    public String managerComments;
+    public double rating;
+
+    @ManyToOne
+    @JoinColumn(name="employeeID")
+    @JsonIgnoreProperties("performanceReview")
+    @JsonBackReference //added
+    public Employee employee;
+
+    @OneToMany
+    @JsonManagedReference
+    public List<Goal> goals;
 }
