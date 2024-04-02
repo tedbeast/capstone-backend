@@ -117,22 +117,24 @@ public class LeaveService {
         System.out.println("Employee ID: " +employeeOptional.get().getEmployeeID());
         System.out.println("Role: " +employeeOptional.get().getRole());
         if (employeeOptional.get().getRole() == Roles.MANAGER) {
-            System.out.println("Role: " +employeeOptional.get().getRole());
+
             // Call the payroll service
             try {
                 //If the 2nd API call doesn't throw an exception, we are assuming success;  otherwise error
                 callPayrollService(updatedLeave);       //call 2nd API
+                updatedLeave.setActiveFlag(false);       // A leave was looked at
                 updatedLeave.setAcceptedFlag(true);     //Set accepted if payroll service call is successful
                 System.out.println("Payroll service call successful, leave approved.");
             } catch (Exception | LeaveFinancialException e) {
                 updatedLeave.setAcceptedFlag(false);    // Set not accepted for any other exception
+                updatedLeave.setActiveFlag(true);       // A leave is still pending
                 System.out.println("Payroll service call failed, leave not approved: " + e.getMessage());
                 throw e;                                // Re-throw the exception without modifying the message
             }
         } else {
             // Employee leave updates
-            updatedLeave.setActiveFlag(true);
-            updatedLeave.setAcceptedFlag(false);
+            updatedLeave.setActiveFlag(true);           // A leave becomes pending
+            updatedLeave.setAcceptedFlag(false);        // A leave was looked at
         }
 
         return leaveRepository.save(updatedLeave);
@@ -140,7 +142,7 @@ public class LeaveService {
 
     // Call to the 2nd API: Financial API service -- it returns successful/unsuccessful response
     public void callPayrollService(Leave leave) throws LeaveFinancialException {
-        String url = "http://localhost:8080/payroll";
+        String url = "http://localhost:9002/payroll";
 
         try {
             HttpHeaders headers = new HttpHeaders();
