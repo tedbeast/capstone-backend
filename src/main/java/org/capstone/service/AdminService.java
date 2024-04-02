@@ -135,7 +135,8 @@ public class AdminService {
         return false;
     }
 
-    public Employee deleteById(int employeeId) throws Exception {
+    @Transactional
+    public void deleteById(int employeeId) throws Exception {
         Optional<Employee> employeeOptional = employeeRepository.findById(employeeId);
         if (employeeOptional.isEmpty()) {
             throw new Exception("No such employee exists,please check the employee id entered.");
@@ -148,9 +149,8 @@ public class AdminService {
             }
             entityManager.remove(employee);
         }
+
     }
-
-
 
     public List<Employee> getAllEmployees() {
         List<Employee> employees = employeeRepository.findAll();
