@@ -24,12 +24,14 @@ public class PerformanceReviewService {
     PerformanceReviewRepository performanceReviewRepository;
     GoalRepository goalRepository;
     EmployeeRepository employeeRepository;
+    ManagerRepository managerRepository;
 
     @Autowired
-    public PerformanceReviewService(PerformanceReviewRepository performanceReviewRepository, GoalRepository goalRepository, EmployeeRepository employeeRepository) {
+    public PerformanceReviewService(PerformanceReviewRepository performanceReviewRepository, GoalRepository goalRepository, EmployeeRepository employeeRepository, ManagerRepository managerRepository) {
         this.performanceReviewRepository = performanceReviewRepository;
         this.goalRepository = goalRepository;
         this.employeeRepository = employeeRepository;
+        this.managerRepository = managerRepository;
     }
 
     public List<PerformanceReview> getAllPerformanceReview() {
@@ -39,7 +41,7 @@ public class PerformanceReviewService {
 
     // to do: use employee repository
     public List<Employee> getAllEmployeeByManagerID(int managerID){
-        return employeeRepository.findEmployeeByManagerId(managerID);
+        return managerRepository.findEmployeesByManagerId(managerID);
     }
 
     public Employee checkIfEmployeeExistsByID(int employeeID) throws PerformanceReviewException {
