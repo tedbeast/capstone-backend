@@ -25,13 +25,15 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
             "GROUP BY e.employeeID, e.name")
     List<Object[]> countEmployeesWithRatingUnderThree();
 
-    @Query("from Employee where manager.managerID = :managerID")
-    List<Employee> findEmployeeByManagerId(@Param("managerID") Integer managerID);
 
     @Query("SELECT e.employeeID, e.name AS employeeName, e.manager.managerID, m.name AS managerName " +
             "FROM Employee e " +
             "JOIN Employee m ON e.manager.managerID = m.employeeID")
     List<Object[]> findEmployeeAndManagerNames();
+
+    @Query("from Employee where manager.managerID = :managerID")
+    List<Employee> findEmployeeByManagerId(@Param("managerID") Integer managerID);
+    Employee findByEmployeeID(int employeeID);
 
     }
 
