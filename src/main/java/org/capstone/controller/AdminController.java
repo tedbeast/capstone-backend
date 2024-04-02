@@ -6,6 +6,7 @@ import org.capstone.entity.Manager;
 import org.capstone.exception.AdminException;
 import org.capstone.service.AdminService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -45,9 +46,10 @@ public class AdminController {
     public ResponseEntity<Employee>deleteById(@PathVariable int employeeID)throws Exception {
         try {
             adminService.deleteById(employeeID);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatusCode.valueOf(200));
         } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            return ResponseEntity.status(HttpStatusCode.valueOf(200))
+                    .body(null);
         }
     }
 
