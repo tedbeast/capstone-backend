@@ -90,11 +90,10 @@ public class AdminService {
         }else{
             manager = optional.get();
         }
-        employee.setManager(manager);
-        employeeRepository.save(employee);
-        manager.getEmployees().add(employee);
+        Employee savedEmployee = employeeRepository.save(employee);
+        manager.getEmployees().add(savedEmployee);
         managerRepository.save(manager);
-        return employee;
+        return savedEmployee;
     }
 
     public Employee deleteById(int employeeId) throws Exception {
