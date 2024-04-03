@@ -1,5 +1,8 @@
 package org.capstone.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import org.capstone.Main;
 //import org.capstone.dto.PerformanceStatsDto;
 //import org.capstone.dto.PerformanceStatsProjection;
@@ -18,6 +21,8 @@ import java.util.Optional;
 
 @Service
 public class AdminService {
+    @PersistenceContext
+    private EntityManager entityManager;
 
     EmployeeRepository employeeRepository;
     ManagerRepository managerRepository;
@@ -31,9 +36,17 @@ public class AdminService {
     }
 
     public Employee updateEmployee(int employeeID, Employee newEmployee) throws AdminException {
+
         Optional<Employee> employeeOptional = employeeRepository.findById(employeeID);
         Employee employee = employeeOptional.get();
         Roles oldRole = employee.getRole();
+        //Check for employee email/phone via review method
+//        String eEmail = newEmployee.getEmail().strip();
+//        String ePhoneNumber = newEmployee.getPhoneNumber().strip();
+//        if (employeeDuplicateReview(eEmail, ePhoneNumber)) {
+//            Main.logger.warn("Employee with duplicate email or phone number already exists");
+//            throw new AdminException("Employee with email or phone number already exists, please try again.");
+//        }
 
         employee.setName(newEmployee.getName());
         employee.setPassword(newEmployee.getPassword());
@@ -60,6 +73,7 @@ public class AdminService {
                 employee.setManager(manager);
             }
             employee = employeeRepository.save(employee);
+            Main.logger.info("Employee " + employeeID + " updated successfully");
         }
 
         return employee;
@@ -69,7 +83,14 @@ public class AdminService {
         if (employee.getName() == null || employee.getName().isEmpty()) {
             throw new AdminException("Employee name cannot be null or empty.");
         }
-
+        //Check for employee email/phone via review method
+        String eEmail = employee.getEmail().strip();
+        String ePhoneNumber = employee.getPhoneNumber().strip();
+        if (employeeDuplicateReview(eEmail, ePhoneNumber)) {
+            Main.logger.warn("Manager with duplicate email or phone number already exists");
+            throw new AdminException("Manager with email or phone number already exists, please try again.");
+        }
+        employee.setManager(null);
         Employee savedEmployee = employeeRepository.save(employee);
 
         if (employee.getRole() == Roles.MANAGER){
@@ -85,27 +106,51 @@ public class AdminService {
     public Employee saveEmployee(int id, Employee employee) throws Exception {
         Optional<Manager> optional = managerRepository.findById(id);
         Manager manager;
-        if(optional.isEmpty()){
-            throw new Exception("no such artist...");
-        }else{
+        if (optional.isEmpty()) {
+            throw new Exception("no such Manager exists...");
+        } else {
             manager = optional.get();
         }
-        Employee savedEmployee = employeeRepository.save(employee);
-        manager.getEmployees().add(savedEmployee);
+        //Check for employee email/phone via review method
+        String eEmail = employee.getEmail().strip();
+        String ePhoneNumber = employee.getPhoneNumber().strip();
+        if (employeeDuplicateReview(eEmail, ePhoneNumber)) {
+            Main.logger.warn("Employee with email or phone number already exists, please try again.");
+            throw new AdminException("Employee with email or phone number already exists, please try again.");
+        }
+        employee.setManager(manager);
+        employeeRepository.save(employee);
+        manager.getEmployees().add(employee);
         managerRepository.save(manager);
-        return savedEmployee;
+        return employee;
+    }
+    //Check if manager being added is already in manager list
+    public boolean employeeDuplicateReview(String email, String phoneNumber) {
+        List<Employee> employees = employeeRepository.findAll();
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getEmail().equalsIgnoreCase(email) || employees.get(i).getPhoneNumber().equals(phoneNumber)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public Employee deleteById(int employeeId) throws Exception {
+    @Transactional
+    public void deleteById(int employeeId) throws Exception {
         Optional<Employee> employeeOptional = employeeRepository.findById(employeeId);
         if (employeeOptional.isEmpty()) {
             throw new Exception("No such employee exists,please check the employee id entered.");
         }
-        employeeRepository.deleteById(employeeId);//Remove the employee from the list
-        return employeeOptional.get();//Return deleted employee?
+        Employee employee = entityManager.find(Employee.class, employeeId);
+        if (employee != null) {
+            Manager manager = employee.getManager();
+            if (manager != null) {
+                manager.getEmployees().remove(employee);
+            }
+            entityManager.remove(employee);
+        }
+
     }
-
-
 
     public List<Employee> getAllEmployees() {
         List<Employee> employees = employeeRepository.findAll();
@@ -128,6 +173,17 @@ public class AdminService {
     public List<Manager> getAllManagers() {
         Main.logger.info("Manager List returned:");
         return managerRepository.findAll();
+    }
+
+    public Employee updateManagerID(int employeeID, Employee newEmployee) throws AdminException {
+        Optional<Employee> employeeOptional = employeeRepository.findById(employeeID);
+        Employee employee = employeeOptional.get();
+
+        employee.setManager(newEmployee.getManager());
+
+        employee = employeeRepository.save(employee);
+
+        return employee;
     }
 
 

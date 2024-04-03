@@ -1,4 +1,5 @@
 package org.capstone.entity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -29,13 +30,14 @@ public class Leave {
     private boolean acceptedFlag;
     private boolean activeFlag;
 
-    @JsonIgnore // Prevents the serialization of the whole Employee object
+//    @JsonIgnore // Prevents the serialization of the whole Employee object
     @ManyToOne
-    @JoinColumn(name = "employeeID")
+    @JoinColumn(name="employeeID")
     @JsonIgnoreProperties("leave")
+    @JsonBackReference //added
     private Employee employee;
 
-    // Add a method to serialize only employeeID
+//     Add a method to serialize only employeeID
     @JsonProperty("employeeID")
     public int getEmployeeID() {
         return this.employee != null ? this.employee.getEmployeeID() : 0;
