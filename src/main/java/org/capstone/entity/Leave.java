@@ -30,7 +30,7 @@ public class Leave {
     private boolean acceptedFlag;
     private boolean activeFlag;
 
-//    @JsonIgnore // Prevents the serialization of the whole Employee object
+    //@JsonIgnore // Prevents the serialization of the whole Employee object
     @ManyToOne
     @JoinColumn(name="employeeID")
     @JsonIgnoreProperties("leave")
