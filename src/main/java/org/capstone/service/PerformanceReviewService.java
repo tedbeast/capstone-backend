@@ -41,7 +41,8 @@ public class PerformanceReviewService {
 
     // to do: use employee repository
     public List<Employee> getAllEmployeeByManagerID(int managerID){
-        return managerRepository.findEmployeesByManagerId(managerID);
+        List<Employee> employeeList = employeeRepository.findEmployeeByManagerId(managerID);
+        return employeeList;
     }
 
     public Employee checkIfEmployeeExistsByID(int employeeID) throws PerformanceReviewException {
