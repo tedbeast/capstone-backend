@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
-//    @Query("from Employee where manager.managerID = :managerID")
-//    List<Employee> findEmployeeByManagerId(@Param("managerID") Integer managerID);
+    @Query("from Employee where manager.managerID = :managerID")
+    List<Employee> findEmployeeByManagerId(@Param("managerID") Integer managerID);
+    Employee findByEmployeeID(int employeeID);
 }
