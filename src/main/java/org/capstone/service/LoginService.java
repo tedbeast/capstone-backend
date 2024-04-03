@@ -1,5 +1,6 @@
 package org.capstone.service;
 import org.capstone.entity.Employee;
+import org.capstone.entity.WebexMessageType;
 import org.capstone.exception.InvalidCredentialsException;
 import org.capstone.exception.PasswordValidationException;
 import org.capstone.exception.UserNotFoundException;
@@ -68,7 +69,7 @@ public class LoginService {
            if (userEmail.contains("@geico.com")){
                try{
                    //Call Webex Service to send user notification that their password has been updated
-                   webexService.sendPasswordHasBeenResetMessage(userEmail);
+                   webexService.sendMessage(userEmail, WebexMessageType.PASSWORD_RESET);
                }catch(Exception e){
                     log.warn(e.getMessage());
                }
