@@ -60,12 +60,12 @@ public class AdminController {
     }
 
     @GetMapping("employee/{employeeId}")
-    public ResponseEntity<Employee> getEmployeeByIDEndpoint(@PathVariable int employeeId) {
+    public ResponseEntity<?> getEmployeeByIDEndpoint(@PathVariable int employeeId) {
         try {
             Employee employee = adminService.getEmployeeById(employeeId);
             return new ResponseEntity<>(employee, HttpStatus.OK);
         } catch (AdminException e) {
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
     @GetMapping("manager")
