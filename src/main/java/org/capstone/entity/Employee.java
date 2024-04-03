@@ -45,6 +45,8 @@ public class Employee {
     private List<PerformanceReview> performanceReview;
 
     @OneToMany
+    @JoinColumn(name = "employeeID")
+    @JsonManagedReference //added
     private List<Leave> leave;
 
     private Roles role;
@@ -71,5 +73,3 @@ public class Employee {
                 '}';
     }
 }
-
-

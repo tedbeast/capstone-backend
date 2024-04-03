@@ -2,12 +2,11 @@ package org.capstone.controller;
 
 
 import org.capstone.entity.Employee;
-
 import org.capstone.entity.Manager;
-import org.capstone.entity.PerformanceReview;
 import org.capstone.exception.AdminException;
 import org.capstone.service.AdminService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -23,7 +22,6 @@ public class AdminController {
         this.adminService = adminService;
     }
 
-
     @PostMapping("/manager")
     public ResponseEntity<Employee> createManager(@RequestBody Employee employee) {
         try {
@@ -34,7 +32,6 @@ public class AdminController {
         }
     }
 
-
     @PutMapping("employee/{employeeID}")
     public Employee updateEmployee(@PathVariable int employeeID, @RequestBody Employee employee) {
         try {
@@ -44,25 +41,25 @@ public class AdminController {
         }
     }
 
-
     @DeleteMapping("employee/{employeeID}")
 
     public ResponseEntity<Employee>deleteById(@PathVariable int employeeID)throws Exception {
         try {
             adminService.deleteById(employeeID);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatusCode.valueOf(200));
         } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            return ResponseEntity.status(HttpStatusCode.valueOf(200))
+                    .body(null);
         }
     }
 
-        @GetMapping("/employee")
+    @GetMapping("employee")
     public ResponseEntity<List<Employee>> getAllEmployeesEndpoint() {
         List<Employee> employees = adminService.getAllEmployees();
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
-    @GetMapping("/employee/{employeeId}")
+    @GetMapping("employee/{employeeId}")
     public ResponseEntity<Employee> getEmployeeByIDEndpoint(@PathVariable int employeeId) {
         try {
             Employee employee = adminService.getEmployeeById(employeeId);
@@ -71,8 +68,7 @@ public class AdminController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-
-    @GetMapping("/manager")
+    @GetMapping("manager")
     public ResponseEntity<List<Manager>> getAllManagersEndpoint() {
         List<Manager> managers = adminService.getAllManagers();
         return new ResponseEntity<>(managers, HttpStatus.OK);
@@ -80,19 +76,21 @@ public class AdminController {
 
     @PostMapping("manager/{managerID}/employee")
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee p, @PathVariable int managerID) throws Exception {
-        Employee employee = adminService.saveEmployee(managerID, p);
-        return new ResponseEntity<>(employee, HttpStatus.CREATED);
+        try {
+            Employee employee = adminService.saveEmployee(managerID, p);
+            return new ResponseEntity<>(employee, HttpStatus.CREATED);
+        }catch (AdminException e) {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
     }
 
-//    @GetMapping("/performance/stats")
-//    public ResponseEntity<PerformanceStatsDto> getPerformanceStats() {
-//        PerformanceStatsDto stats = adminService.findPerformanceStats();
-//        return new ResponseEntity<>(stats, HttpStatus.OK);
-//    }
+    @PutMapping("manager/{employeeID}")
+    public Employee updateManagerID(@PathVariable int employeeID, @RequestBody Employee employee) {
+        try {
+            return adminService.updateManagerID(employeeID, employee);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee not found", e);
+        }
+    }
 
-//    @GetMapping("/performance/stats")
-//    public ResponseEntity<PerformanceStatsProjection> getPerformanceStats() {
-//       PerformanceStatsProjection stats = adminService.findPerformanceStats();
-//       return new ResponseEntity<>(stats, HttpStatus.OK);
-//    }
 }

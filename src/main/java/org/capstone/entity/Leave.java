@@ -32,12 +32,12 @@ public class Leave {
 
     //@JsonIgnore // Prevents the serialization of the whole Employee object
     @ManyToOne
-    @JoinColumn(name = "employeeID")
+    @JoinColumn(name="employeeID")
     @JsonIgnoreProperties("leave")
     @JsonBackReference //added
     private Employee employee;
 
-    // Add a method to serialize only employeeID
+//     Add a method to serialize only employeeID
     @JsonProperty("employeeID")
     public int getEmployeeID() {
         return this.employee != null ? this.employee.getEmployeeID() : 0;
