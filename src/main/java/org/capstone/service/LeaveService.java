@@ -18,8 +18,12 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+
+// Uncomment this if you want sample data loaded upon startup
+import org.capstone.util.SetUpLeaveSeedData;
 
 @Service
 @Transactional
@@ -40,6 +44,15 @@ public class LeaveService {
         this.employeeRepository = employeeRepository;
         this.managerRepository = managerRepository;
         this.restTemplate = restTemplate;
+
+        //        Uncomment this code to seed data such as employee, manager, and leave requests upon startup
+        try {
+            String seedDataAdded = new SetUpLeaveSeedData().seedLeaveData(this.leaveRepository, this.employeeRepository, this.managerRepository);
+            Main.logger.info(seedDataAdded);
+        } catch (ParseException e) {
+            Main.logger.warn("Seed data failed");
+        }
+
     }
 
     //Get All Leaves
