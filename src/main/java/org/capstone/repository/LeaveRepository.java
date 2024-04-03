@@ -29,6 +29,11 @@ public interface LeaveRepository extends JpaRepository<Leave, Integer> {
 //    @Query(value = "SELECT l.* FROM Leave l, Employee e WHERE  :managerID = e.employee_fk and e.employeeid = l.employeeid and active_flag = :active_flag and accepted_flag = :accepted_flag", nativeQuery = true)
 //    List<Leave> findEmployeeLeaveByManagerByStatusFlags(@Param("managerID") int contextManagerID, @Param("active_flag") boolean active_flag, @Param("accepted_flag") boolean accepted_flag);
 
+    @Query("from Leave where employee.manager.managerID = ?1")
+    List<Leave> findAllEmployeeLeaveByManager(Integer managerID);
+
+    @Query("FROM Leave l where employee.manager.managerID = ?1 and l.activeFlag = ?2 and l.acceptedFlag = ?3")
+    List<Leave> findEmployeeLeaveByManagerByStatusFlags(int managerID, boolean active_flag, boolean accepted_flag);
 
 
 
