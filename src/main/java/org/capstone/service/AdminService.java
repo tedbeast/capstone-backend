@@ -80,6 +80,13 @@ public class AdminService {
     }
 
     public Employee createManager(Employee employee) throws AdminException {
+        List <Manager>  managers=managerRepository.findAll();
+        Manager firstManager=null;
+        if(!managers.isEmpty()){
+            firstManager =managers.get(0);
+
+        }
+
         if (employee.getName() == null || employee.getName().isEmpty()) {
             throw new AdminException("Employee name cannot be null or empty.");
         }
@@ -92,11 +99,18 @@ public class AdminService {
         }
         employee.setManager(null);
         Employee savedEmployee = employeeRepository.save(employee);
+        if(firstManager!=null  ){
+            if(firstManager.getEmployees()==null){
+                firstManager.setEmployees(new ArrayList<>());
 
+            }
+            firstManager.getEmployees().add(savedEmployee);
+        }
         if (employee.getRole() == Roles.MANAGER){
             Manager manager = new Manager();
 
             manager.setManagerID(savedEmployee.getEmployeeID());
+
 
             managerRepository.save(manager);
         }

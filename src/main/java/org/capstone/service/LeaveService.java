@@ -322,8 +322,6 @@ public class LeaveService {
         if(mangerO.isPresent()){
             Manager manager =mangerO.get();
             List<Leave> leaves = new ArrayList<>();
-            manager.setEmployees(new ArrayList<>());
-            manager.getEmployees().add(employeeRepository.findById(1).get());
             for (Employee employee : manager.getEmployees()) {
                 // Assuming Employee entity has a getLeaves method
                 leaves.addAll(employee.getLeave());
