@@ -1,19 +1,29 @@
 package org.capstone.controller;
 
 
+import java.security.Key;
+import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+
+import io.jsonwebtoken.security.Keys;
 import org.capstone.entity.Employee;
+import org.capstone.entity.Roles;
 import org.capstone.exception.InvalidCredentialsException;
 import org.capstone.exception.PasswordValidationException;
 import org.capstone.exception.UserNotFoundException;
 import org.capstone.service.LoginService;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
+import org.capstone.util.KeyGeneratorFinal;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+
+import javax.crypto.SecretKey;
 
 @RestController
 @Slf4j
@@ -22,8 +32,25 @@ public class LoginController {
 
   public final LoginService loginService;
 
-  public LoginController(LoginService loginService) {
+  private final KeyGeneratorFinal keyGeneratorFinal;
+
+  public LoginController(LoginService loginService, KeyGeneratorFinal keyGeneratorFinal) {
     this.loginService = loginService;
+    this.keyGeneratorFinal = keyGeneratorFinal;
+  }
+
+  private String generateToken(int employeeID, Roles role) throws NoSuchAlgorithmException {
+
+    try {
+      SecretKey secretKey = keyGeneratorFinal.generateSecretKey();
+
+      return Jwts.builder().setSubject(String.valueOf(employeeID)).claim("role", role.name())
+              .signWith(SignatureAlgorithm.HS256, secretKey).compact();
+    }
+    catch(NoSuchAlgorithmException e){
+      throw new RuntimeException("Failed to generate secrey key", e);
+    }
+
   }
 
   @GetMapping("/")
@@ -48,7 +75,9 @@ public class LoginController {
         session.setAttribute("employeeID", authenticatedUser.getEmployeeID());
         session.setAttribute("role", authenticatedUser.getRole());
         Map<String, String> responseBody = new HashMap<>();
-        responseBody.put("message", "Login successful. Session created.");
+        String token = generateToken(authenticatedUser.getEmployeeID(), authenticatedUser.getRole());
+        responseBody.put("message", "Login successful.");
+        responseBody.put("token", token);
         responseBody.put("role", String.valueOf(authenticatedUser.getRole()));
         return ResponseEntity.ok(responseBody);
       } else {
@@ -60,9 +89,13 @@ public class LoginController {
       log.error("Invalid credentials: " + e.getMessage());
       return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
               .body(Collections.singletonMap("error", "Invalid username or password"));
+    } catch (NoSuchAlgorithmException e) {
+        throw new RuntimeException(e);
     }
 
   }
+
+
    @PutMapping("/reset")
     public ResponseEntity<String> resetPassword(@RequestBody Employee resetUser){
       try {
