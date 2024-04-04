@@ -172,9 +172,9 @@ public class LeaveController {
     @PutMapping("/employee/{employeeId}/leave/{id}")
     public ResponseEntity<Leave> updateLeave(@RequestBody Leave l, @PathVariable int employeeId, @PathVariable int id) {
         try {
-            Leave updatedLeave = leaveService.updateLeave(id, l);
+            Leave updatedLeave = leaveService.updateLeaveById(id, l);
             return new ResponseEntity<>(updatedLeave, HttpStatus.OK);
-        } catch (LeaveNotFoundException e) {
+        } catch (LeaveNotFoundException | LeaveFinancialException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
@@ -185,7 +185,7 @@ public class LeaveController {
     @PutMapping("/leave/{id}")
     public ResponseEntity<LeaveResponse> updateLeaveById(@RequestBody Leave l, @PathVariable int id) {
         try {
-            Leave updatedLeave = leaveService.updateLeave(id, l);
+            Leave updatedLeave = leaveService.updateLeaveById(id, l);
             LeaveResponse response = new LeaveResponse(HttpStatus.OK, "Leave updated successfully", updatedLeave);
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (LeaveNotFoundException e) {
