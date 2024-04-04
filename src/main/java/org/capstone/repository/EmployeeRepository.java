@@ -21,7 +21,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
             "FROM Employee e " +
             "JOIN e.performanceReview p " +
             "WHERE p.rating < 3 " +
-            "GROUP BY e.employeeID, e.name")
+            "GROUP BY e.employeeID, e.name, p.rating")
     List<Object[]> countEmployeesWithRatingUnderThree();
 
 
