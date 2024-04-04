@@ -72,10 +72,11 @@ public class LoginController {
               loginUser.getPassword());
       log.info("Authenticated user: " + authenticatedUser);
       if (authenticatedUser != null) {
-        session.setAttribute("employeeID", authenticatedUser.getEmployeeID());
-        session.setAttribute("role", authenticatedUser.getRole());
+//        session.setAttribute("employeeID", authenticatedUser.getEmployeeID());
+//        session.setAttribute("role", authenticatedUser.getRole());
         Map<String, String> responseBody = new HashMap<>();
         String token = generateToken(authenticatedUser.getEmployeeID(), authenticatedUser.getRole());
+        responseBody.put("employeeID", String.valueOf(authenticatedUser.getEmployeeID()));
         responseBody.put("message", "Login successful.");
         responseBody.put("token", token);
         responseBody.put("role", String.valueOf(authenticatedUser.getRole()));
