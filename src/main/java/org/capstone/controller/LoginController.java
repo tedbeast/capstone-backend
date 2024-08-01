@@ -61,8 +61,20 @@ public class LoginController {
       return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
               .body(Collections.singletonMap("error", "Invalid username or password"));
     }
-
   }
+
+//    @GetMapping("/employeee/{employeeID}")
+//    public ResponseEntity<Employee> getEmployeeDetails( @PathVariable int employeeID){
+//      Employee employee = loginService.getEmployeeById(employeeID);
+//      if (employee != null) {
+//        System.out.println("Found Employee: "+ employee);
+//        return ResponseEntity.ok(employee);
+//      } else {
+//        System.out.println("Did not find employee: " + employee);
+//        return ResponseEntity.notFound().build();
+//      }
+//    }
+
    @PutMapping("/reset")
     public ResponseEntity<String> resetPassword(@RequestBody Employee resetUser){
       try {

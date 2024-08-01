@@ -39,6 +39,11 @@ public class LoginService {
             throw new InvalidCredentialsException("Authentication failed.Invalid credentials ");
         }
     }
+
+//    public Employee getEmployeeById(int employeeID){
+//        return employeeRepository.findByEmployeeID(employeeID);
+//    }
+
     public void saveUser(Employee user) {
         if(user==null) {
             throw new IllegalArgumentException("User object is null");
